@@ -51,7 +51,7 @@ Texto final das páginas fixas, na voz da liga (CLAUDE.md, seção 5). Base para
 **Último gráfico comentado**
 
 - Título do bloco: Gráfico comentado
-- Texto: Um gráfico, um comentário de até 150 palavras e a fonte dos dados.
+- Texto: Um gráfico, um comentário e a fonte dos dados.
 - Botões: Ler o comentário | Ver todos os gráficos
 
 **Próximo evento**
@@ -177,7 +177,14 @@ Use os modelos para escrever no formato dos fascículos: Com título, autor, eix
 | Filtros | Filtrar por eixo · Filtrar por tipo · Limpar filtros |
 | Gráfico comentado | Ler o comentário · Ver todos os gráficos · Abrir o gráfico em tamanho maior |
 | Evento futuro | Fazer inscrição |
+| Evento futuro, sem link de inscrição ainda | Inscrições em breve. |
+| Evento futuro de entrada livre | Entrada livre, sem inscrição. |
 | Evento passado | Ver as fotos |
+| Página de um evento | Voltar aos eventos |
+| Início, botão da abertura antes do lançamento | Ver os textos do nº 1 |
+| Início, segundo botão da abertura | Ver como funcionamos |
+| Início, bloco "como funcionamos" | Ler sobre a liga |
+| Equipe, chamada final | Ver como participar |
 | Participe | Fazer inscrição no processo seletivo · Baixar modelo em Word · Baixar modelo em LaTeX |
 | Redes | Seguir no Instagram · Seguir no LinkedIn |
 | Contato | Escrever para a liga |
@@ -205,7 +212,7 @@ Use os modelos para escrever no formato dos fascículos: Com título, autor, eix
 
 ### 5.3 Notas de responsabilidade e avisos
 
-**Texto de opinião** (fixa, sempre exibida; texto definido no CLAUDE.md):
+**Responsabilidade autoral** (fixa, exibida em todo texto, de qualquer tipo; texto definido no CLAUDE.md):
 
 > As opiniões expressas são de responsabilidade de quem assina o texto.
 
@@ -231,3 +238,18 @@ Exemplo: AMORIN, Miguel. Impactos setoriais do acordo Mercosul e União Europeia
 **Rodapé de gráfico:**
 
 > Fonte: {instituição}, {série}. Elaboração: MacroLiga UFRGS.
+
+---
+
+## 6. Frases de abertura das páginas
+
+Frases que surgiram nos wireframes e na spec de design (`docs/spec-design.md`, seção 8).
+
+| Página | Frase |
+|---|---|
+| Publicações | Textos curtos de estudantes de graduação, revisados por professores da FCE e reunidos em fascículos numerados. Todos têm DOI e podem ser citados. |
+| Gráficos comentados | Um gráfico, um comentário e a fonte dos dados. |
+| Eventos | Lançamentos de fascículos, debates e outros encontros promovidos pela liga. |
+| Equipe | Cerca de 15 estudantes de graduação da UFRGS, organizados em diretorias e em seis eixos temáticos. |
+| Fascículo, questionário | Leu este fascículo? Conte o que achou em um questionário curto. As respostas ajudam a avaliar o projeto de extensão. |
+| 404, título | Página não encontrada |

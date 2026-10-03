@@ -103,20 +103,24 @@ O Instagram gera alcance, o LinkedIn gera credibilidade e **o site guarda a prod
 ### Modelo de conteúdo (cabeçalho YAML de cada texto)
 
 ```yaml
-title: "Impactos setoriais do acordo Mercosul–União Europeia"
+title: "Impactos setoriais do acordo Mercosul e União Europeia"
 author: "Miguel Amorin"
+autor-citacao: ""                # opcional: só para sobrenome composto
 tipo: "Análise de conjuntura"   # Análise de conjuntura | Revisão de literatura | Nota de pesquisa | Texto de opinião
-eixo: "Setor Externo e Câmbio"   # um dos 6 eixos
+eixo: "Setor externo e câmbio"   # um dos 6 eixos de _variables.yml
 fasciculo: 1
+ordem: 2                         # posição no sumário
 date: 2026-11-27
 sintese: "Duas a três frases."
-doi: "10.5281/zenodo.XXXXXXX"
-pdf: "texto.pdf"
 revisao: "Prof. Fulano (FCE/UFRGS)"
-categories: ["Setor Externo e Câmbio", "Análise de conjuntura"]
+doi: ""                          # vazio = usa o DOI do fascículo
+pdf: "texto.pdf"
+draft: true                      # apagar no dia do lançamento
 ```
 
-Os **Textos de opinião** sempre exibem: "As opiniões expressas são de responsabilidade de quem assina o texto."
+Não há campo `categories`: os filtros leem `eixo` e `tipo`. O modelo completo (fascículo, evento, gráfico, equipe) está em `docs/spec-design.md`, seção 3.
+
+**Todo texto** exibe: "As opiniões expressas são de responsabilidade de quem assina o texto."
 
 ### Conteúdo real para o nº 1 (em revisão; não publicar antes do lançamento)
 
@@ -267,9 +271,9 @@ Copie para `assets/` só o que o site usar. Nunca altere os originais em `../Mat
 Não decida estes pontos sozinho: pergunte ao Miguel.
 
 1. **Nome da publicação:** a recomendação é "Pontos de Macro"; está provisório em `_variables.yml`.
-2. **DOI por texto ou só por fascículo?** A recomendação é por texto, mais um registro do fascículo inteiro.
+2. **DOI por texto ou só por fascículo?** A recomendação é por texto, mais um registro do fascículo inteiro. O site suporta os dois: `doi` vazio no texto herda o do fascículo.
 3. **Endereço `ufrgs.br/macroliga`:** depende de o coordenador pedir ao CPD.
-4. **Página Gráfico Comentado** entra já na 1ª versão ou depois do lançamento?
+4. ~~**Página Gráfico Comentado** entra já na 1ª versão ou depois do lançamento?~~ Decidido (spec, D1): entra até 22/11, junto com Publicações.
 5. **Fotos dos membros na página Equipe:** dependem de termo de uso de imagem.
 6. **Regras de uso do nome e da marca UFRGS** em materiais de extensão: a confirmar com a FCE.
 
