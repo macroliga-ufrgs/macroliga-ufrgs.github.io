@@ -116,7 +116,7 @@ revisao: "Prof. Fulano (FCE/UFRGS)"
 categories: ["Setor Externo e Câmbio", "Análise de conjuntura"]
 ```
 
-Os **Textos de opinião** sempre exibem: "As opiniões expressas são de responsabilidade do autor."
+Os **Textos de opinião** sempre exibem: "As opiniões expressas são de responsabilidade de quem assina o texto."
 
 ### Conteúdo real para o nº 1 (em revisão; não publicar antes do lançamento)
 

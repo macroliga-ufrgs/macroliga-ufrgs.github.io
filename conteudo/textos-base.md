@@ -25,7 +25,7 @@ Texto final das páginas fixas, na voz da liga (CLAUDE.md, seção 5). Base para
 | B | Macroeconomia em textos curtos, revisados por professores. | Se a prioridade for passar seriedade (professores, LinkedIn). |
 | C | A economia brasileira, um ponto de cada vez. | Se o nome "Pontos de Macro" for confirmado: conversa com o logo de pontos e com o nome da publicação. |
 
-### Subtítulo (23 palavras)
+### Subtítulo
 
 > Somos a Liga Acadêmica de Macroeconomia da UFRGS. Buscamos promover o ensino e o debate da macroeconomia e seus impactos.
 
@@ -81,7 +81,7 @@ A MacroLiga, um projeto idealizado e criado pelos alunos e alunas de Ciências E
 
 Todo texto passa pelas mesmas quatro etapas.
 
-1. **Texto.** Um membro escreve sobre dos temas associados à macroeconomia. Nossos textos baseiam-se em análise de conjuntura, revisão de literatura, nota de pesquisa ou texto de opinião.
+1. **Texto.** Um membro escreve sobre um dos temas associados à macroeconomia. Nossos textos baseiam-se em análise de conjuntura, revisão de literatura, nota de pesquisa ou texto de opinião.
 2. **Debate entre pares.** Os membros leem e discutem o texto antes da revisão. A discussão testa os dados, os argumentos e a clareza. 
 3. **Revisão docente.** Um professor revisa o texto, garantindo a qualidade acadêmica do texto.
 4. **Publicação.** Os textos aprovados formam um fascículo numerado. Cada texto recebe um DOI no Zenodo. O DOI é um identificador permanente: o link não quebra e o texto pode ser citado em trabalhos acadêmicos. Cada fascículo é lançado em um evento presencial na FCE, com um debatedor para cada texto.
@@ -97,7 +97,7 @@ Todo texto passa pelas mesmas quatro etapas.
 
 ### Regra da pluralidade
 
-A liga não toma posição sobre política econômica, governos ou partidos. Nossos membros têm visões teóricas diferentes, e isso faz parte do projeto. Criamos textos que baseados em fatos. Eles mostram o que aconteceu, com número, data e fonte. A opinião de cada autor é de sua responsabilidade única e aparece só em seus textos individuais, assinados e identificados.
+A liga não toma posição sobre política econômica, governos ou partidos. Nossos membros têm visões teóricas diferentes, e isso faz parte do projeto. Criamos textos baseados em fatos. Eles mostram o que aconteceu, com número, data e fonte. A opinião de cada autor é de sua responsabilidade única e aparece só em seus textos individuais, assinados e identificados.
 
 ### Vínculo com a extensão
 
@@ -186,7 +186,7 @@ Use os modelos para escrever no formato dos fascículos: Com título, autor, eix
 
 > Os "·" acima só separam opções nesta tabela. No site, cada uma é um botão ou link próprio.
 
-**Menu principal:** Início, Publicações, Gráficos Comentados, Eventos, Sobre, Equipe, Participe.
+**Menu principal:** Início, Publicações, Gráficos comentados, Eventos, Sobre, Equipe, Participe.
 
 **Rótulos de metadados:** Eixo, Tipo de texto, Autor, Revisão, Publicado em, DOI, Como citar, Sumário.
 
@@ -196,7 +196,7 @@ Use os modelos para escrever no formato dos fascículos: Com título, autor, eix
 |---|---|
 | Próximos eventos | Nenhum evento agendado. Siga @macroliga.ufrgs para saber do próximo. |
 | Eventos passados | Ainda não realizamos eventos. O primeiro será o lançamento do fascículo nº 1. |
-| Publicações, antes do nº 1 | O fascículo nº 1 está em revisão. O lançamento está previsto para novembro de 2026. [CONFIRMAR: data] |
+| Publicações, antes do nº 1 | O fascículo nº 1 está em revisão. O lançamento será realizado em data a ser definida.|
 | Filtros sem resultado | Ainda não há textos com esses filtros. Limpe os filtros para ver todos os textos. (botão: Limpar filtros) |
 | Gráfico comentado | O primeiro gráfico comentado ainda não saiu. Siga @macroliga.ufrgs para ver quando for publicado. |
 | Processo seletivo fechado | Não há processo seletivo aberto agora. Siga @macroliga.ufrgs para saber do próximo. |
