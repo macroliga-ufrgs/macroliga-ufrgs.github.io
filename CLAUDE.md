@@ -96,7 +96,7 @@ O Instagram gera alcance, o LinkedIn gera credibilidade e **o site guarda a prod
 | **Gráfico Comentado** | Gráfico + comentário de até 150 palavras + fonte. É a versão web do formato-assinatura das redes. Fica opcional na 1ª versão |
 | **Eventos** | Próximos eventos (com inscrição) e eventos passados (com fotos) |
 | **Sobre** | Missão, como funcionamos (texto → debate entre pares → revisão docente → publicação), regra da pluralidade, vínculo com a extensão |
-| **Equipe** | Coordenação, professores revisores, diretorias e eixos (com membros) |
+| **Equipe** | Membros, por diretoria e por eixo. A coordenação aparece no rodapé e na página Sobre; cada professor revisor, na página do texto que revisou |
 | **Participe** | Processo seletivo, formulário, modelos para autores (Word/LaTeX) |
 | **Contato** | E-mail e redes (pode ficar no rodapé, em vez de página própria) |
 
