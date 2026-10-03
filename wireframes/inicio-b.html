@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wireframe: Início B</title>
+<link rel="stylesheet" href="wf.css">
+<script src="wf.js" defer></script>
+</head>
+<body data-menu="Início">
+
+<header class="wf-topo">
+  <h1>Início, alternativa B: abre pela grade de pontos</h1>
+  <p>A primeira tela é a ideia-assinatura: uma grade de pontos que forma o mapa do Brasil (ou um gráfico de dispersão), com a frase da liga por cima. A produção vem logo abaixo, em três entradas de pesos diferentes. A sequência "texto, debate, revisão, publicação" reaparece como pontos ligados por uma linha.</p>
+</header>
+
+<template id="tela">
+  <div data-g1></div>
+
+  <section class="b cheio">
+    <p class="nota"><b>I1</b> abertura com grade de pontos (tela cheia, fundo em bloco): os pontos se acendem em sequência; um único ponto em destaque marca "o dado que importa". Frase + subtítulo + 2 botões. É o único movimento do site.</p>
+    <div class="lim g2" style="align-items:center">
+      <div class="pontos" style="aspect-ratio:1/1; display:flex; align-items:center; justify-content:center">
+        <span class="peq" style="background:#f6f6f6; padding:4px 8px; text-align:center">grade de pontos formando o mapa do Brasil<br>(um ponto maior e escuro = o dado em destaque)</span>
+      </div>
+      <div>
+        <p class="t1">A conjuntura brasileira, explicada pela teoria.</p>
+        <p>Somos a Liga Acadêmica de Macroeconomia da UFRGS. Buscamos promover o ensino e o debate da macroeconomia e seus impactos.</p>
+        <div class="btns"><span class="btn prim">Ler o fascículo nº 1</span><span class="btn">Ver como funcionamos</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="lim">
+    <div class="g-lado">
+      <section class="b">
+        <p class="nota"><b>I2</b> fascículo mais recente (a entrada maior): capa pequena + número, data e quantidade de textos + botões.</p>
+        <div class="g-capa estreita">
+          <div class="img capa"><span>capa do nº 1</span></div>
+          <div>
+            <p class="meta">Fascículo mais recente</p>
+            <p class="t2">[Pontos de Macro] nº 1</p>
+            <p>27 de novembro de 2026. 4 textos sobre a economia brasileira, revisados por professores da FCE.</p>
+            <ul class="peq">
+              <li>Endividamento das famílias e financeirização no Brasil, de João Pedone</li>
+              <li>Impactos setoriais do acordo Mercosul e União Europeia, de Miguel Amorin</li>
+              <li>Notas sobre a eficácia da política monetária sob a hipótese de expectativas racionais: uma breve revisão da literatura, de Gabriel Vieira</li>
+              <li>Subdesenvolvimento: uma visão schumpeteriana, de Arthur Pittella</li>
+            </ul>
+            <div class="btns"><span class="btn prim">Ler o fascículo</span><span class="btn">Ver todos os fascículos</span></div>
+          </div>
+        </div>
+        <div class="alt"><span class="rot">Até o lançamento:</span>Fascículo nº 1: em breve. Mesma lista, sem links. Botão: Seguir @macroliga.ufrgs para saber do lançamento.</div>
+      </section>
+
+      <div>
+        <section class="b">
+          <p class="nota"><b>I3</b> gráfico comentado (entrada média): miniatura + título-afirmação. Opcional na 1ª versão (decisão 4).</p>
+          <svg class="grafico" viewBox="0 0 600 260" role="img" aria-label="Esboço de gráfico de linha">
+            <g stroke="#ddd"><line x1="30" y1="60" x2="580" y2="60"/><line x1="30" y1="130" x2="580" y2="130"/><line x1="30" y1="200" x2="580" y2="200"/></g>
+            <polyline fill="none" stroke="#555" stroke-width="3" points="30,200 110,190 190,195 270,170 350,160 430,125 510,105 570,85"/>
+            <circle cx="570" cy="85" r="8" fill="#222"/>
+          </svg>
+          <p class="t3" style="margin-top:8px">Juros já pesam 10% da renda das famílias <span class="peq">(exemplo)</span></p>
+          <div class="btns"><span class="btn">Ler o comentário</span></div>
+        </section>
+
+        <section class="b">
+          <p class="nota"><b>I4</b> próximo evento (entrada menor): nome + data e local + inscrição.</p>
+          <p class="meta">Próximo evento</p>
+          <p class="t3">Lançamento do fascículo nº 1</p>
+          <p class="peq">Semana de 23/11/2026 (data a confirmar), FCE/UFRGS.</p>
+          <div class="btns"><span class="btn prim">Fazer inscrição</span></div>
+        </section>
+      </div>
+    </div>
+
+    <section class="b">
+      <p class="nota"><b>I5</b> como funcionamos: as 4 etapas como pontos ligados por uma linha (sequência real, pode ser numerada). Leva à página Sobre.</p>
+      <p class="t2">Todo texto passa pelas mesmas quatro etapas</p>
+      <div class="g4">
+        <div style="border-top:2px solid #444; padding-top:8px"><p class="t3"><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#444; margin:-15px 6px 0 0; vertical-align:middle"></span>1. Texto</p><p class="peq">Um membro escreve sobre um dos temas associados à macroeconomia.</p></div>
+        <div style="border-top:2px solid #444; padding-top:8px"><p class="t3"><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#444; margin:-15px 6px 0 0; vertical-align:middle"></span>2. Debate entre pares</p><p class="peq">Os membros leem e discutem o texto antes da revisão.</p></div>
+        <div style="border-top:2px solid #444; padding-top:8px"><p class="t3"><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#444; margin:-15px 6px 0 0; vertical-align:middle"></span>3. Revisão docente</p><p class="peq">Um professor revisa o texto, garantindo a qualidade acadêmica.</p></div>
+        <div style="border-top:2px solid #444; padding-top:8px"><p class="t3"><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:#444; margin:-15px 6px 0 0; vertical-align:middle"></span>4. Publicação</p><p class="peq">Os textos aprovados formam um fascículo numerado, com DOI no Zenodo.</p></div>
+      </div>
+      <div class="btns"><span class="btn">Ler sobre a liga</span></div>
+    </section>
+
+    <section class="b">
+      <p class="nota"><b>I6</b> redes: frase + dois botões.</p>
+      <p class="t3">Acompanhe a liga</p>
+      <p>Estamos no Instagram e no LinkedIn debatendo sobre macroeconomia e divulgando informações sobre a MacroLiga.</p>
+      <div class="btns"><span class="btn">Seguir no Instagram</span><span class="btn">Seguir no LinkedIn</span></div>
+    </section>
+  </div>
+
+  <div data-g2></div>
+</template>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wireframe: Início C</title>
+<link rel="stylesheet" href="wf.css">
+<script src="wf.js" defer></script>
+</head>
+<body data-menu="Início">
+
+<header class="wf-topo">
+  <h1>Início, alternativa C: abre pelo gráfico comentado</h1>
+  <p>A primeira tela é um gráfico comentado, no modelo de Adam Tooze: título que afirma o fato, gráfico grande, comentário curto e fonte. A página muda a cada gráfico novo. Risco: depende da decisão 4 e de um ritmo de publicação de gráficos; sem gráfico publicado, a abertura fica vazia.</p>
+</header>
+
+<template id="tela">
+  <div data-g1></div>
+
+  <div class="lim">
+    <section class="b">
+      <p class="nota"><b>I1</b> gráfico comentado em destaque (abertura): título-afirmação + subtítulo com unidade e período + gráfico grande + comentário de até 150 palavras + fonte + botões. No desktop, o comentário fica ao lado do gráfico.</p>
+      <p class="meta">Gráfico comentado</p>
+      <p class="t1 menor">Juros já pesam 10% da renda das famílias <span class="peq">(título de exemplo)</span></p>
+      <p class="peq">[Unidade], [período]</p>
+      <div class="g-lado">
+        <svg class="grafico" viewBox="0 0 700 380" role="img" aria-label="Esboço de gráfico de linha">
+          <g stroke="#ddd"><line x1="40" y1="70" x2="680" y2="70"/><line x1="40" y1="150" x2="680" y2="150"/><line x1="40" y1="230" x2="680" y2="230"/><line x1="40" y1="310" x2="680" y2="310"/></g>
+          <polyline fill="none" stroke="#555" stroke-width="3" points="40,300 110,290 180,295 250,270 320,255 390,250 460,210 530,180 600,160 665,120"/>
+          <circle cx="665" cy="120" r="9" fill="#222"/>
+          <text x="650" y="100" font-size="15" fill="#333" text-anchor="end" font-family="system-ui">último dado, com rótulo direto</text>
+        </svg>
+        <div>
+          <p class="peq">Comentário autoral de até 150 palavras:</p>
+          <div class="linhas" style="--n:9"></div>
+          <p class="peq">Fonte: [instituição], [série]. Elaboração: MacroLiga UFRGS.</p>
+          <p class="peq">Por [autor], eixo [eixo].</p>
+        </div>
+      </div>
+      <div class="btns"><span class="btn prim">Ler o comentário</span><span class="btn">Abrir o gráfico em tamanho maior</span><span class="btn">Ver todos os gráficos</span></div>
+      <div class="alt"><span class="rot">Sem gráfico publicado (provável em 18/10):</span>O primeiro gráfico comentado ainda não saiu. Siga @macroliga.ufrgs para ver quando for publicado. Nesse estado, a abertura teria de cair para I2.</div>
+    </section>
+
+    <section class="b">
+      <p class="nota"><b>I2</b> quem somos: frase + subtítulo, logo depois do gráfico, para quem não conhece a liga.</p>
+      <p class="t2">A conjuntura brasileira, explicada pela teoria.</p>
+      <p>Somos a Liga Acadêmica de Macroeconomia da UFRGS. Buscamos promover o ensino e o debate da macroeconomia e seus impactos.</p>
+      <div class="btns"><span class="btn">Ver como funcionamos</span></div>
+    </section>
+
+    <div class="g2">
+      <section class="b">
+        <p class="nota"><b>I3</b> fascículo mais recente: capa + número e data + botões.</p>
+        <div class="g-capa mini">
+          <div class="img capa"><span>capa</span></div>
+          <div>
+            <p class="meta">Fascículo mais recente</p>
+            <p class="t2">[Pontos de Macro] nº 1</p>
+            <p class="peq">27 de novembro de 2026. 4 textos sobre a economia brasileira, revisados por professores da FCE.</p>
+          </div>
+        </div>
+        <div class="btns"><span class="btn prim">Ler o fascículo</span><span class="btn">Ver todos os fascículos</span></div>
+        <div class="alt"><span class="rot">Até o lançamento:</span>Fascículo nº 1: em breve, com a lista dos 4 textos e "Seguir @macroliga.ufrgs para saber do lançamento".</div>
+      </section>
+
+      <section class="b">
+        <p class="nota"><b>I4</b> próximo evento: nome + data, horário e local + inscrição.</p>
+        <p class="meta">Próximo evento</p>
+        <p class="t2">Lançamento do fascículo nº 1</p>
+        <p>Semana de 23/11/2026 (data a confirmar), [horário], FCE/UFRGS.</p>
+        <div class="btns"><span class="btn prim">Fazer inscrição</span></div>
+        <div class="alt"><span class="rot">Sem evento agendado:</span>Nenhum evento agendado. Siga @macroliga.ufrgs para saber do próximo.</div>
+      </section>
+    </div>
+
+    <section class="b">
+      <p class="nota"><b>I5</b> redes: frase + dois botões.</p>
+      <p class="t3">Acompanhe a liga</p>
+      <p>Estamos no Instagram e no LinkedIn debatendo sobre macroeconomia e divulgando informações sobre a MacroLiga.</p>
+      <div class="btns"><span class="btn">Seguir no Instagram</span><span class="btn">Seguir no LinkedIn</span></div>
+    </section>
+  </div>
+
+  <div data-g2></div>
+</template>
+</body>
+</html>

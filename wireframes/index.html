@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wireframes MacroLiga</title>
+<link rel="stylesheet" href="wf.css">
+</head>
+<body>
+<div class="indice">
+  <h1>Wireframes do site da MacroLiga UFRGS</h1>
+  <p>Baixa fidelidade, só para discutir estrutura: o que entra em cada página e em que ordem. Não é o site e não é o visual. Cor, fontes da marca e logo entram só na fase de direção visual.</p>
+
+  <section>
+    <h2>Telas</h2>
+    <table>
+      <tr><th>Arquivo</th><th>Códigos</th><th>O que mostra</th></tr>
+      <tr><td><a href="inicio-a.html">Início A</a></td><td>I1–I5</td><td>Abre pelo fascículo mais recente, com capa e sumário.</td></tr>
+      <tr><td><a href="inicio-b.html">Início B</a></td><td>I1–I6</td><td>Abre pela grade de pontos (mapa do Brasil feito de dados), com a frase da liga.</td></tr>
+      <tr><td><a href="inicio-c.html">Início C</a></td><td>I1–I5</td><td>Abre por um gráfico comentado grande, no modelo de Adam Tooze.</td></tr>
+      <tr><td><a href="publicacoes.html">Publicações</a></td><td>P1–P4</td><td>Fascículos por número; todos os textos com filtros por eixo e tipo.</td></tr>
+      <tr><td><a href="fasciculo.html">Fascículo</a></td><td>F1–F6</td><td>Fascículo nº 1: capa, PDF e DOI, sumário, questionário.</td></tr>
+      <tr><td><a href="texto.html">Texto</a></td><td>T1–T11</td><td>Um texto do nº 1: metadados, síntese, PDF, como citar, notas, questionário.</td></tr>
+      <tr><td><a href="eventos.html">Eventos</a></td><td>EV1–EV3</td><td>Lançamento do nº 1 com inscrição; eventos passados (vazio por enquanto).</td></tr>
+      <tr><td><a href="sobre.html">Sobre</a></td><td>S1–S5</td><td>Missão, 4 etapas, eixos, regra da pluralidade, extensão.</td></tr>
+      <tr><td><a href="equipe.html">Equipe</a></td><td>EQ1–EQ4</td><td>Membros por diretoria e por eixo, sem fotos.</td></tr>
+      <tr><td><a href="participe.html">Participe</a></td><td>PA1–PA5</td><td>Quem pode entrar, seleção, o que se espera, modelos, contato.</td></tr>
+    </table>
+    <p class="peq" style="margin-top:10px">Quando uma das três versões da Início for escolhida, ela é renomeada para inicio.html e as outras são apagadas.</p>
+  </section>
+
+  <section>
+    <h2>Como ler</h2>
+    <table>
+      <tr><td><span class="nota" style="margin:0; border:0; padding:0; background:none"><b>I2</b></span></td><td>Código do bloco. Use para pedir mudanças: "troque I3 com I2", "corte P4".</td></tr>
+      <tr><td><b>G1</b>, <b>G2</b></td><td>Cabeçalho e rodapé, iguais em todas as páginas. Mudar G1 muda todas.</td></tr>
+      <tr><td><i>texto em itálico</i></td><td>Anotação de função do bloco. Não aparece no site.</td></tr>
+      <tr><td><span style="border:1.5px dashed #888; padding:0 6px">tracejado</span></td><td>Estado alternativo ou condicional (antes do lançamento, lista vazia, só em texto de opinião).</td></tr>
+      <tr><td>[colchetes]</td><td>Dado que ainda não existe ou nome provisório. [Pontos de Macro] é o nome provisório da publicação.</td></tr>
+      <tr><td><span style="display:inline-block; width:60px; height:14px; background:#ddd"></span></td><td>Barras cinza: texto que ainda não existe (por exemplo, a síntese de um texto em revisão).</td></tr>
+      <tr><td>caixa com X</td><td>Imagem: capa, selo, foto.</td></tr>
+    </table>
+    <p class="peq" style="margin-top:10px">Cada tela mostra o celular (390 px) e o desktop (1280 px) lado a lado. Em telas menores, marque "Mostrar o desktop pela metade" no topo da tela. Para ver só uma das versões, acrescente <code>?so=celular</code> ou <code>?so=desktop</code> ao endereço. As screenshots de cada tela (390 e 1280 px) ficam em <a href="screenshots/">screenshots/</a>.</p>
+  </section>
+
+  <section>
+    <h2>Pontos que os wireframes não decidem</h2>
+    <ul>
+      <li>Nome da publicação (decisão 1): aparece como [Pontos de Macro].</li>
+      <li>Gráficos comentados na 1ª versão (decisão 4): afeta o menu (G1) e os blocos de gráfico da Início. A alternativa C depende disso.</li>
+      <li>Fotos da equipe (decisão 5): Equipe está sem fotos.</li>
+      <li>Tipo e eixo dos textos de João Pedone e Arthur Pittella: marcados "a confirmar".</li>
+      <li>Frases novas, que não estão em textos-base.md: P1, EQ1 e EV1.</li>
+    </ul>
+  </section>
+</div>
+</body>
+</html>

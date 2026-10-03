@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wireframe: Publicações</title>
+<link rel="stylesheet" href="wf.css">
+<script src="wf.js" defer></script>
+</head>
+<body data-menu="Publicações">
+
+<header class="wf-topo">
+  <h1>Publicações</h1>
+  <p>Lista os fascículos por número e, abaixo, todos os textos com filtros por eixo e por tipo. Estado mostrado: depois do lançamento do nº 1. Tipo e eixo de dois textos estão marcados "a confirmar".</p>
+</header>
+
+<template id="tela">
+  <div data-g1></div>
+
+  <div class="lim">
+    <section class="b">
+      <p class="nota"><b>P1</b> título da página + uma frase sobre o que se publica. (Frase nova: não está em textos-base.md.)</p>
+      <p class="t1">Publicações</p>
+      <p>Textos curtos de estudantes de graduação, revisados por professores da FCE e reunidos em fascículos numerados. Todos têm DOI e podem ser citados.</p>
+    </section>
+
+    <section class="b">
+      <p class="nota"><b>P2</b> fascículos por número, do mais recente ao mais antigo: capa + número + data + quantidade de textos + botão.</p>
+      <p class="t2">Fascículos</p>
+      <div class="g3">
+        <div class="g-capa mini">
+          <div class="img capa"><span>capa nº 1</span></div>
+          <div>
+            <p class="t3">[Pontos de Macro] nº 1</p>
+            <p class="meta">27 de novembro de 2026</p>
+            <p class="meta">4 textos</p>
+            <div class="btns"><span class="btn prim">Ler o fascículo</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="alt"><span class="rot">Antes do nº 1:</span>O fascículo nº 1 está em revisão. O lançamento será realizado em data a ser definida.</div>
+    </section>
+
+    <section class="b">
+      <p class="nota"><b>P3</b> filtros: por eixo (6) e por tipo de texto (4) + limpar. No celular, duas listas suspensas; no desktop, botões de opção visíveis.</p>
+      <div class="so-c">
+        <p class="peq" style="margin-bottom:4px">Filtrar por eixo</p>
+        <span class="campo">Todos os eixos</span>
+        <p class="peq" style="margin:10px 0 4px">Filtrar por tipo</p>
+        <span class="campo">Todos os tipos</span>
+        <div class="btns"><span class="btn">Limpar filtros</span></div>
+      </div>
+      <div class="so-d">
+        <p class="peq" style="margin-bottom:6px">Filtrar por eixo</p>
+        <div class="chips">
+          <span class="chip on">Todos</span>
+          <span class="chip">Política monetária e inflação</span>
+          <span class="chip">Setor externo e câmbio</span>
+          <span class="chip">Atividade econômica, mercado de trabalho e crédito</span>
+          <span class="chip">Política fiscal e contas públicas</span>
+          <span class="chip">Mercados externos</span>
+          <span class="chip">Conjuntura política</span>
+        </div>
+        <p class="peq" style="margin:12px 0 6px">Filtrar por tipo</p>
+        <div class="chips">
+          <span class="chip on">Todos</span>
+          <span class="chip">Análise de conjuntura</span>
+          <span class="chip">Revisão de literatura</span>
+          <span class="chip">Nota de pesquisa</span>
+          <span class="chip">Texto de opinião</span>
+          <span class="chip" style="border-style:dashed">Limpar filtros</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="b">
+      <p class="nota"><b>P4</b> todos os textos (resultado dos filtros): título + autor + tipo + eixo + fascículo + botão. Lista, não grade de cards.</p>
+      <p class="t2">Textos</p>
+      <div class="item g-lado">
+        <div><p class="t3">Endividamento das famílias e financeirização no Brasil</p><p class="meta">João Pedone. Fascículo nº 1.</p><p class="meta">Tipo: [a confirmar]. Eixo: Atividade econômica, mercado de trabalho e crédito.</p></div>
+        <div><span class="btn">Ler o texto</span></div>
+      </div>
+      <div class="item g-lado">
+        <div><p class="t3">Impactos setoriais do acordo Mercosul e União Europeia</p><p class="meta">Miguel Amorin. Fascículo nº 1.</p><p class="meta">Tipo: Análise de conjuntura. Eixo: Setor externo e câmbio.</p></div>
+        <div><span class="btn">Ler o texto</span></div>
+      </div>
+      <div class="item g-lado">
+        <div><p class="t3">Notas sobre a eficácia da política monetária sob a hipótese de expectativas racionais: uma breve revisão da literatura</p><p class="meta">Gabriel Vieira. Fascículo nº 1.</p><p class="meta">Tipo: Revisão de literatura. Eixo: Política monetária e inflação.</p></div>
+        <div><span class="btn">Ler o texto</span></div>
+      </div>
+      <div class="item g-lado">
+        <div><p class="t3">Subdesenvolvimento: uma visão schumpeteriana</p><p class="meta">Arthur Pittella. Fascículo nº 1.</p><p class="meta">Tipo: [a confirmar]. Eixo: [a confirmar].</p></div>
+        <div><span class="btn">Ler o texto</span></div>
+      </div>
+      <div class="alt"><span class="rot">Filtros sem resultado:</span>Ainda não há textos com esses filtros. Limpe os filtros para ver todos os textos.<div class="btns"><span class="btn">Limpar filtros</span></div></div>
+    </section>
+  </div>
+
+  <div data-g2></div>
+</template>
+</body>
+</html>

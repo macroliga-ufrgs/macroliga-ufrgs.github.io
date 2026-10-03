@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wireframe: Eventos</title>
+<link rel="stylesheet" href="wf.css">
+<script src="wf.js" defer></script>
+</head>
+<body data-menu="Eventos">
+
+<header class="wf-topo">
+  <h1>Eventos</h1>
+  <p>Próximos eventos com inscrição (Google Forms) e eventos passados com fotos. Estado mostrado: antes do lançamento do nº 1, com o lançamento agendado e nenhum evento passado.</p>
+</header>
+
+<template id="tela">
+  <div data-g1></div>
+
+  <div class="lim">
+    <section class="b">
+      <p class="nota"><b>EV1</b> título + uma frase sobre os eventos. (Frase nova, baseada no CLAUDE.md.)</p>
+      <p class="t1">Eventos</p>
+      <p>Cada fascículo é lançado em um evento presencial na FCE, com um debatedor para cada texto.</p>
+    </section>
+
+    <section class="b">
+      <p class="nota"><b>EV2</b> próximos eventos: data em destaque + nome + horário e local + o que acontece + inscrição.</p>
+      <p class="t2">Próximos eventos</p>
+      <div class="item g-capa estreita">
+        <div><p class="t2" style="margin:0">23–27/11</p><p class="peq">2026, data a confirmar</p></div>
+        <div>
+          <p class="t3">Lançamento do fascículo nº 1</p>
+          <p class="meta">[horário], FCE/UFRGS, [sala]</p>
+          <p>Apresentação dos 4 textos do nº 1, cada um com um debatedor designado.</p>
+          <div class="btns"><span class="btn prim">Fazer inscrição</span></div>
+        </div>
+      </div>
+      <div class="alt"><span class="rot">Sem evento agendado:</span>Nenhum evento agendado. Siga @macroliga.ufrgs para saber do próximo.</div>
+    </section>
+
+    <section class="b">
+      <p class="nota"><b>EV3</b> eventos passados: data + nome + uma foto + link para as fotos. Mostrado aqui o estado vazio, que é o de 18/10.</p>
+      <p class="t2">Eventos passados</p>
+      <p>Ainda não realizamos eventos. O primeiro será o lançamento do fascículo nº 1.</p>
+      <div class="alt">
+        <span class="rot">Depois do lançamento, cada evento passado fica assim:</span>
+        <div class="g-capa estreita">
+          <div class="img" style="min-height:110px"><span>foto do evento</span></div>
+          <div>
+            <p class="t3">Lançamento do fascículo nº 1</p>
+            <p class="meta">[data], FCE/UFRGS</p>
+            <div class="btns"><span class="btn">Ver as fotos</span><span class="btn">Ler o fascículo</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div data-g2></div>
+</template>
+</body>
+</html>

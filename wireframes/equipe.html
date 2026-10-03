@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wireframe: Equipe</title>
+<link rel="stylesheet" href="wf.css">
+<script src="wf.js" defer></script>
+</head>
+<body data-menu="Equipe">
+
+<header class="wf-topo">
+  <h1>Equipe</h1>
+  <p>Página centrada nos membros: diretorias e eixos, cada um com seus integrantes. A coordenação aparece só no rodapé (G2) e na Sobre (S5); os professores revisores aparecem na página de cada texto (T6). Os nomes ficam entre colchetes até a lista ser confirmada. Sem fotos até haver termo de uso de imagem (decisão 5): cada pessoa aparece com nome e função, e a foto entra depois no mesmo lugar.</p>
+</header>
+
+<template id="tela">
+  <div data-g1></div>
+
+  <div class="lim">
+    <section class="b">
+      <p class="nota"><b>EQ1</b> título + uma frase sobre a equipe. (Frase nova: não está em textos-base.md.)</p>
+      <p class="t1">Equipe</p>
+      <p>Cerca de 15 estudantes de graduação da UFRGS, organizados em diretorias e em seis eixos temáticos.</p>
+    </section>
+
+    <section class="b">
+      <p class="nota"><b>EQ2</b> diretorias: as 4, cada uma com seus membros (nome + cargo). Sem fotos por enquanto.</p>
+      <p class="t2">Diretorias</p>
+      <div class="g4">
+        <div><p class="t3">Presidência (Research)</p><p class="peq">[nome], presidente</p></div>
+        <div><p class="t3">Vice-Presidência e Tesouraria</p><p class="peq">[nome], vice-presidente</p></div>
+        <div><p class="t3">Comunicação (Marketing e Design)</p><p class="peq">[nome]<br>[nome]</p></div>
+        <div><p class="t3">Outreach</p><p class="peq">[nome]</p></div>
+      </div>
+      <div class="alt"><span class="rot">Depois do termo de uso de imagem:</span>foto quadrada acima de cada nome, no mesmo lugar.</div>
+    </section>
+
+    <section class="b">
+      <p class="nota"><b>EQ3</b> eixos temáticos (ligados à Presidência): os 6, cada um com seus membros. Cada eixo leva a Publicações filtrada.</p>
+      <p class="t2">Eixos temáticos</p>
+      <div class="g3">
+        <div class="item"><p class="t3">Política monetária e inflação</p><p class="peq">[nomes dos membros]</p></div>
+        <div class="item"><p class="t3">Setor externo e câmbio</p><p class="peq">[nomes dos membros]</p></div>
+        <div class="item"><p class="t3">Atividade econômica, mercado de trabalho e crédito</p><p class="peq">[nomes dos membros]</p></div>
+        <div class="item"><p class="t3">Política fiscal e contas públicas</p><p class="peq">[nomes dos membros]</p></div>
+        <div class="item"><p class="t3">Mercados externos</p><p class="peq">[nomes dos membros]</p></div>
+        <div class="item"><p class="t3">Conjuntura política</p><p class="peq">[nomes dos membros]</p></div>
+      </div>
+    </section>
+
+    <section class="b">
+      <p class="nota"><b>EQ4</b> chamada para Participe: uma frase + botão.</p>
+      <p>A liga reúne estudantes de graduação da UFRGS pertencentes a qualquer curso.</p>
+      <div class="btns"><span class="btn prim">Ver como participar</span></div>
+    </section>
+  </div>
+
+  <div data-g2></div>
+</template>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wireframe: Fascículo</title>
+<link rel="stylesheet" href="wf.css">
+<script src="wf.js" defer></script>
+</head>
+<body data-menu="Publicações">
+
+<header class="wf-topo">
+  <h1>Fascículo (exemplo: nº 1)</h1>
+  <p>Página de um fascículo: capa, data, PDF completo com DOI, sumário com autor e tipo de cada texto, questionário. No celular, "Baixar PDF" aparece sem rolar.</p>
+</header>
+
+<template id="tela">
+  <div data-g1></div>
+
+  <div class="lim">
+    <section class="b">
+      <p class="nota"><b>F1</b> trilha: volta para Publicações.</p>
+      <p class="peq"><u>Publicações</u> / Fascículo nº 1</p>
+    </section>
+
+    <section class="b">
+      <p class="nota"><b>F2</b> cabeçalho do fascículo: capa + nome e número + data + quantidade de textos + PDF completo + DOI.</p>
+      <div class="g-capa">
+        <div class="img capa"><span>capa do fascículo nº 1</span></div>
+        <div>
+          <p class="t1">[Pontos de Macro] nº 1</p>
+          <p class="meta">Publicado em: 27 de novembro de 2026</p>
+          <p class="meta">4 textos, revisados por professores da FCE</p>
+          <p class="meta">DOI: 10.5281/zenodo.XXXXXXX</p>
+          <div class="btns"><span class="btn prim">Baixar PDF</span><span class="btn">Abrir no Zenodo</span></div>
+          <div class="alt"><span class="rot">PDF ainda indisponível:</span>O PDF fica disponível no lançamento do fascículo.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="b">
+      <p class="nota"><b>F3</b> sumário: cada texto com título, autor, tipo e eixo + link para a página do texto.</p>
+      <p class="t2">Sumário</p>
+      <div class="item g-lado">
+        <div><p class="t3">Endividamento das famílias e financeirização no Brasil</p><p class="meta">Autor: João Pedone</p><p class="meta">Tipo de texto: [a confirmar]. Eixo: Atividade econômica, mercado de trabalho e crédito.</p></div>
+        <div><span class="btn">Ler o texto</span></div>
+      </div>
+      <div class="item g-lado">
+        <div><p class="t3">Impactos setoriais do acordo Mercosul e União Europeia</p><p class="meta">Autor: Miguel Amorin</p><p class="meta">Tipo de texto: Análise de conjuntura. Eixo: Setor externo e câmbio.</p></div>
+        <div><span class="btn">Ler o texto</span></div>
+      </div>
+      <div class="item g-lado">
+        <div><p class="t3">Notas sobre a eficácia da política monetária sob a hipótese de expectativas racionais: uma breve revisão da literatura</p><p class="meta">Autor: Gabriel Vieira</p><p class="meta">Tipo de texto: Revisão de literatura. Eixo: Política monetária e inflação.</p></div>
+        <div><span class="btn">Ler o texto</span></div>
+      </div>
+      <div class="item g-lado">
+        <div><p class="t3">Subdesenvolvimento: uma visão schumpeteriana</p><p class="meta">Autor: Arthur Pittella</p><p class="meta">Tipo de texto: [a confirmar]. Eixo: [a confirmar].</p></div>
+        <div><span class="btn">Ler o texto</span></div>
+      </div>
+    </section>
+
+    <div class="g2">
+      <section class="b">
+        <p class="nota"><b>F4</b> lançamento (opcional): link para o evento, com debatedores e fotos.</p>
+        <p class="t3">Lançamento</p>
+        <p>Lançado em evento presencial na FCE, com um debatedor para cada texto.</p>
+        <div class="btns"><span class="btn">Ver as fotos</span></div>
+      </section>
+
+      <section class="b">
+        <p class="nota"><b>F5</b> questionário de avaliação (indicador da extensão): obrigatório em toda página de fascículo. Frase de textos-base adaptada: "fascículo" no lugar de "texto".</p>
+        <p>Leu este fascículo? Conte o que achou em um questionário curto. As respostas ajudam a avaliar o projeto de extensão.</p>
+        <div class="btns"><span class="btn prim">Responder ao questionário</span></div>
+      </section>
+    </div>
+
+    <section class="b">
+      <p class="nota"><b>F6</b> aviso de posição institucional (fixo).</p>
+      <p class="peq">Os textos publicados não representam a posição da MacroLiga UFRGS, da FCE ou da UFRGS.</p>
+    </section>
+  </div>
+
+  <div data-g2></div>
+</template>
+</body>
+</html>
