@@ -3,9 +3,7 @@
 // G1 e G2 ficam escritos só aqui, para valer igual em todas as telas.
 
 const TELAS = [
-  ["inicio-a.html", "Início A (fascículo)"],
-  ["inicio-b.html", "Início B (grade de pontos)"],
-  ["inicio-c.html", "Início C (gráfico comentado)"],
+  ["inicio.html", "Início"],
   ["publicacoes.html", "Publicações"],
   ["fasciculo.html", "Fascículo nº 1"],
   ["texto.html", "Texto"],
