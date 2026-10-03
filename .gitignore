@@ -1,0 +1,16 @@
+# Quarto
+/.quarto/
+/_site/
+*_files/
+
+# Material ainda não publicado (textos em revisão, PDFs etc.)
+# Nada desta pasta vai para o repositório público.
+/rascunhos/
+
+# Sistema e editores
+.Rhistory
+.RData
+.Rproj.user/
+Thumbs.db
+desktop.ini
+.DS_Store
