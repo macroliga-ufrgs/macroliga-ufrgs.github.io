@@ -20,4 +20,8 @@ n=$(grep -v '^\s*//' estilos/macroliga.scss | grep -c 'var(--vermelho)')
 [ "$n" -le 2 ] && ok "var(--vermelho) usado no máximo 2 vezes no SCSS ($n)" || falha "var(--vermelho) usado $n vezes"
 n=$(grep -v '^\s*//' estilos/macroliga.scss | grep -c 'tabular-nums')
 [ "$n" -eq 1 ] && ok "tabular-nums numa única regra" || falha "tabular-nums em $n regras"
+# Nenhum h1 da página pode ir parar no bloco de título do Quarto (que fica oculto).
+for f in index.html sobre.html participe.html equipe.html publicacoes/index.html eventos/index.html 404.html; do
+  grep -q '<header id="title-block-header"[^>]*><h1' "$SITE/$f" && falha "h1 de $f escondido no bloco de título" || ok "h1 de $f fora do bloco de título"
+done
 fim
