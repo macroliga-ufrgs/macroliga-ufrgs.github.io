@@ -40,6 +40,27 @@ website:
     right:
       - text: "Início"
         href: index.qmd
+  page-footer:
+    left: |
+      ![](/assets/marca/svg/macroliga-horizontal-branco.svg){.rodape__logo fig-alt="MacroLiga UFRGS" width="188" height="40"}
+
+      [MacroLiga UFRGS, Liga Acadêmica de Macroeconomia.]{.rodape__nome}
+
+      Projeto de extensão da Faculdade de Ciências Econômicas da UFRGS, coordenado pelo {{< var coordenacao >}}.
+    center: |
+      <h2 class="rodape__titulo">Contato</h2>
+
+      - E-mail: [{{< var contato.email >}}](mailto:{{< var contato.email >}})
+      - Instagram: [{{< var contato.instagram >}}]({{< var contato.instagram-url >}})
+      - LinkedIn: [{{< var contato.linkedin >}}]({{< var contato.linkedin-url >}})
+
+      [Escrever para a liga](mailto:{{< var contato.email >}}){.botao .botao--secundario}
+    right: |
+      Textos publicados sob a licença [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.pt-br).
+
+      Site feito pela equipe de Comunicação da liga, com Quarto, e publicado no GitHub Pages.
+
+      © 2026 MacroLiga UFRGS
 
 format:
   html:
