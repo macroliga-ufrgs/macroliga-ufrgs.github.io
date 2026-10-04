@@ -641,3 +641,10 @@ footer.footer .nav-footer { padding-inline: var(--margem); }
   .equipe-diretorias { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .equipe-eixos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+// ---- Componente: Participe (PA1–PA5) ----------------------------------------
+.participe__grade { display: grid; gap: 0 var(--esp-8); }
+.selecao__fechada, .selecao__aberta { padding: var(--esp-4); border: var(--linha-grade); }
+.selecao__aberta { font-weight: var(--peso-forte); }
+#pa-inscricao-topo .acoes { margin-top: var(--esp-5); }
+.participe .acoes { margin-top: var(--esp-4); }
+@media (min-width: 992px) { .participe__grade { grid-template-columns: 1fr 1fr; } }

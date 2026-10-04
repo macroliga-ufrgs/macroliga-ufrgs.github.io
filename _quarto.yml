@@ -6,6 +6,8 @@ project:
     - "publicacoes/**/*.qmd"
     - "eventos/**/*.qmd"
     - "graficos/**/*.qmd"
+  resources:
+    - modelos/
   post-render:
     - ferramentas/apagar-rascunhos.lua
     - ferramentas/pular-primeiro.lua
@@ -44,6 +46,8 @@ website:
         href: sobre.qmd
       - text: "Equipe"
         href: equipe.qmd
+      - text: "Participe"
+        href: participe.qmd
   page-footer:
     left: |
       ![](/assets/marca/svg/macroliga-horizontal-branco.svg){.rodape__logo fig-alt="MacroLiga UFRGS" width="188" height="40"}
