@@ -687,3 +687,36 @@ footer.footer .nav-footer { padding-inline: var(--margem); }
   .fasciculo-pagina { grid-template-columns: 15rem minmax(0, 1fr); gap: var(--esp-6); }
   .fasciculo-pagina__titulo { font-size: var(--fs-h1); font-weight: var(--peso-h1); }
 }
+// ---- Componente: página de texto (T1–T11) -----------------------------------
+// Celular: T2, T3 (botões), T4–T8, T9 (dados). Desktop: coluna lateral fixa com dados e botões.
+.texto__tipo { font-size: var(--fs-meta); font-weight: var(--peso-forte); margin: 0 0 var(--esp-3) !important; }
+.texto__autor { margin: var(--esp-3) 0 0 !important; }
+.texto__grade { display: grid; gap: var(--esp-6); margin-top: var(--esp-6); }
+.texto__dados--lateral { display: none; }
+.texto__sintese { font: var(--peso-texto) var(--fs-sintese)/var(--lh-serifa) var(--fonte-titulo); max-width: var(--medida); margin: 0 !important; }
+.texto__dados--celular { margin-top: var(--esp-7); padding-top: var(--esp-5); border-top: var(--linha-grade); }
+.citacao { margin-top: var(--esp-7); max-width: var(--medida); }
+.citacao h2 { font-size: var(--fs-h3); font-weight: var(--peso-h3); margin: 0 0 var(--esp-3) !important; }
+.citacao__texto { padding: var(--esp-4); border: var(--linha-grade); font-size: var(--fs-meta); margin: 0 0 var(--esp-3) !important; overflow-wrap: anywhere; }
+.citacao__aviso { font-size: var(--fs-meta); min-height: 1.6em; margin: var(--esp-2) 0 0 !important; }
+.outros-textos h2 { font-size: var(--fs-h3); font-weight: var(--peso-h3); margin: var(--esp-8) 0 var(--esp-3); }
+.outros { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--esp-4); max-width: none !important; }
+.outros li { border-top: var(--linha-grade); padding-top: var(--esp-3); }
+.outros__titulo { display: block; font: 500 1.0625rem/1.4 var(--fonte-titulo); text-decoration: none; }
+.outros__titulo:hover { text-decoration: underline 1px; }
+.outros__autor { display: block; font-size: var(--fs-meta); margin-top: var(--esp-1); }
+@media (min-width: 992px) {
+  .texto__grade { grid-template-columns: minmax(0, 1fr) 20rem; gap: var(--esp-8); align-items: start; }
+  .texto__lateral { grid-column: 2; grid-row: 1; position: sticky; top: var(--esp-5); display: flex; flex-direction: column; gap: var(--esp-5); }
+  .texto__lateral .texto__dados--lateral { display: grid; order: 1; }
+  .texto__lateral .texto__acoes { order: 2; }
+  .texto__corpo { grid-column: 1; grid-row: 1; }
+  .texto__dados--celular { display: none; }
+  .outros { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+// ---- Títulos dos componentes dentro de .pagina ----------------------------------
+// .pagina h2/h3 dão espaço de seção ao fluxo de texto; nos componentes o espaço é do componente.
+.pagina .item-texto__titulo,
+.pagina .fasciculo__titulo,
+.pagina .evento__nome { margin: 0; }

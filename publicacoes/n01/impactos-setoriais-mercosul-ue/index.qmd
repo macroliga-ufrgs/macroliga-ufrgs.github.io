@@ -1,0 +1,15 @@
+---
+title: "Impactos setoriais do acordo Mercosul e União Europeia"
+author: "Miguel Amorin"
+autor-citacao: ""
+tipo: "Análise de conjuntura"
+eixo: "Setor externo e câmbio"
+fasciculo: 1
+ordem: 2                            # [ordem provisória: definida pela Presidência]
+date: 2026-11-27
+sintese: "[síntese provisória: a preencher pelo autor]"
+revisao: "[revisor a confirmar]"
+doi: ""
+pdf: "texto.pdf"
+draft: true
+---

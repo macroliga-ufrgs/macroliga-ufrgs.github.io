@@ -1,0 +1,12 @@
+# Maquinaria do texto (não mexa). Copiado junto com a pasta; vale para o index.qmd dela.
+pagina: texto
+image: "../capa.png"
+description: "{{< meta sintese >}}"
+pagetitle: ""            # preenchido pelo filtro com o title (usado no og:title)
+open-graph:
+  title: "{{< meta pagetitle >}}"
+listing:
+  id: lista-outros
+  contents: "../*/index.qmd"
+  template: ../../../modelos-listing/outros.ejs
+  sort: "ordem"

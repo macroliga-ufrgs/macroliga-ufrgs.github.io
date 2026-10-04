@@ -1,0 +1,18 @@
+---
+# Para publicar um texto: copie esta pasta para dentro da pasta do fascículo
+# (ex.: publicacoes/n02/), renomeie com um slug curto (minúsculas, sem acento, com hífens)
+# e preencha. A página inteira é montada a partir deste cabeçalho.
+title: "Título do texto em sentence case"
+author: "Nome Sobrenome"
+autor-citacao: ""                   # opcional: só para sobrenome composto, ex.: "SILVA, Leonardo Xavier da"
+tipo: "Análise de conjuntura"       # Análise de conjuntura | Revisão de literatura | Nota de pesquisa | Texto de opinião
+eixo: "Setor externo e câmbio"      # um dos 6 eixos de _variables.yml, escrito igual
+fasciculo: 2                        # número do fascículo
+ordem: 1                            # posição no sumário
+date: 2027-05-20                    # data do lançamento
+sintese: "Duas a três frases que resumem o texto."
+revisao: "Prof. Fulano de Tal (FCE/UFRGS)"
+doi: ""                             # vazio = usa o DOI do fascículo
+pdf: "texto.pdf"                    # o PDF do texto, nesta pasta (só no lançamento)
+draft: true                         # apague esta linha no dia do lançamento
+---

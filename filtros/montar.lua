@@ -8,6 +8,12 @@ local comum = dofile(quarto.utils.resolve_path("comum.lua"))
 function Pandoc(doc)
   comum.script("menu")
   local pagina = comum.texto(doc.meta.pagina)
+  -- Cada página escreve o próprio h1. O título vai só para o <title> (pagetitle): assim o
+  -- Quarto não monta o bloco de título padrão, que leria o YAML como Markdown com HTML cru.
+  if doc.meta.title ~= nil then
+    if comum.texto(doc.meta.pagetitle) == "" then doc.meta.pagetitle = pandoc.Inlines(pandoc.utils.stringify(doc.meta.title)) end
+    doc.meta.title = nil
+  end
   if pagina ~= "" then
     local arquivo = quarto.utils.resolve_path("paginas/" .. pagina .. ".lua")
     if comum.existe(arquivo) then
