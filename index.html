@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="A MacroLiga UFRGS publica textos curtos sobre a conjuntura brasileira, escritos por estudantes de graduação e revisados por professores da FCE.">
+
+<title>Início – MacroLiga UFRGS</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<link href="./assets/marca/png/macroliga-favicon-180.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-106632a3924e99a14239781f397fb8eb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "Nenhum resultado",
+    "search-matching-documents-text": "documentos correspondentes",
+    "search-copy-link-title": "Copiar link para a busca",
+    "search-hide-matches-text": "Esconder correspondências adicionais",
+    "search-more-match-text": "mais correspondência neste documento",
+    "search-more-matches-text": "mais correspondências neste documento",
+    "search-clear-button-title": "Limpar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Procurar"
+  }
+}</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-lista-fasciculo-destaque .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: [{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: [],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-lista-fasciculo-destaque'] = new List('listing-lista-fasciculo-destaque', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-lista-em-breve .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-numero','listing-textos',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-numero","listing-textos"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-lista-em-breve'] = new List('listing-lista-em-breve', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-lista-proximo-evento .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-project','listing-lang','listing-execute','listing-brand','listing-website','listing-format','listing-filters','listing-publicacao','listing-contato','listing-coordenacao','listing-questionario','listing-modelos','listing-contagem','listing-eixos','listing-tipos','listing-engines','listing-_quarto-vars','listing-language','listing-pagina','listing-data-exibida','listing-open-graph','listing-title','listing-date','listing-quando','listing-horario','listing-local','listing-situacao','listing-inscricao','listing-fasciculo','listing-capa','listing-capa-alt','listing-fotos','listing-path','listing-outputHref','listing-date-modified','listing-author','listing-description','listing-filename','listing-file-modified','listing-reading-time','listing-word-count',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-lang","listing-execute","listing-brand","listing-website","listing-format","listing-filters","listing-publicacao","listing-contato","listing-coordenacao","listing-questionario","listing-modelos","listing-contagem","listing-eixos","listing-tipos","listing-engines","listing-_quarto-vars","listing-language","listing-pagina","listing-data-exibida","listing-open-graph","listing-title","listing-date","listing-quando","listing-horario","listing-local","listing-situacao","listing-inscricao","listing-fasciculo","listing-capa","listing-capa-alt","listing-fotos","listing-path","listing-outputHref","listing-date-modified","listing-author","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-lista-proximo-evento'] = new List('listing-lista-proximo-evento', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400..560&amp;display=swap">
+
+
+<meta property="og:title" content="Início – MacroLiga UFRGS">
+<meta property="og:description" content="A MacroLiga UFRGS publica textos curtos sobre a conjuntura brasileira, escritos por estudantes de graduação e revisados por professores da FCE.">
+<meta property="og:image" content="https://macroliga-ufrgs.github.io/assets/marca/png/macroliga-og.png">
+<meta property="og:site_name" content="MacroLiga UFRGS">
+<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:alt" content="Selo da MacroLiga UFRGS">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+<a class="pular" href="#quarto-document-content">Pular para o conteúdo</a>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./assets/marca/svg/macroliga-horizontal-branco.svg" alt="MacroLiga UFRGS, página inicial" class="navbar-logo light-content">
+    <img src="./assets/marca/svg/macroliga-horizontal-branco.svg" alt="MacroLiga UFRGS, página inicial" class="navbar-logo dark-content">
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Alternar de navegação" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Início</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./publicacoes/index.html"> 
+<span class="menu-text">Publicações</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./eventos/index.html"> 
+<span class="menu-text">Eventos</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./sobre.html"> 
+<span class="menu-text">Sobre</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./equipe.html"> 
+<span class="menu-text">Equipe</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./participe.html"> 
+<span class="menu-text">Participe</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+<!-- main -->
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Início</h1>
+</div>
+
+<div>
+  <div class="description">
+    A MacroLiga UFRGS publica textos curtos sobre a conjuntura brasileira, escritos por estudantes de graduação e revisados por professores da FCE.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<main id="quarto-document-content" class="content" tabindex="-1">
+<section class="fundo-azul abertura-faixa" aria-labelledby="abertura-titulo">
+<div class="conteiner abertura">
+<div class="abertura__texto">
+<h1 class="abertura__titulo" id="abertura-titulo">A conjuntura brasileira, explicada pela teoria.</h1>
+<p class="abertura__subtitulo">Somos a Liga Acadêmica de Macroeconomia da UFRGS. Buscamos promover o ensino e o debate da macroeconomia e seus impactos.</p>
+<div class="acoes">
+<a class="botao" href="#fasciculo">Ver os textos do nº&nbsp;1</a>
+<a class="botao botao--secundario" href="#como-funcionamos">Ver como funcionamos</a>
+</div>
+</div>
+<figure class="abertura__mapa figure">
+<svg viewbox="-21.6 271.0 1089.2 748.6" preserveaspectratio="xMaxYMid meet" role="img" aria-label="Mapa do Brasil formado por pontos, como no logo da liga, com Porto Alegre em vermelho" focusable="false">
+<defs>
+<pattern id="grade-pontos" patternunits="userSpaceOnUse" width="37.56" height="35.65" x="260.05" y="288.84">
+<circle class="mapa-grade-ponto" cx="18.78" cy="17.82" r="14.6"></circle>
+</pattern>
+</defs>
+<rect class="mapa-grade" x="-3000" y="-3000" width="8000" height="8000" fill="url(#grade-pontos)"></rect>
+<circle class="mapa-ponto" cx="466.62" cy="306.66" r="9.2" style="--i:0.058"></circle>
+<circle class="mapa-ponto" cx="504.18" cy="306.66" r="14.6" style="--i:0.070"></circle>
+<circle class="mapa-ponto" cx="466.62" cy="342.31" r="14.6" style="--i:0.105"></circle>
+<circle class="mapa-ponto" cx="504.18" cy="342.31" r="14.6" style="--i:0.116"></circle>
+<circle class="mapa-ponto" cx="353.95" cy="377.96" r="14.6" style="--i:0.116"></circle>
+<circle class="mapa-ponto" cx="391.51" cy="377.96" r="14.6" style="--i:0.128"></circle>
+<circle class="mapa-ponto" cx="429.07" cy="377.96" r="14.6" style="--i:0.140"></circle>
+<circle class="mapa-ponto" cx="466.62" cy="377.96" r="14.6" style="--i:0.151"></circle>
+<circle class="mapa-ponto" cx="616.86" cy="342.31" r="14.6" style="--i:0.151"></circle>
+<circle class="mapa-ponto" cx="504.18" cy="377.96" r="14.6" style="--i:0.163"></circle>
+<circle class="mapa-ponto" cx="654.42" cy="342.31" r="14.6" style="--i:0.163"></circle>
+<circle class="mapa-ponto" cx="353.95" cy="413.61" r="14.6" style="--i:0.163"></circle>
+<circle class="mapa-ponto" cx="541.74" cy="377.96" r="14.6" style="--i:0.174"></circle>
+<circle class="mapa-ponto" cx="691.98" cy="342.31" r="14.6" style="--i:0.174"></circle>
+<circle class="mapa-ponto" cx="391.51" cy="413.61" r="14.6" style="--i:0.174"></circle>
+<circle class="mapa-ponto" cx="579.30" cy="377.96" r="14.6" style="--i:0.186"></circle>
+<circle class="mapa-ponto" cx="429.07" cy="413.61" r="14.6" style="--i:0.186"></circle>
+<circle class="mapa-ponto" cx="466.62" cy="413.61" r="14.6" style="--i:0.198"></circle>
+<circle class="mapa-ponto" cx="616.86" cy="377.96" r="14.6" style="--i:0.198"></circle>
+<circle class="mapa-ponto" cx="504.18" cy="413.61" r="14.6" style="--i:0.209"></circle>
+<circle class="mapa-ponto" cx="654.42" cy="377.96" r="14.6" style="--i:0.209"></circle>
+<circle class="mapa-ponto" cx="353.95" cy="449.26" r="14.6" style="--i:0.209"></circle>
+<circle class="mapa-ponto" cx="541.74" cy="413.61" r="14.6" style="--i:0.221"></circle>
+<circle class="mapa-ponto" cx="691.98" cy="377.96" r="9.2" style="--i:0.221"></circle>
+<circle class="mapa-ponto" cx="391.51" cy="449.26" r="14.6" style="--i:0.221"></circle>
+<circle class="mapa-ponto" cx="579.30" cy="413.61" r="14.6" style="--i:0.233"></circle>
+<circle class="mapa-ponto" cx="429.07" cy="449.26" r="14.6" style="--i:0.233"></circle>
+<circle class="mapa-ponto" cx="466.62" cy="449.26" r="14.6" style="--i:0.244"></circle>
+<circle class="mapa-ponto" cx="616.86" cy="413.61" r="14.6" style="--i:0.244"></circle>
+<circle class="mapa-ponto" cx="316.39" cy="484.91" r="14.6" style="--i:0.244"></circle>
+<circle class="mapa-ponto" cx="504.18" cy="449.26" r="14.6" style="--i:0.256"></circle>
+<circle class="mapa-ponto" cx="654.42" cy="413.61" r="14.6" style="--i:0.256"></circle>
+<circle class="mapa-ponto" cx="353.95" cy="484.91" r="14.6" style="--i:0.256"></circle>
+<circle class="mapa-ponto" cx="541.74" cy="449.26" r="14.6" style="--i:0.267"></circle>
+<circle class="mapa-ponto" cx="691.98" cy="413.61" r="14.6" style="--i:0.267"></circle>
+<circle class="mapa-ponto" cx="391.51" cy="484.91" r="14.6" style="--i:0.267"></circle>
+<circle class="mapa-ponto" cx="729.53" cy="413.61" r="14.6" style="--i:0.279"></circle>
+<circle class="mapa-ponto" cx="579.30" cy="449.26" r="14.6" style="--i:0.279"></circle>
+<circle class="mapa-ponto" cx="278.83" cy="520.56" r="9.2" style="--i:0.279"></circle>
+<circle class="mapa-ponto" cx="429.07" cy="484.91" r="14.6" style="--i:0.279"></circle>
+<circle class="mapa-ponto" cx="767.09" cy="413.61" r="14.6" style="--i:0.291"></circle>
+<circle class="mapa-ponto" cx="466.62" cy="484.91" r="14.6" style="--i:0.291"></circle>
+<circle class="mapa-ponto" cx="616.86" cy="449.26" r="14.6" style="--i:0.291"></circle>
+<circle class="mapa-ponto" cx="316.39" cy="520.56" r="14.6" style="--i:0.291"></circle>
+<circle class="mapa-ponto" cx="504.18" cy="484.91" r="14.6" style="--i:0.302"></circle>
+<circle class="mapa-ponto" cx="654.42" cy="449.26" r="14.6" style="--i:0.302"></circle>
+<circle class="mapa-ponto" cx="353.95" cy="520.56" r="14.6" style="--i:0.302"></circle>
+<circle class="mapa-ponto" cx="541.74" cy="484.91" r="14.6" style="--i:0.314"></circle>
+<circle class="mapa-ponto" cx="691.98" cy="449.26" r="14.6" style="--i:0.314"></circle>
+<circle class="mapa-ponto" cx="391.51" cy="520.56" r="14.6" style="--i:0.314"></circle>
+<circle class="mapa-ponto" cx="729.53" cy="449.26" r="14.6" style="--i:0.326"></circle>
+<circle class="mapa-ponto" cx="579.30" cy="484.91" r="14.6" style="--i:0.326"></circle>
+<circle class="mapa-ponto" cx="429.07" cy="520.56" r="14.6" style="--i:0.326"></circle>
+<circle class="mapa-ponto" cx="767.09" cy="449.26" r="14.6" style="--i:0.337"></circle>
+<circle class="mapa-ponto" cx="466.62" cy="520.56" r="14.6" style="--i:0.337"></circle>
+<circle class="mapa-ponto" cx="616.86" cy="484.91" r="14.6" style="--i:0.337"></circle>
+<circle class="mapa-ponto" cx="316.39" cy="556.21" r="14.6" style="--i:0.337"></circle>
+<circle class="mapa-ponto" cx="804.65" cy="449.26" r="14.6" style="--i:0.349"></circle>
+<circle class="mapa-ponto" cx="504.18" cy="520.56" r="14.6" style="--i:0.349"></circle>
+<circle class="mapa-ponto" cx="654.42" cy="484.91" r="14.6" style="--i:0.349"></circle>
+<circle class="mapa-ponto" cx="353.95" cy="556.21" r="14.6" style="--i:0.349"></circle>
+<circle class="mapa-ponto" cx="842.21" cy="449.26" r="14.6" style="--i:0.360"></circle>
+<circle class="mapa-ponto" cx="541.74" cy="520.56" r="14.6" style="--i:0.360"></circle>
+<circle class="mapa-ponto" cx="691.98" cy="484.91" r="14.6" style="--i:0.360"></circle>
+<circle class="mapa-ponto" cx="391.51" cy="556.21" r="14.6" style="--i:0.360"></circle>
+<circle class="mapa-ponto" cx="729.53" cy="484.91" r="14.6" style="--i:0.372"></circle>
+<circle class="mapa-ponto" cx="879.77" cy="449.26" r="14.6" style="--i:0.372"></circle>
+<circle class="mapa-ponto" cx="579.30" cy="520.56" r="14.6" style="--i:0.372"></circle>
+<circle class="mapa-ponto" cx="429.07" cy="556.21" r="14.6" style="--i:0.372"></circle>
+<circle class="mapa-ponto" cx="767.09" cy="484.91" r="14.6" style="--i:0.384"></circle>
+<circle class="mapa-ponto" cx="466.62" cy="556.21" r="14.6" style="--i:0.384"></circle>
+<circle class="mapa-ponto" cx="616.86" cy="520.56" r="14.6" style="--i:0.384"></circle>
+<circle class="mapa-ponto" cx="804.65" cy="484.91" r="14.6" style="--i:0.395"></circle>
+<circle class="mapa-ponto" cx="504.18" cy="556.21" r="14.6" style="--i:0.395"></circle>
+<circle class="mapa-ponto" cx="654.42" cy="520.56" r="14.6" style="--i:0.395"></circle>
+<circle class="mapa-ponto" cx="353.95" cy="591.86" r="9.2" style="--i:0.395"></circle>
+<circle class="mapa-ponto" cx="842.21" cy="484.91" r="14.6" style="--i:0.407"></circle>
+<circle class="mapa-ponto" cx="541.74" cy="556.21" r="14.6" style="--i:0.407"></circle>
+<circle class="mapa-ponto" cx="691.98" cy="520.56" r="14.6" style="--i:0.407"></circle>
+<circle class="mapa-ponto" cx="729.53" cy="520.56" r="14.6" style="--i:0.419"></circle>
+<circle class="mapa-ponto" cx="879.77" cy="484.91" r="14.6" style="--i:0.419"></circle>
+<circle class="mapa-ponto" cx="579.30" cy="556.21" r="14.6" style="--i:0.419"></circle>
+<circle class="mapa-ponto" cx="767.09" cy="520.56" r="14.6" style="--i:0.430"></circle>
+<circle class="mapa-ponto" cx="466.62" cy="591.86" r="14.6" style="--i:0.430"></circle>
+<circle class="mapa-ponto" cx="917.33" cy="484.91" r="14.6" style="--i:0.430"></circle>
+<circle class="mapa-ponto" cx="616.86" cy="556.21" r="14.6" style="--i:0.430"></circle>
+<circle class="mapa-ponto" cx="804.65" cy="520.56" r="14.6" style="--i:0.442"></circle>
+<circle class="mapa-ponto" cx="504.18" cy="591.86" r="14.6" style="--i:0.442"></circle>
+<circle class="mapa-ponto" cx="954.89" cy="484.91" r="14.6" style="--i:0.442"></circle>
+<circle class="mapa-ponto" cx="654.42" cy="556.21" r="14.6" style="--i:0.442"></circle>
+<circle class="mapa-ponto" cx="842.21" cy="520.56" r="14.6" style="--i:0.453"></circle>
+<circle class="mapa-ponto" cx="541.74" cy="591.86" r="14.6" style="--i:0.453"></circle>
+<circle class="mapa-ponto" cx="691.98" cy="556.21" r="14.6" style="--i:0.453"></circle>
+<circle class="mapa-ponto" cx="729.53" cy="556.21" r="14.6" style="--i:0.465"></circle>
+<circle class="mapa-ponto" cx="879.77" cy="520.56" r="14.6" style="--i:0.465"></circle>
+<circle class="mapa-ponto" cx="579.30" cy="591.86" r="14.6" style="--i:0.465"></circle>
+<circle class="mapa-ponto" cx="767.09" cy="556.21" r="14.6" style="--i:0.477"></circle>
+<circle class="mapa-ponto" cx="917.33" cy="520.56" r="14.6" style="--i:0.477"></circle>
+<circle class="mapa-ponto" cx="616.86" cy="591.86" r="14.6" style="--i:0.477"></circle>
+<circle class="mapa-ponto" cx="804.65" cy="556.21" r="14.6" style="--i:0.488"></circle>
+<circle class="mapa-ponto" cx="504.18" cy="627.51" r="9.2" style="--i:0.488"></circle>
+<circle class="mapa-ponto" cx="954.89" cy="520.56" r="14.6" style="--i:0.488"></circle>
+<circle class="mapa-ponto" cx="654.42" cy="591.86" r="14.6" style="--i:0.488"></circle>
+<circle class="mapa-ponto" cx="842.21" cy="556.21" r="14.6" style="--i:0.500"></circle>
+<circle class="mapa-ponto" cx="541.74" cy="627.51" r="14.6" style="--i:0.500"></circle>
+<circle class="mapa-ponto" cx="691.98" cy="591.86" r="14.6" style="--i:0.500"></circle>
+<circle class="mapa-ponto" cx="729.53" cy="591.86" r="14.6" style="--i:0.512"></circle>
+<circle class="mapa-ponto" cx="879.77" cy="556.21" r="14.6" style="--i:0.512"></circle>
+<circle class="mapa-ponto" cx="579.30" cy="627.51" r="14.6" style="--i:0.512"></circle>
+<circle class="mapa-ponto" cx="767.09" cy="591.86" r="14.6" style="--i:0.523"></circle>
+<circle class="mapa-ponto" cx="917.33" cy="556.21" r="14.6" style="--i:0.523"></circle>
+<circle class="mapa-ponto" cx="616.86" cy="627.51" r="14.6" style="--i:0.523"></circle>
+<circle class="mapa-ponto" cx="804.65" cy="591.86" r="14.6" style="--i:0.535"></circle>
+<circle class="mapa-ponto" cx="954.89" cy="556.21" r="9.2" style="--i:0.535"></circle>
+<circle class="mapa-ponto" cx="654.42" cy="627.51" r="14.6" style="--i:0.535"></circle>
+<circle class="mapa-ponto" cx="842.21" cy="591.86" r="14.6" style="--i:0.547"></circle>
+<circle class="mapa-ponto" cx="541.74" cy="663.16" r="14.6" style="--i:0.547"></circle>
+<circle class="mapa-ponto" cx="691.98" cy="627.51" r="14.6" style="--i:0.547"></circle>
+<circle class="mapa-ponto" cx="729.53" cy="627.51" r="14.6" style="--i:0.558"></circle>
+<circle class="mapa-ponto" cx="879.77" cy="591.86" r="14.6" style="--i:0.558"></circle>
+<circle class="mapa-ponto" cx="579.30" cy="663.16" r="14.6" style="--i:0.558"></circle>
+<circle class="mapa-ponto" cx="767.09" cy="627.51" r="14.6" style="--i:0.570"></circle>
+<circle class="mapa-ponto" cx="917.33" cy="591.86" r="14.6" style="--i:0.570"></circle>
+<circle class="mapa-ponto" cx="616.86" cy="663.16" r="14.6" style="--i:0.570"></circle>
+<circle class="mapa-ponto" cx="804.65" cy="627.51" r="14.6" style="--i:0.581"></circle>
+<circle class="mapa-ponto" cx="654.42" cy="663.16" r="14.6" style="--i:0.581"></circle>
+<circle class="mapa-ponto" cx="842.21" cy="627.51" r="14.6" style="--i:0.593"></circle>
+<circle class="mapa-ponto" cx="691.98" cy="663.16" r="14.6" style="--i:0.593"></circle>
+<circle class="mapa-ponto" cx="729.53" cy="663.16" r="14.6" style="--i:0.605"></circle>
+<circle class="mapa-ponto" cx="879.77" cy="627.51" r="14.6" style="--i:0.605"></circle>
+<circle class="mapa-ponto" cx="579.30" cy="698.81" r="14.6" style="--i:0.605"></circle>
+<circle class="mapa-ponto" cx="767.09" cy="663.16" r="14.6" style="--i:0.616"></circle>
+<circle class="mapa-ponto" cx="616.86" cy="698.81" r="14.6" style="--i:0.616"></circle>
+<circle class="mapa-ponto" cx="804.65" cy="663.16" r="14.6" style="--i:0.628"></circle>
+<circle class="mapa-ponto" cx="654.42" cy="698.81" r="14.6" style="--i:0.628"></circle>
+<circle class="mapa-ponto" cx="842.21" cy="663.16" r="14.6" style="--i:0.640"></circle>
+<circle class="mapa-ponto" cx="691.98" cy="698.81" r="14.6" style="--i:0.640"></circle>
+<circle class="mapa-ponto" cx="729.53" cy="698.81" r="14.6" style="--i:0.651"></circle>
+<circle class="mapa-ponto" cx="879.77" cy="663.16" r="14.6" style="--i:0.651"></circle>
+<circle class="mapa-ponto" cx="579.30" cy="734.46" r="14.6" style="--i:0.651"></circle>
+<circle class="mapa-ponto" cx="767.09" cy="698.81" r="14.6" style="--i:0.663"></circle>
+<circle class="mapa-ponto" cx="616.86" cy="734.46" r="14.6" style="--i:0.663"></circle>
+<circle class="mapa-ponto" cx="804.65" cy="698.81" r="14.6" style="--i:0.674"></circle>
+<circle class="mapa-ponto" cx="654.42" cy="734.46" r="14.6" style="--i:0.674"></circle>
+<circle class="mapa-ponto" cx="842.21" cy="698.81" r="14.6" style="--i:0.686"></circle>
+<circle class="mapa-ponto" cx="691.98" cy="734.46" r="14.6" style="--i:0.686"></circle>
+<circle class="mapa-ponto" cx="729.53" cy="734.46" r="14.6" style="--i:0.698"></circle>
+<circle class="mapa-ponto" cx="879.77" cy="698.81" r="9.2" style="--i:0.698"></circle>
+<circle class="mapa-ponto" cx="579.30" cy="770.11" r="14.6" style="--i:0.698"></circle>
+<circle class="mapa-ponto" cx="767.09" cy="734.46" r="14.6" style="--i:0.709"></circle>
+<circle class="mapa-ponto" cx="616.86" cy="770.11" r="14.6" style="--i:0.709"></circle>
+<circle class="mapa-ponto" cx="804.65" cy="734.46" r="14.6" style="--i:0.721"></circle>
+<circle class="mapa-ponto" cx="654.42" cy="770.11" r="14.6" style="--i:0.721"></circle>
+<circle class="mapa-ponto" cx="842.21" cy="734.46" r="14.6" style="--i:0.733"></circle>
+<circle class="mapa-ponto" cx="691.98" cy="770.11" r="14.6" style="--i:0.733"></circle>
+<circle class="mapa-ponto" cx="729.53" cy="770.11" r="14.6" style="--i:0.744"></circle>
+<circle class="mapa-ponto" cx="767.09" cy="770.11" r="14.6" style="--i:0.756"></circle>
+<circle class="mapa-ponto" cx="616.86" cy="805.76" r="9.2" style="--i:0.756"></circle>
+<circle class="mapa-ponto" cx="804.65" cy="770.11" r="14.6" style="--i:0.767"></circle>
+<circle class="mapa-ponto" cx="654.42" cy="805.76" r="14.6" style="--i:0.767"></circle>
+<circle class="mapa-ponto" cx="842.21" cy="770.11" r="14.6" style="--i:0.779"></circle>
+<circle class="mapa-ponto" cx="691.98" cy="805.76" r="14.6" style="--i:0.779"></circle>
+<circle class="mapa-ponto" cx="729.53" cy="805.76" r="14.6" style="--i:0.791"></circle>
+<circle class="mapa-ponto" cx="767.09" cy="805.76" r="14.6" style="--i:0.802"></circle>
+<circle class="mapa-ponto" cx="654.42" cy="841.41" r="14.6" style="--i:0.814"></circle>
+<circle class="mapa-ponto" cx="691.98" cy="841.41" r="14.6" style="--i:0.826"></circle>
+<circle class="mapa-ponto" cx="729.53" cy="841.41" r="9.2" style="--i:0.837"></circle>
+<circle class="mapa-ponto" cx="654.42" cy="877.06" r="14.6" style="--i:0.860"></circle>
+<circle class="mapa-ponto" cx="691.98" cy="877.06" r="14.6" style="--i:0.872"></circle>
+<circle class="mapa-ponto" cx="616.86" cy="912.71" r="14.6" style="--i:0.895"></circle>
+<circle class="mapa-ponto" cx="654.42" cy="912.71" r="14.6" style="--i:0.907"></circle>
+<circle class="mapa-ponto" cx="691.98" cy="912.71" r="14.6" style="--i:0.919"></circle>
+<circle class="mapa-ponto" cx="616.86" cy="948.36" r="9.2" style="--i:0.942"></circle>
+<circle class="mapa-ponto" cx="654.42" cy="948.36" r="14.6" style="--i:0.953"></circle>
+<circle class="mapa-ponto" cx="654.42" cy="984.01" r="9.2" style="--i:1.000"></circle>
+<circle class="mapa-destaque" cx="654.42" cy="912.71" r="22"></circle>
+</svg>
+
+</figure>
+</div>
+</section>
+<div class="conteiner inicio">
+<div class="inicio__producao">
+<div id="fasciculo" class="inicio__fasciculo">
+<div id="i2-fasciculo" hidden="">
+<div id="listing-lista-fasciculo-destaque" class="quarto-listing quarto-listing-container-custom">
+
+<div class="listing-no-matching d-none">Nenhum item correspondente</div>
+</div>
+</div>
+<div id="i2-em-breve">
+<div id="listing-lista-em-breve" class="quarto-listing quarto-listing-container-custom">
+
+<article class="fasciculo fasciculo--em-breve">
+<div>
+<h2 class="fasciculo__titulo">Fascículo nº&nbsp;1: em breve</h2>
+<p class="fasciculo__frase">O primeiro fascículo está em produção. O lançamento será em um evento presencial na FCE, em data a ser confirmada.</p>
+</div>
+<div class="fasciculo__corpo">
+<ul class="sumario">
+<li><span class="sumario__titulo">Endividamento das famílias e financeirização no Brasil</span><span class="sumario__autor">João Pedone</span></li>
+<li><span class="sumario__titulo">Impactos setoriais do acordo Mercosul e União Europeia</span><span class="sumario__autor">Miguel Amorin</span></li>
+<li><span class="sumario__titulo">Notas sobre a eficácia da política monetária sob a hipótese de expectativas racionais: uma breve revisão da literatura</span><span class="sumario__autor">Gabriel Vieira</span></li>
+<li><span class="sumario__titulo">Subdesenvolvimento: uma visão schumpeteriana</span><span class="sumario__autor">Arthur Pittella</span></li>
+</ul>
+</div>
+</article>
+
+<div class="listing-no-matching d-none">Nenhum item correspondente</div>
+</div>
+<div class="acoes">
+<p><a href="https://www.instagram.com/macroliga.ufrgs/" class="botao">Seguir @macroliga.ufrgs para saber do lançamento</a></p>
+</div>
+</div>
+</div>
+<div class="inicio__lateral">
+<div id="i4" class="inicio__evento">
+<div id="listing-lista-proximo-evento" class="quarto-listing quarto-listing-container-custom">
+
+<h2 class="bloco__titulo">Próximo evento</h2>
+<h3 class="evento__nome"><a href="./eventos/2026-11-27-lancamento-n01/index.html">Lançamento do fascículo nº&nbsp;1</a></h3>
+<p class="evento__quando">Semana de 23/11/2026, data a confirmar. FCE/UFRGS, sala a definir.</p>
+<p class="evento__inscricao">Inscrições em breve.</p>
+
+<div class="listing-no-matching d-none">Nenhum item correspondente</div>
+</div>
+<div id="i4-vazio" hidden="">
+<h2 class="bloco__titulo">Próximo evento</h2>
+<p>Nenhum evento agendado. Siga <a href="https://www.instagram.com/macroliga.ufrgs/">@macroliga.ufrgs</a> para saber do próximo.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="como-funcionamos" class="inicio__etapas">
+<h2 class="bloco__titulo">Todo texto passa pelas mesmas quatro etapas</h2>
+<ol class="etapas">
+<li class="etapa"><p class="etapa__titulo">1. Texto</p><p>Um membro escreve sobre um dos temas associados à macroeconomia.</p></li>
+<li class="etapa"><p class="etapa__titulo">2. Debate entre pares</p><p>Os membros leem e discutem o texto antes da revisão.</p></li>
+<li class="etapa"><p class="etapa__titulo">3. Revisão docente</p><p>Um professor revisa o texto, garantindo a qualidade acadêmica.</p></li>
+<li class="etapa etapa--publicacao"><p class="etapa__titulo">4. Publicação</p><p>Os textos aprovados formam um fascículo numerado, com DOI no Zenodo.</p></li>
+</ol>
+<div class="acoes">
+<p><a href="./sobre.html" class="botao botao--secundario">Ler sobre a liga</a></p>
+</div>
+</div>
+<div class="inicio__redes">
+<h2 class="bloco__titulo">Acompanhe a liga</h2>
+<p>Estamos no Instagram e no LinkedIn debatendo sobre macroeconomia e divulgando informações sobre a MacroLiga.</p>
+<div class="acoes">
+<p><a href="https://www.instagram.com/macroliga.ufrgs/" class="botao botao--secundario">Seguir no Instagram</a> <a href="https://www.linkedin.com/company/macroliga/" class="botao botao--secundario">Seguir no LinkedIn</a></p>
+</div>
+</div>
+</div>
+
+
+
+</main>
+
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/macroliga-ufrgs\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><img src="./assets/marca/svg/macroliga-horizontal-branco.svg" class="rodape__logo" alt="MacroLiga UFRGS" width="188" height="40"></p>
+<p><span class="rodape__nome">MacroLiga UFRGS, Liga Acadêmica de Macroeconomia.</span></p>
+<p>Projeto de extensão da Faculdade de Ciências Econômicas da UFRGS, coordenado pelo prof. Leonardo Xavier da Silva.</p>
+</div>   
+    <div class="nav-footer-center">
+<h2 class="rodape__titulo">
+Contato
+</h2>
+<ul>
+<li>E-mail: <a href="mailto:macroliga.ufrgs@gmail.com">macroliga.ufrgs@gmail.com</a></li>
+<li>Instagram: <a href="https://www.instagram.com/macroliga.ufrgs/">@macroliga.ufrgs</a></li>
+<li>LinkedIn: <a href="https://www.linkedin.com/company/macroliga/">MacroLiga UFRGS</a></li>
+</ul>
+<p><a href="mailto:macroliga.ufrgs@gmail.com" class="botao botao--secundario">Escrever para a liga</a></p>
+</div>
+    <div class="nav-footer-right">
+<p>Textos publicados sob a licença <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt-br">CC BY-NC 4.0</a>.</p>
+<p>Site feito pela equipe de Comunicação da liga, com Quarto, e publicado no GitHub Pages.</p>
+<p>© 2026 MacroLiga UFRGS</p>
+</div>
+  </div>
+</footer>
+<script>
+(function () {
+  var h = location.hostname;
+  if (location.protocol === "file:" || h === "localhost" || h === "127.0.0.1" || h === "[::1]") return;
+  var s = document.createElement("script");
+  s.async = true;
+  s.src = "https://gc.zgo.at/count.js";
+  s.setAttribute("data-goatcounter", "https://macroliga.goatcounter.com/count");
+  document.body.appendChild(s);
+})();
+</script>
+
+
+
+
+<script src="site_libs/quarto-contrib/macroliga-menu-1.0/menu.js"></script>
+</body></html>
