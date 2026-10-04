@@ -8,8 +8,9 @@
     else fn();
   }
   pronto(function () {
-    var meta = document.querySelector('meta[name="quarto:offset"]');
-    var raiz = new URL(meta ? meta.content : "./", location.href).pathname;
+    // A raiz do site vem do link do logo, que sempre aponta para a Início.
+    var logo = document.querySelector(".navbar-brand");
+    var raiz = new URL(logo ? logo.getAttribute("href") : "./", location.href).pathname.replace(/index\.html$/, "");
     var aqui = location.pathname;
     document.querySelectorAll("#navbarCollapse .nav-link").forEach(function (a) {
       var secao = new URL(a.getAttribute("href"), location.href).pathname.replace(/index\.html$/, "");

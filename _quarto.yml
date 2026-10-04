@@ -35,13 +35,14 @@ website:
     title: false
     logo: assets/marca/svg/macroliga-horizontal-branco.svg
     logo-alt: "MacroLiga UFRGS, página inicial"
-    logo-href: index.qmd
     background: primary
     pinned: true
     collapse-below: lg
     right:
       - text: "Início"
         href: index.qmd
+      - text: "Publicações"
+        href: publicacoes/index.qmd
       - text: "Sobre"
         href: sobre.qmd
       - text: "Equipe"

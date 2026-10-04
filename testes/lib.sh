@@ -55,11 +55,17 @@ desfazer() {
   CRIADOS=()
 }
 trap desfazer EXIT
-renderizar() { quarto render "$@" > testes/.render-estado.log 2>&1; }
+# quarto render aceita UM arquivo de entrada: com vários, renderiza um por vez (sem nenhum, o site todo).
+renderizar() {
+  : > testes/.render-estado.log
+  if [ $# -eq 0 ]; then quarto render >> testes/.render-estado.log 2>&1; return; fi
+  local f
+  for f in "$@"; do quarto render "$f" >> testes/.render-estado.log 2>&1 || return 1; done
+}
 deve_falhar() { # deve_falhar <trecho-da-mensagem> <descrição> <arquivos...>
   local msg=$1 desc=$2
   shift 2
-  if quarto render "$@" > testes/.render-estado.log 2>&1; then
+  if renderizar "$@"; then
     falha "$desc  [o render não falhou]"
   elif grep -Fq -- "$msg" testes/.render-estado.log; then
     ok "$desc"

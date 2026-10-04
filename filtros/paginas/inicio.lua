@@ -8,6 +8,13 @@ return function(doc, comum)
   local ultimo = visiveis[#visiveis]
   local em_breve = comum.em_breve()[1]
   local ocultos = {}
+  local eb_visivel = false
+  if em_breve then
+    for _, f in ipairs(visiveis) do
+      if f.numero == tonumber(comum.texto(em_breve.numero)) then eb_visivel = true end
+    end
+  end
+  if eb_visivel then em_breve = nil end
 
   local botao
   if ultimo then
