@@ -7,6 +7,7 @@ done
 nao_existe publicacoes/_modelo-texto "pasta-modelo ausente"
 nao_tem publicacoes/index.html 'class="lista-textos' "P4 continua oculto"
 nao_tem sitemap.xml 'publicacoes/n01' "fascículo e textos fora do sitemap"
+nao_tem listings.json 'publicacoes/n01' "fascículo e textos fora do listings.json"
 r=$(git ls-files '*.pdf' | wc -l | tr -d ' ')
 [ "$r" = "0" ] && ok "nenhum PDF no Git" || falha "há $r PDF(s) no Git"
 fim

@@ -49,6 +49,36 @@ for pasta in pairs(pastas_de_rascunho) do
   if not tem_html(pasta) then apagar_arquivos(pasta) end
 end
 
+-- listings.json cita os endereços de todas as páginas com listing, inclusive rascunhos.
+-- Ficam só as entradas (e itens) cujas páginas existem em _site/.
+local arquivo_listings = pandoc.path.join({ saida, "listings.json" })
+local f = io.open(arquivo_listings, "r")
+if f then
+  local ok, lista = pcall(pandoc.json.decode, f:read("a"), false)
+  f:close()
+  local function existe(href)
+    local g = io.open(pandoc.path.join({ saida, (href:gsub("^/", "")) }), "r")
+    if g then g:close() return true end
+    return false
+  end
+  if ok and type(lista) == "table" then
+    local filtrada = {}
+    for _, entrada in ipairs(lista) do
+      if existe(entrada.listing) then
+        local itens = pandoc.List({})
+        for _, it in ipairs(entrada.items or {}) do
+          if existe(it) then itens:insert(it) end
+        end
+        entrada.items = itens
+        table.insert(filtrada, entrada)
+      end
+    end
+    local g = io.open(arquivo_listings, "w")
+    g:write(pandoc.json.encode(filtrada))
+    g:close()
+  end
+end
+
 -- A busca está desligada (D10), mas o Quarto escreve search.json quando a página tem
 -- <main>. Nada o lê; ele só repetiria o texto das páginas. Apague-o.
 os.remove(pandoc.path.join({ saida, "search.json" }))
