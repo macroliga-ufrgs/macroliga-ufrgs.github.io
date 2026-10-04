@@ -9,13 +9,13 @@ if (items.length > 0) {
 <h2>Textos</h2>
 <ul class="lista-textos lista-textos--filtravel">
 <% for (const item of items) { %>
-<li class="item-texto" data-eixo="<%= slug(item.eixo) %>" data-tipo="<%= slug(item.tipo) %>">
+<li class="item-texto" data-eixo="<%- slug(item.eixo) %>" data-tipo="<%- slug(item.tipo) %>">
 <div>
-<p class="item-texto__tipo"><%= item.tipo %></p>
-<h3 class="item-texto__titulo"><a href="<%- item.path %>"><%= t(item.title) %></a></h3>
-<p class="item-texto__autor"><%= autor(item) %></p>
+<p class="item-texto__tipo"><%- item.tipo %></p>
+<h3 class="item-texto__titulo"><a href="<%- item.path %>"><%- t(item.title) %></a></h3>
+<p class="item-texto__autor"><%- autor(item) %></p>
 </div>
-<dl class="item-texto__dados"><dt>Eixo</dt><dd><%= item.eixo %></dd><dt>Fascículo</dt><dd>nº&nbsp;<%= item.fasciculo %></dd></dl>
+<dl class="item-texto__dados"><dt>Eixo</dt><dd><%- item.eixo %></dd><dt>Fascículo</dt><dd>nº&nbsp;<%- item.fasciculo %></dd></dl>
 </li>
 <% } %>
 </ul>

@@ -2,12 +2,12 @@
 <% for (const item of items) { const n = item.numero; %>
 <article class="fasciculo fasciculo--em-breve">
 <div>
-<h3 class="fasciculo__titulo">Fascículo nº&nbsp;<%= n %>: em breve</h3>
-<p class="fasciculo__frase">O fascículo nº&nbsp;<%= n %> está em revisão. O lançamento será realizado em data a ser definida.</p>
+<h3 class="fasciculo__titulo">Fascículo nº&nbsp;<%- n %>: em breve</h3>
+<p class="fasciculo__frase">O fascículo nº&nbsp;<%- n %> está em revisão. O lançamento será realizado em data a ser definida.</p>
 </div>
 <div class="fasciculo__corpo">
 <ul class="sumario">
-<% for (const t of (item.textos || [])) { %><li><span class="sumario__titulo"><%= t.titulo %></span><span class="sumario__autor"><%= t.autor %></span></li>
+<% for (const t of (item.textos || [])) { %><li><span class="sumario__titulo"><%- t.titulo %></span><span class="sumario__autor"><%- t.autor %></span></li>
 <% } %></ul>
 </div>
 </article>

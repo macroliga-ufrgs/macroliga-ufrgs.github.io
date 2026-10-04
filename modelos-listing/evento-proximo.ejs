@@ -8,8 +8,8 @@ const e = items[0];
 if (e) {
 %>
 <h2 class="bloco__titulo">Próximo evento</h2>
-<h3 class="evento__nome"><a href="<%- e.path %>"><%= t(e.title) %></a></h3>
-<p class="evento__quando"><%= e.quando || e.date %><% if (e.horario) { %>, <%= e.horario %><% } %>. <%= e.local %>.</p>
-<%- acao(e.inscricao) %>
+<h3 class="evento__nome"><a href="<%- e.path %>"><%- t(e.title) %></a></h3>
+<p class="evento__quando"><%- e.quando || e.date %><% if (e.horario) { %>, <%- e.horario %><% } %>. <%- e.local %>.</p>
+<%= acao(e.inscricao) %>
 <% } %>
 ```

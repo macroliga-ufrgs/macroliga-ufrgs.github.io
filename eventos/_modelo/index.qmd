@@ -1,0 +1,16 @@
+---
+# Para criar um evento: copie esta pasta para eventos/aaaa-mm-dd-slug/ e preencha.
+title: "Nome do evento"
+date: 2026-12-10                 # data do evento (ordena a lista)
+quando: ""                       # opcional: substitui a data exibida, ex.: "Semana de 23/11/2026, data a confirmar"
+horario: ""                      # ex.: "19h"
+local: ""                        # texto livre, ex.: "FCE/UFRGS, sala 101" ou "On-line, link enviado após a inscrição"
+situacao: "proximo"              # proximo | realizado (troque à mão depois do evento)
+inscricao: ""                    # link do formulário | vazio (= "Inscrições em breve.") | livre
+fasciculo:                       # só em lançamento: o número do fascículo, ex.: 2
+capa: ""                         # depois do evento: arquivo da foto de capa nesta pasta, ex.: "capa.jpg"
+capa-alt: ""                     # descrição da foto (obrigatória se houver capa)
+fotos: ""                        # link do álbum externo da liga
+---
+
+Descrição do evento em um ou dois parágrafos: o que acontece, para quem é e quem participa.

@@ -12,14 +12,14 @@ if (f) {
 %>
 <h2 class="bloco__titulo">Fascículo mais recente</h2>
 <article class="fasciculo">
-<% if (f.image) { %><img class="fasciculo__capa" src="<%- f.image %>" alt="Capa do fascículo nº&nbsp;<%= n %>"><% } %>
+<% if (f.image) { %><img class="fasciculo__capa" src="<%- f.image %>" alt="Capa do fascículo nº&nbsp;<%- n %>"><% } %>
 <div>
-<h3 class="fasciculo__titulo"><a href="<%- f.path %>"><%= f.publicacao.nome %> nº&nbsp;<%= n %></a></h3>
-<p class="fasciculo__frase"><%= f.date %>. <%= seus.length %> <%= seus.length === 1 ? "texto" : "textos" %> sobre a economia brasileira, revisados por professores da FCE.</p>
+<h3 class="fasciculo__titulo"><a href="<%- f.path %>"><%- f.publicacao.nome %> nº&nbsp;<%- n %></a></h3>
+<p class="fasciculo__frase"><%- f.date %>. <%- seus.length %> <%- seus.length === 1 ? "texto" : "textos" %> sobre a economia brasileira, revisados por professores da FCE.</p>
 </div>
 <div class="fasciculo__corpo">
 <ul class="sumario">
-<% for (const x of seus) { %><li><a class="sumario__titulo" href="<%- x.path %>"><%= t(x.title) %></a><span class="sumario__autor"><%= autor(x) %></span></li>
+<% for (const x of seus) { %><li><a class="sumario__titulo" href="<%- x.path %>"><%- t(x.title) %></a><span class="sumario__autor"><%- autor(x) %></span></li>
 <% } %></ul>
 <div class="acoes">
 <a class="botao" href="<%- f.path %>">Ler o fascículo</a>

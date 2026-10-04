@@ -1,0 +1,25 @@
+```{=html}
+<%
+const t = s => String(s || "").replace(/nº /g, "nº\u00a0");
+const pad = n => String(n).padStart(2, "0");
+// A capa fica na pasta do evento; esta lista está em eventos/, então o caminho é <pasta>/<capa>.
+const pasta = e => String(e.path).replace(/\\/g, "/").split("/").slice(-2)[0];
+if (items.length > 0) {
+%>
+<ul class="lista-eventos">
+<% for (const e of items) { %>
+<li class="item-evento item-evento--passado">
+<% if (e.capa) { %><img class="item-evento__capa" src="<%- pasta(e) + "/" + e.capa %>" alt="<%- e["capa-alt"] || "" %>" loading="lazy"><% } else { %><p class="item-evento__data"><%- e.date %></p><% } %>
+<div class="item-evento__corpo">
+<h3 class="item-evento__nome"><a href="<%- e.path %>"><%- t(e.title) %></a></h3>
+<p class="item-evento__local"><%- e.date %>, <%- e.local %></p>
+<% if (e.fotos || e.fasciculo) { %><p class="acoes">
+<% if (e.fotos) { %><a class="botao botao--secundario" href="<%- e.fotos %>">Ver as fotos</a><% } %>
+<% if (e.fasciculo) { %><a class="botao botao--secundario" href="/publicacoes/n<%- pad(e.fasciculo) %>/index.qmd">Ler o fascículo</a><% } %>
+</p><% } %>
+</div>
+</li>
+<% } %>
+</ul>
+<% } %>
+```

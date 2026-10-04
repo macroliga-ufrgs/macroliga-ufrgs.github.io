@@ -41,6 +41,8 @@ website:
         href: index.qmd
       - text: "Publicações"
         href: publicacoes/index.qmd
+      - text: "Eventos"
+        href: eventos/index.qmd
       - text: "Sobre"
         href: sobre.qmd
       - text: "Equipe"

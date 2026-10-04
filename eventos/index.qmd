@@ -1,0 +1,48 @@
+---
+title: "Eventos"
+pagina: eventos
+description: "Lançamentos de fascículos, debates e outros encontros promovidos pela MacroLiga UFRGS."
+open-graph:
+  description: "Lançamentos de fascículos, debates e outros encontros promovidos pela MacroLiga UFRGS."
+listing:
+  - id: lista-proximos
+    contents: "*/index.qmd"
+    template: ../modelos-listing/eventos-proximos.ejs
+    include:
+      situacao: "proximo"
+    sort: "date"
+    date-format: "D [de] MMMM [de] YYYY"
+  - id: lista-passados
+    contents: "*/index.qmd"
+    template: ../modelos-listing/eventos-passados.ejs
+    include:
+      situacao: "realizado"
+    sort: "date desc"
+    date-format: "D [de] MMMM [de] YYYY"
+---
+
+:::: {.conteiner .pagina .eventos}
+# Eventos
+
+::: {.pagina__intro}
+Lançamentos de fascículos, debates e outros encontros promovidos pela liga.
+:::
+
+## Próximos eventos
+
+::: {#lista-proximos}
+:::
+
+::: {#ev2-vazio .estado-vazio}
+Nenhum evento agendado. Siga [{{< var contato.instagram >}}]({{< var contato.instagram-url >}}) para saber do próximo.
+:::
+
+## Eventos passados
+
+::: {#lista-passados}
+:::
+
+::: {#ev3-vazio .estado-vazio}
+Ainda não realizamos eventos. O primeiro será o lançamento do fascículo nº 1.
+:::
+::::

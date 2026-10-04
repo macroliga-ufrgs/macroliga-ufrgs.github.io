@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Tarefa 9: Eventos e o lançamento (estado de 18/10).
+source "$(dirname "$0")/lib.sh"
+P=eventos/2026-11-27-lancamento-n01/index.html
+existe eventos/index.html "página Eventos"
+tem eventos/index.html 'Lançamentos de fascículos, debates e outros encontros promovidos pela liga\.' "EV1"
+tem eventos/index.html "Lançamento do fascículo ${NO}1" "EV2 lançamento"
+tem eventos/index.html 'Semana de 23/11/2026, data a confirmar' "EV2 usa quando"
+tem eventos/index.html 'Inscrições em breve\.' "EV2 inscrição vazia"
+tem eventos/index.html 'class="item-evento__frase">Apresentação dos quatro textos' "EV2 frase curta (descrição do evento)"
+nao_tem eventos/index.html 'desc\(' "sem marcador de descrição escapado"
+tem eventos/index.html 'id="ev2-vazio"[^>]*hidden' "EV2 estado vazio oculto"
+tem eventos/index.html "Ainda não realizamos eventos\. O primeiro será o lançamento do fascículo ${NO}1\." "EV3 estado vazio"
+nao_existe eventos/_modelo/index.html "pasta-modelo não vira página"
+nao_tem eventos/index.html '_modelo' "pasta-modelo fora da listing"
+existe "$P" "página do lançamento"
+tem "$P" 'href="(\.\./index|\.\./\.\./eventos/index)\.html">Voltar aos eventos' "EVP1"
+tem "$P" "<h1 class=\"titulo-longo\">Lançamento do fascículo ${NO}1</h1>" "EVP2 nome"
+tem "$P" 'FCE/UFRGS, sala a definir' "EVP2 local do campo"
+tem "$P" 'Impactos setoriais do acordo Mercosul e União Europeia' "EVP2 textos do fascículo (do em-breve)"
+tem "$P" 'Inscrições em breve\.' "EVP3"
+tem "$P" '<meta property="og:description" content="Semana de 23/11/2026, data a confirmar, FCE/UFRGS, sala a definir">' "Open Graph: data e local"
+tem index.html "Lançamento do fascículo ${NO}1" "I4 mostra o lançamento"
+tem index.html 'id="i4-vazio"[^>]*hidden' "I4 estado vazio oculto"
+tem index.html 'class="nav-link[^"]*" href="\./eventos/index\.html"' "Eventos no menu"
+fim
