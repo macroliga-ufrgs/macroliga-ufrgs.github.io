@@ -15,7 +15,7 @@ roda() {
     bash "$t" || STATUS=1
   done
 }
-roda testes/e*.sh
+roda testes/e[0-9]*.sh
 echo "== quarto render"
 if ! quarto render > testes/.render.log 2>&1; then tail -40 testes/.render.log; echo "quarto render falhou."; exit 1; fi
 grep -E "WARN" testes/.render.log | sort -u | sed 's/^/  aviso do Quarto: /'
@@ -23,5 +23,5 @@ echo "== quarto render --profile rascunhos"
 if ! quarto render --profile rascunhos > testes/.render-rascunhos.log 2>&1; then
   tail -40 testes/.render-rascunhos.log; echo "quarto render --profile rascunhos falhou."; exit 1
 fi
-roda testes/t*.sh testes/r*.sh
+roda testes/t[0-9]*.sh testes/r[0-9]*.sh
 exit $STATUS
