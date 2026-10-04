@@ -9,6 +9,7 @@ existe site_libs/quarto-contrib/macroliga-menu-1.0/menu.js "menu.js copiado para
 tem index.html '<meta property="og:title"' "og:title"
 tem index.html '<meta property="og:image" content="https://macroliga-ufrgs\.github\.io/assets/marca/png/macroliga-og\.png"' "og:image padrão é o selo"
 tem index.html '<meta property="og:description" content="[^"]+' "og:description preenchida"
-nao_tem index.html 'goatcounter' "sem GoatCounter com o código vazio"
+tem index.html 'https://macroliga\.goatcounter\.com/count' "GoatCounter com o código de _variables.yml"
+tem index.html 'location\.hostname' "o script não conta visitas em localhost"
 nenhum_html '(href|src)="/[^/]' "nenhum link começa com / (exceto a 404)" '/404\.html$'
 fim
