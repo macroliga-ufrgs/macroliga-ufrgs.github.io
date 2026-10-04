@@ -637,3 +637,16 @@ O que você edita no dia a dia:
 | Processo seletivo | O cabeçalho de `participe.qmd` |
 | E-mail, redes, questionário, nome da publicação | `_variables.yml` |
 | Textos das páginas Início, Sobre, Equipe e Participe | O texto (fora do cabeçalho) de `index.qmd`, `sobre.qmd`, `equipe.qmd` e `participe.qmd`. Mude só as frases; não apague as linhas que começam com `:::` |
+
+### Testes automáticos (para quem mexe na maquinaria)
+
+Os testes da pasta `testes/` conferem o site inteiro: geram as páginas, mudam cabeçalhos de propósito para provocar erros e verificam o resultado. Quem só edita conteúdo não precisa rodá-los. Quem mexe na maquinaria roda, antes de enviar ao GitHub:
+
+```
+bash testes/rodar.sh
+```
+
+Eles precisam de Git Bash (vem com o Git no Windows), Python e Google Chrome, e levam de 10 a 15 minutos. No fim de cada arquivo aparece `Tudo certo.` ou a lista do que falhou.
+
+- **Pare qualquer `quarto preview` antes (Ctrl+C no terminal dele).** Os testes alteram e restauram arquivos enquanto rodam. Um preview aberto reage a essas mudanças e renderiza ao mesmo tempo, e os dois processos se atropelam: aparecem falhas sem sentido, erros como `NotFound ... rename 'index.html'` e arquivos `index.html`, `index-listing.json` e `site_libs/` soltos dentro das pastas do site. Se isso acontecer, apague esses arquivos soltos (eles não são do repositório: `git status` os mostra como novos) e rode os testes de novo, sem preview.
+- **Alguns testes conferem o conteúdo atual**, como quantos textos tem o fascículo nº 1. Se você acrescentar um texto e um teste falhar com algo como `5 ocorrência(s) ... esperado 4`, o site está certo: atualize o número esperado no arquivo do teste indicado.

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Tarefa 12: os textos em rascunho não existem no site publicado.
 source "$(dirname "$0")/lib.sh"
-for s in endividamento-familias-financeirizacao impactos-setoriais-mercosul-ue eficacia-politica-monetaria-expectativas-racionais subdesenvolvimento-visao-schumpeteriana; do
+for s in endividamento-familias-financeirizacao impactos-setoriais-mercosul-ue eficacia-politica-monetaria-expectativas-racionais subdesenvolvimento-visao-schumpeteriana risco-cibernetico-sistemico-sistema-financeiro; do
   nao_existe "publicacoes/n01/$s/index.html" "texto $s ausente do _site"
 done
 nao_existe publicacoes/_modelo-texto "pasta-modelo ausente"
