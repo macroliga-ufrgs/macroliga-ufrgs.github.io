@@ -235,19 +235,39 @@ Peça mudanças diretas, como "o bloco de pontos está chamando mais atenção q
 ```
 Use a skill writing-plans do Superpowers para transformar docs/spec-design.md,
 docs/design-tokens.md e design/prancha.html num plano de implementação em Quarto
-(docs/plano-implementacao.md), em tarefas pequenas e verificáveis. Requisitos:
-- _quarto.yml (website, lang: pt, navbar, footer, search, site-url, open-graph,
-  execute: freeze: auto), _brand.yml (cores, fontes do Google Fonts, logos),
-  _variables.yml (nome da publicação, e-mail, redes, link do questionário).
-- estilos/macroliga.scss traduzindo a prancha (tokens → variáveis SCSS do Bootstrap
-  + regras próprias).
-- Listings com templates EJS próprios para fascículos e textos (filtros por categoria).
-- index.qmd com page-layout: custom, se a Início precisar.
-- Pastas-modelo com YAML completo: publicacoes/_modelo-texto/, publicacoes/_modelo-fasciculo/,
-  eventos/_modelo/, graficos/_modelo/ (com chunk R usando assets/graficos/tema_macroliga.R).
-- Ordem: base e tema → Início → Sobre → Equipe → Participe/rodapé → (site mínimo)
-  → Publicações/fascículo/texto → Eventos → Gráfico Comentado.
-- Cada tarefa termina com quarto render sem erros + screenshot 390/1280.
+(docs/plano-implementacao.md), em tarefas pequenas e verificáveis.
+A spec manda: estrutura de pastas (3.2), cabeçalhos YAML (3.3), listings (3.4),
+filtros (3.5), validação (3.6), _variables.yml (3.7) e critérios de pronto (6).
+Requisitos:
+- _quarto.yml: website, lang: pt, navbar e rodapé da spec (seção 4), site-url,
+  open-graph, execute: freeze: auto. Sem busca na 1ª versão (D10). GoatCounter
+  só no site publicado e só com o código preenchido (D11).
+- _brand.yml: as 6 cores e os logos da marca; Inter e Libre Baskerville do Google
+  Fonts, só com os pesos usados (Libre Baskerville variável, 400–700; ver
+  docs/design-tokens.md).
+- estilos/macroliga.scss a partir de design/macroliga.css: mesmos tokens e nomes,
+  componentes como seções do SCSS, estilizando a navbar do Quarto (Bootstrap,
+  que recolhe abaixo de 992 px) no lugar do cabeçalho da prancha.
+- Abertura da Início com design/mapa-pontos.svg (gerado por design/gerar-mapa.py),
+  incluído no index.qmd com page-layout: custom, se necessário.
+- Listings com templates EJS próprios (modelos-listing/) para I2, I3, I4, P2, P4,
+  F3, T10, GC2, EV2 e EV3, incluindo o estado "em breve" de publicacoes/em-breve.yml.
+- Filtros por eixo e por tipo (D6): data-eixo e data-tipo em cada texto,
+  assets/js/filtros.js, estado no endereço (?eixo=&tipo=). Não há campo categories.
+- Filtro Lua de validação (spec 3.6), com mensagens em português.
+- Pastas-modelo com YAML completo: publicacoes/_modelo-texto/,
+  publicacoes/_modelo-fasciculo/, eventos/_modelo/ e graficos/_modelo/ (este com
+  grafico_site() de assets/graficos/tema_macroliga.R; uma tarefa testa se o freeze
+  guarda as duas imagens e se elas chegam ao _site/).
+- Regras de docs/design-tokens.md em todo template: "nº&nbsp;{n}", algarismos
+  tabulares só em dados, vermelho só nos três usos previstos.
+- Ordem: base e tema → Início → Sobre → Equipe → Participe → Publicações em breve
+  → Eventos e evento de lançamento → 404 → fascículo nº 1 e os 4 textos em
+  rascunho (D3) → filtros → (marco "site mínimo", spec 6.1) → Gráficos comentados
+  (até 22/11, D1).
+- Cada tarefa termina com quarto render sem erros + screenshots em 390 e 1280 px,
+  comparadas com a prancha e com o wireframe aprovado.
+- Antes de escrever o plano, pergunte-me os pontos em aberto de docs/design-tokens.md.
 ```
 
 Revise o plano e escolha a execução que o Superpowers oferecer: *inline*, mais simples de acompanhar, ou com subagentes, mais rápida. Para um site deste tamanho, **inline** basta.
@@ -255,11 +275,12 @@ Revise o plano e escolha a execução que o Superpowers oferecer: *inline*, mais
 ### 5.2 Construção
 
 ```
-Execute docs/plano-implementacao.md até o marco "site mínimo".
+Execute docs/plano-implementacao.md até o marco "site mínimo" (spec 6.1).
 A skill frontend-design deve estar ativa para todo trabalho visual.
 A cada página: renderize, tire screenshots em 390 e 1280, compare com a prancha
 e com o wireframe aprovado, e corrija antes de seguir. Commit por tarefa.
-Pare no marco e me mostre as screenshots de todas as páginas.
+No marco, confira item a item a lista da spec 6.1 e me mostre as screenshots
+de todas as páginas, inclusive as de rascunho.
 ```
 
 **Pontos de atenção** (cobre do Claude se ele desviar):
@@ -268,8 +289,13 @@ Pare no marco e me mostre as screenshots de todas as páginas.
 - O nome da publicação só via `{{< var publicacao.nome >}}`.
 - Links relativos, para o site funcionar também em `ufrgs.br/macroliga`.
 - Fontes: carregar só os pesos usados.
+- Rascunhos (`draft: true`) aparecem no `quarto preview` e não existem no `_site/`.
 
-**Pronto quando:** `quarto preview` mostra Início, Sobre, Equipe e Participe completos, com os 4 títulos do nº 1 na Início como "em breve" (sem PDF).
+**Pronto quando** (lista completa na spec, seção 6.1):
+
+- `quarto preview` mostra Início (fascículo "em breve", próximo evento com o lançamento), Publicações (em breve), Eventos, a página do evento de lançamento, Sobre, Equipe, Participe (seleção fechada) e 404;
+- o fascículo nº 1 e os 4 textos aparecem completos no preview, como rascunho, com os filtros por eixo e tipo funcionando;
+- o `quarto render` gera um `_site/` sem nenhum rascunho, sem "Gráficos comentados" no menu e sem botão que leve a página inexistente.
 
 ---
 
