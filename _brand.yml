@@ -1,0 +1,50 @@
+# Marca da MacroLiga UFRGS (CLAUDE.md, seção 6). Não invente cores nem fontes.
+color:
+  palette:
+    azul-marinho: "#083D6B"
+    vermelho: "#D51E23"      # só os três usos de docs/design-tokens.md
+    offwhite: "#FAF8F4"
+    grafite: "#1F2933"
+    grade: "#D9D4CA"
+    contexto: "#9AA5B1"      # só séries secundárias de gráficos; nunca texto
+  background: offwhite
+  foreground: grafite
+  primary: azul-marinho
+  link: azul-marinho
+
+typography:
+  fonts:
+    # A Libre Baskerville não entra aqui: o _brand.yml só aceita pesos 100, 200…900,
+    # e o site usa 450 e 560. Ela é carregada no _quarto.yml (include-in-header),
+    # como fonte variável de 400 a 560.
+    - family: Inter
+      source: google
+      weight: [400, 700]
+      style: normal
+  base:
+    family: Inter
+    weight: 400
+    line-height: 1.6
+  headings:
+    family: Libre Baskerville
+    weight: 400
+    color: azul-marinho
+    line-height: 1.12
+
+logo:
+  images:
+    horizontal-cor:
+      path: assets/marca/svg/macroliga-horizontal-cor.svg
+      alt: "MacroLiga UFRGS"
+    horizontal-branco:
+      path: assets/marca/svg/macroliga-horizontal-branco.svg
+      alt: "MacroLiga UFRGS"
+    simbolo-cor:
+      path: assets/marca/svg/macroliga-simbolo-cor.svg
+      alt: "Símbolo da MacroLiga UFRGS"
+    selo-cor:
+      path: assets/marca/svg/macroliga-selo-cor.svg
+      alt: "Selo da MacroLiga UFRGS"
+  small: simbolo-cor
+  medium: horizontal-cor
+  large: selo-cor

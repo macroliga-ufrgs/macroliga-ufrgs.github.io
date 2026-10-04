@@ -1,6 +1,6 @@
 # Tokens e direção visual
 
-- **Status:** etapa 2 da skill `frontend-design`, aguardando aprovação da prancha.
+- **Status:** prancha aprovada em 03/10/2026, com dois ajustes (sem frase sobre Porto Alegre; licença CC BY-NC 4.0). Plano de implementação em docs/plano-implementacao.md.
 - **Arquivos:** `design/macroliga.css` (tokens e componentes), `design/prancha.html` (amostras), `design/abertura.html` (abertura da Início), `design/gerar-mapa.py` (gera `design/mapa-pontos.svg`) e `design/fontes.html` (comparação de fontes que levou à decisão D-F).
 - **Uso na fase do Quarto:** as cores e as fontes vão para o `_brand.yml`; o resto de `macroliga.css` vira `estilos/macroliga.scss`, com os mesmos nomes de variáveis.
 
@@ -50,8 +50,9 @@ Os valores estão em `design/macroliga.css`. Tamanhos em px, celular / desktop; 
 - **Rótulo do último dado:** a distância entre o ponto e o valor agora é um espaço tipográfico, e não um deslocamento no eixo x. Assim ela não encolhe no gráfico estreito do celular. Isso vale para todos os formatos.
 - **`.fonte_ok()`** também aceita fontes registradas com `systemfonts::register_font()`, além das instaladas.
 
-## Pontos em aberto
+## Pontos resolvidos na etapa do plano (03/10/2026)
 
-1. **`grafico_site()` dentro do Quarto.** A função foi testada fora do Quarto: gera as duas imagens e escreve o HTML. Falta confirmar, na fase 4, que as imagens salvas na pasta de figuras da página são guardadas pelo `freeze` e copiadas para `_site/`.
-2. **Link "Ler o texto" na lista de Publicações (spec, P4).** Na prancha, o próprio título é o link, para não haver dois links iguais por item. Falta confirmar.
-3. **Em telas de 360 px,** a frase da abertura fica com 46 px (2,7× o corpo), para "A conjuntura" caber na primeira linha.
+1. **`grafico_site()` dentro do Quarto:** testado no Quarto 1.10.18. O freeze guarda as duas imagens em `_freeze/<página>/figure-html/`, e o render as copia para `_site/`. Se um dia falhar, a saída aprovada é salvar as imagens na pasta da página e declará-las em `resources:`.
+2. **Link na lista de Publicações (P4) e no sumário (F3):** o título é o link; não há botão "Ler o texto".
+3. **Abertura em 360 px:** 46 px aceitos (2,7× o corpo), só em telas de 360–375 px.
+4. **Fontes no `_brand.yml`:** ele só aceita pesos múltiplos de 100. A Inter (400 e 700) vem por ele; a Libre Baskerville vem por `<link>` com `wght@400..560`.

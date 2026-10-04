@@ -166,7 +166,7 @@ Use os modelos para escrever no formato dos fascículos: Com título, autor, eix
 | Onde | Texto |
 |---|---|
 | Card de fascículo | Ler o fascículo |
-| Card de texto | Ler o texto |
+| Lista de textos (Publicações e sumário) | O título é o link; sem botão "Ler o texto" |
 | Página de texto ou fascículo | Baixar PDF |
 | Link do DOI | Abrir no Zenodo |
 | Bloco "Como citar" | Copiar citação |

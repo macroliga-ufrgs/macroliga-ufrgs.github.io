@@ -1,0 +1,51 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "publicacoes/**/*.qmd"
+    - "eventos/**/*.qmd"
+    - "graficos/**/*.qmd"
+
+lang: pt
+metadata-files:
+  - _variables.yml
+
+execute:
+  freeze: auto
+
+brand:
+  light: _brand.yml
+
+website:
+  title: "MacroLiga UFRGS"
+  description: "Liga Acadêmica de Macroeconomia da UFRGS: textos curtos sobre a conjuntura brasileira, escritos por estudantes e revisados por professores da FCE."
+  site-url: "https://macroliga-ufrgs.github.io"
+  favicon: assets/marca/png/macroliga-favicon-512.png
+  search: false          # D10: sem busca na 1ª versão
+  page-navigation: false
+  navbar:
+    title: false
+    logo: assets/marca/svg/macroliga-horizontal-branco.svg
+    logo-alt: "MacroLiga UFRGS, página inicial"
+    logo-href: index.qmd
+    background: primary
+    pinned: true
+    collapse-below: lg
+    right:
+      - text: "Início"
+        href: index.qmd
+
+format:
+  html:
+    theme:
+      light: [brand, estilos/macroliga.scss]
+    page-layout: custom
+    toc: false
+    anchor-sections: false
+    smooth-scroll: false
+    include-in-header:
+      text: |
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400..560&display=swap">

@@ -1,0 +1,98 @@
+/*-- scss:defaults --*/
+// Ajustes do Bootstrap: cantos retos e sem sombras. Cores e fontes vêm do _brand.yml.
+// (As variáveis $brand-* não existem nesta camada; use-as só em scss:rules.)
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+$border-radius-xl: 0;
+$border-radius-xxl: 0;
+$border-radius-pill: 0;
+$enable-shadows: false;
+$navbar-padding-y: 0;
+$headings-margin-bottom: 0;
+
+/*-- scss:rules --*/
+// =============================================================================
+// MacroLiga UFRGS: estilos do site. Origem: design/macroliga.css (prancha aprovada).
+// Mesmos tokens e nomes; cada componente é uma seção. Mobile primeiro: o desktop
+// começa em 992 px, onde o menu do Quarto (Bootstrap) deixa de ser recolhido.
+// O vermelho tem três usos (docs/design-tokens.md): .mapa-destaque, .etapa--publicacao
+// e o último dado dos gráficos (na imagem). Não use var(--vermelho) em mais nada.
+// =============================================================================
+
+// ---- Tokens -----------------------------------------------------------------
+:root {
+  // Cores da marca, lidas do _brand.yml. Nenhuma outra cor entra no site.
+  --azul-marinho: #{$brand-azul-marinho};
+  --vermelho: #{$brand-vermelho};
+  --offwhite: #{$brand-offwhite};
+  --grafite: #{$brand-grafite};
+  --grade: #{$brand-grade};
+  --contexto: #{$brand-contexto};
+
+  --fonte-titulo: "Libre Baskerville", Georgia, serif;
+  --fonte-texto: "Inter", system-ui, sans-serif;
+
+  // Escala tipográfica (celular). O desktop redefine abaixo.
+  --fs-display: clamp(2.875rem, 13.4vw, 3.25rem);  // 46–52 px (46 px em 360 px: exceção aprovada)
+  --fs-h1: 3.25rem;
+  --fs-titulo-longo: 2rem;
+  --fs-h2: 1.75rem;
+  --fs-h3: 1.3125rem;
+  --fs-sintese: 1.3125rem;
+  --fs-corpo: 1.0625rem;
+  --fs-meta: 0.9375rem;
+  --fs-pequeno: 0.875rem;
+
+  // Pesos. A Libre Baskerville é variável: o peso sobe quando o tamanho desce.
+  --peso-display: 400;
+  --peso-h1: 400;
+  --peso-titulo-longo: 450;
+  --peso-h2: 500;
+  --peso-h3: 560;
+  --peso-texto: 400;
+  --peso-forte: 700;
+
+  --lh-display: 1.02;
+  --lh-titulo: 1.12;
+  --lh-texto: 1.6;
+  --lh-serifa: 1.65;
+
+  --esp-1: 0.25rem;
+  --esp-2: 0.5rem;
+  --esp-3: 0.75rem;
+  --esp-4: 1rem;
+  --esp-5: 1.5rem;
+  --esp-6: 2rem;
+  --esp-7: 3rem;
+  --esp-8: 4rem;
+  --esp-9: 6rem;
+  --esp-10: 8rem;
+
+  --largura-max: 75rem;
+  --margem: var(--esp-4);
+  --medida: 68ch;
+  --secao: var(--esp-8);
+
+  --raio-0: 0;
+  --raio-ponto: 50%;
+
+  --linha-grade: 1px solid var(--grade);
+  --linha-eixo: 2px solid var(--grafite);
+
+  --alvo-min: 3rem;
+  --cor-foco: var(--azul-marinho);
+}
+
+@media (min-width: 992px) {
+  :root {
+    --fs-display: clamp(4.5rem, 3.4vw + 1.75rem, 5.25rem);
+    --fs-h1: 4.5rem;
+    --fs-titulo-longo: 2.75rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.5rem;
+    --fs-corpo: 1.125rem;
+    --margem: var(--esp-6);
+    --secao: var(--esp-9);
+  }
+}
