@@ -1,0 +1,48 @@
+```{=html}
+<%
+const slug = s => String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+  .replace(/[^a-z0-9\s-]/g, "").trim().replace(/\s+/g, "-").replace(/-+/g, "-");
+const t = s => String(s || "").replace(/nº /g, "nº\u00a0");
+const autor = i => [].concat(i.author || []).map(a => (a && a.name) ? (a.name.literal || a.name) : a).join(", ");
+if (items.length > 0) {
+%>
+<% const eixos = items[0].eixos || []; const tipos = items[0].tipos || []; %>
+<h2>Textos</h2>
+<div class="filtros" data-filtros hidden>
+<div class="filtros__celular">
+<label for="filtro-eixo">Filtrar por eixo</label>
+<select id="filtro-eixo" data-filtro="eixo"><option value="">Todos os eixos</option><% for (const e of eixos) { %><option value="<%- slug(e) %>"><%- e %></option><% } %></select>
+<label for="filtro-tipo">Filtrar por tipo</label>
+<select id="filtro-tipo" data-filtro="tipo"><option value="">Todos os tipos</option><% for (const x of tipos) { %><option value="<%- slug(x) %>"><%- x %></option><% } %></select>
+</div>
+<div class="filtros__desktop">
+<fieldset><legend>Filtrar por eixo</legend><div class="opcoes">
+<label class="opcao"><input type="radio" name="filtro-eixo" value="" checked><span>Todos</span></label>
+<% for (const e of eixos) { %><label class="opcao"><input type="radio" name="filtro-eixo" value="<%- slug(e) %>"><span><%- e %></span></label><% } %>
+</div></fieldset>
+<fieldset><legend>Filtrar por tipo</legend><div class="opcoes">
+<label class="opcao"><input type="radio" name="filtro-tipo" value="" checked><span>Todos</span></label>
+<% for (const x of tipos) { %><label class="opcao"><input type="radio" name="filtro-tipo" value="<%- slug(x) %>"><span><%- x %></span></label><% } %>
+</div></fieldset>
+</div>
+<p class="acoes"><button type="button" class="botao botao--secundario" data-limpar>Limpar filtros</button></p>
+<p class="filtros__resultado" id="filtros-resultado" role="status"></p>
+</div>
+<ul class="lista-textos lista-textos--filtravel">
+<% for (const item of items) { %>
+<li class="item-texto" data-eixo="<%- slug(item.eixo) %>" data-tipo="<%- slug(item.tipo) %>">
+<div>
+<p class="item-texto__tipo"><%- item.tipo %></p>
+<h3 class="item-texto__titulo"><a href="<%- item.path %>"><%- t(item.title) %></a></h3>
+<p class="item-texto__autor"><%- autor(item) %></p>
+</div>
+<dl class="item-texto__dados"><dt>Eixo</dt><dd><%- item.eixo %></dd><dt>Fascículo</dt><dd>nº&nbsp;<%- item.fasciculo %></dd></dl>
+</li>
+<% } %>
+</ul>
+<div class="filtros__vazio" id="filtros-vazio" hidden>
+<p>Ainda não há textos com esses filtros. Limpe os filtros para ver todos os textos.</p>
+<p class="acoes"><button type="button" class="botao botao--secundario" data-limpar>Limpar filtros</button></p>
+</div>
+<% } %>
+```

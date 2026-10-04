@@ -14,3 +14,13 @@
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Saídas de perfis e verificação
+/_site-rascunhos/
+/_site-subcaminho/
+/capturas/
+testes/.render*.log
+*.bak-teste
+/.superpowers/
+
+**/*.quarto_ipynb

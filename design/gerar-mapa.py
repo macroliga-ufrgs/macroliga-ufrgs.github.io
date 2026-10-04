@@ -1,6 +1,6 @@
 # Gera o SVG do mapa de pontos da abertura (I1) a partir do símbolo do logo.
 # Uso: python design/gerar-mapa.py  (a partir da pasta site/)
-# Saída: design/mapa-pontos.svg, para colar no HTML (ou incluir no Quarto).
+# Saída: design/mapa-pontos.svg (prancha) e assets/img/mapa-pontos.svg (Início do site).
 #
 # As posições dos pontos são as do logo aprovado, sem alteração. O script só
 # acrescenta a grade de fundo, a ordem da animação (--i) e o ponto de Porto Alegre.
@@ -60,6 +60,8 @@ for p in sorted(pontos, key=ordem):
 linhas.append(f'<circle class="mapa-destaque" cx="{poa[0]:.2f}" cy="{poa[1]:.2f}" r="22"/>')
 linhas.append("</svg>")
 
-saida = SITE / "design/mapa-pontos.svg"
-saida.write_text("\n".join(linhas) + "\n", encoding="utf-8")
-print(f"{len(pontos)} pontos; Porto Alegre em ({poa[0]}, {poa[1]}); {saida.stat().st_size} bytes")
+svg = "\n".join(linhas) + "\n"
+for saida in (SITE / "design/mapa-pontos.svg", SITE / "assets/img/mapa-pontos.svg"):
+    saida.parent.mkdir(parents=True, exist_ok=True)
+    saida.write_text(svg, encoding="utf-8")
+print(f"{len(pontos)} pontos; Porto Alegre em ({poa[0]}, {poa[1]}); {len(svg.encode())} bytes")

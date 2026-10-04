@@ -1,0 +1,19 @@
+```{=html}
+<%
+const fasciculos = items.filter(i => i.numero !== undefined && i.ordem === undefined)
+  .sort((a, b) => Number(b.numero) - Number(a.numero));
+const textos = items.filter(i => i.ordem !== undefined);
+%>
+<% for (const f of fasciculos) {
+  const n = Number(f.numero);
+  const qtd = textos.filter(x => Number(x.fasciculo) === n).length; %>
+<article class="fasciculo fasciculo--lista">
+<% if (f.image) { %><img class="fasciculo__capa" src="<%- f.image %>" alt="Capa do fascículo nº&nbsp;<%- n %>" loading="lazy"><% } %>
+<div>
+<h3 class="fasciculo__titulo"><a href="<%- f.path %>"><%- f.publicacao.nome %> nº&nbsp;<%- n %></a></h3>
+<p class="fasciculo__frase"><%- f.date %>. <%- qtd %> <%- qtd === 1 ? "texto" : "textos" %>.</p>
+<p class="acoes"><a class="botao" href="<%- f.path %>">Ler o fascículo</a></p>
+</div>
+</article>
+<% } %>
+```

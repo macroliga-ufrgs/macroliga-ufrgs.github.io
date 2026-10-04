@@ -1,0 +1,16 @@
+---
+title: "Página não encontrada"
+pagina: "404"
+description: "Esta página não existe ou mudou de endereço."
+---
+
+:::: {.conteiner .pagina .pagina-404}
+# Página não encontrada
+
+Não encontramos esta página. O endereço pode ter mudado.
+
+::: {.acoes}
+[Voltar ao início](index.qmd){.botao}
+[Ver as publicações](publicacoes/index.qmd){.botao .botao--secundario}
+:::
+::::

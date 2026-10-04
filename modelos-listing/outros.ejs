@@ -1,0 +1,11 @@
+```{=html}
+<%
+const t = s => String(s || "").replace(/nº /g, "nº\u00a0");
+const autor = i => [].concat(i.author || []).map(a => (a && a.name) ? (a.name.literal || a.name) : a).join(", ");
+if (items.length > 0) {
+%>
+<ul class="outros">
+<% for (const item of items) { %><li><a class="outros__titulo" href="<%- item.path %>"><%- t(item.title) %></a><span class="outros__autor"><%- autor(item) %></span></li>
+<% } %></ul>
+<% } %>
+```

@@ -1,0 +1,67 @@
+---
+title: "Participe"
+pagina: participe
+description: "Como entrar na MacroLiga UFRGS: quem pode participar, como funciona a seleção e modelos para autores."
+selecao:
+  aberta: false
+  prazo: ""          # ex.: "30 de outubro de 2026"
+  formulario: ""     # link do formulário do Google Forms
+---
+
+::::: {.conteiner .pagina .participe}
+
+:::: {#pa1}
+# Participe
+
+## Quem pode entrar
+
+A liga reúne estudantes de graduação da UFRGS pertencentes a qualquer curso. Todos aqueles que desejam aprender sobre Macroeconomia são livres para participar, mas conhecimento prévio de macroeconomia ajuda a acompanhar as discussões. Não é preciso já saber escrever um texto acadêmico. Os textos passam por debate entre pares e por revisão docente justamente para que todos aprendam no processo.
+::::
+
+::: {#pa-inscricao-topo}
+:::
+
+:::: {.participe__grade}
+::: {#pa2}
+## Como funciona a seleção
+
+As vagas abrem por processo seletivo periódico. A inscrição é feita por formulário on-line. Divulgamos as datas aqui e no Instagram.
+
+::: {#selecao-situacao}
+:::
+:::
+
+::: {#pa3}
+## O que se espera do membro
+
+- Escrever textos para os fascículos, dentro de um dos eixos ligados à Macroeconomia.
+- Ler e debater os textos dos colegas antes da revisão docente.
+- Participar das reuniões da liga.
+- Atuar nas atividades que garantam a manutenção e expansão institucional da liga.
+- Membros recebem certificados de horas de extensão por sua participação nas atividades da liga.
+:::
+::::
+
+:::: {#pa4}
+## Modelos para autores
+
+Use os modelos para escrever no formato dos fascículos: com título, autor, eixo e tipo de texto.
+
+::: {.acoes}
+[Baixar modelo em Word]({{< var modelos.word >}}){.botao .botao--secundario}
+[Baixar modelo em LaTeX]({{< var modelos.latex >}}){.botao .botao--secundario}
+:::
+::::
+
+:::: {#pa5}
+## Dúvidas?
+
+E-mail: [{{< var contato.email >}}](mailto:{{< var contato.email >}})
+
+::: {.acoes}
+[Escrever para a liga](mailto:{{< var contato.email >}}){.botao}
+[Seguir no Instagram]({{< var contato.instagram-url >}}){.botao .botao--secundario}
+:::
+::::
+
+:::::

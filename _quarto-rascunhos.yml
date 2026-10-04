@@ -1,0 +1,7 @@
+# Perfil para ver os rascunhos (draft: true) completos:
+#   quarto preview --profile rascunhos
+# Gera o site em _site-rascunhos/, que nunca é publicado.
+project:
+  output-dir: _site-rascunhos
+website:
+  draft-mode: visible

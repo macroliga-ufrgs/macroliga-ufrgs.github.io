@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# Tarefa 12: os textos completos no perfil rascunhos (T1–T11), o sumário e P4.
+SITE=_site-rascunhos
+source "$(dirname "$0")/lib.sh"
+P=publicacoes/n01/impactos-setoriais-mercosul-ue/index.html
+existe "$P" "texto do Miguel no perfil rascunhos"
+tem "$P" "href=\"[./]*(publicacoes/n01/)?index\.html\">Voltar ao fascículo ${NO}1</a>" "T1"
+tem "$P" '<p class="texto__tipo">Análise de conjuntura</p>' "T2 tipo"
+tem "$P" '<h1 class="titulo-longo">Impactos setoriais do acordo Mercosul e União Europeia</h1>' "T2 título"
+tem "$P" '<p class="texto__autor">Miguel Amorin</p>' "T2 autor"
+tem "$P" 'O PDF fica disponível no lançamento do fascículo\.' "T3 sem PDF"
+tem "$P" 'href="https://doi\.org/10\.5281/zenodo\.XXXXXXX">Abrir no Zenodo' "T3 DOI herdado do fascículo"
+tem "$P" '<p class="texto__sintese">' "T4"
+tem "$P" 'As opiniões expressas são de responsabilidade de quem assina o texto\.' "T5"
+tem "$P" 'A revisão docente não implica concordância do revisor com o conteúdo\.' "T6"
+tem "$P" 'AMORIN, Miguel\. Impactos setoriais do acordo Mercosul e União Europeia\. <strong>Pontos de Macro</strong>, Porto Alegre, n\. 1, nov\. 2026\. DOI: 10\.5281/zenodo\.XXXXXXX\.' "T7 citação ABNT"
+tem "$P" 'data-copiar="citacao-texto" hidden(="")?>Copiar citação' "T7 botão (aparece com JS)"
+tem "$P" 'class="citacao__aviso" role="status"' "T7 aviso para leitor de tela"
+conta "$P" 'class="dados texto__dados' 2 "T3 lateral (desktop) e T9 (celular)"
+tem "$P" "Outros textos do fascículo ${NO}1" "T10 título"
+conta "$P" 'class="outros__titulo"' 3 "T10 três outros textos"
+nao_tem "$P" 'class="outros__titulo"[^>]*>Impactos setoriais' "T10 sem o próprio texto"
+tem "$P" 'Os textos publicados não representam a posição' "T11"
+tem "$P" 'site_libs/quarto-contrib/macroliga-citacao-1\.0/citacao\.js' "citacao.js anexado"
+tem "$P" '<meta property="og:title" content="Impactos setoriais do acordo Mercosul e União Europeia">' "og:title do texto"
+tem "$P" '<meta property="og:image" content="https://macroliga-ufrgs\.github\.io/publicacoes/n01/capa\.png"' "og:image é a capa do fascículo"
+F=publicacoes/n01/index.html
+conta "$F" 'class="item-texto"' 4 "F3 quatro textos"
+tem "$F" '4 textos, revisados por professores da FCE' "F2 conta os textos"
+tem publicacoes/index.html 'class="lista-textos lista-textos--filtravel"' "P4 aparece"
+conta publicacoes/index.html 'class="item-texto" data-eixo=' 4 "P4 quatro textos"
+tem publicacoes/index.html 'data-eixo="setor-externo-e-cambio" data-tipo="analise-de-conjuntura"' "P4 data-eixo e data-tipo em slug"
+tem index.html 'Fascículo mais recente' "I2 mostra o nº 1 no perfil rascunhos"
+tem index.html "Ler o fascículo ${NO}1" "I1 aponta para o fascículo"
+fim

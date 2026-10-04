@@ -1,0 +1,23 @@
+```{=html}
+<%
+const t = s => String(s || "").replace(/nº /g, "nº\u00a0");
+const acao = v => !v ? '<p class="evento__inscricao">Inscrições em breve.</p>'
+  : (v === "livre" ? '<p class="evento__inscricao">Entrada livre, sem inscrição.</p>'
+  : '<p class="acoes"><a class="botao" href="' + v + '">Fazer inscrição</a></p>');
+if (items.length > 0) {
+%>
+<ul class="lista-eventos">
+<% for (const e of items) { %>
+<li class="item-evento">
+<p class="item-evento__data"><%- e.quando || e.date %></p>
+<div class="item-evento__corpo">
+<h3 class="item-evento__nome"><a href="<%- e.path %>"><%- t(e.title) %></a></h3>
+<p class="item-evento__local"><% if (e.horario) { %><%- e.horario %>, <% } %><%- e.local %></p>
+<% if (e.description) { %><p class="item-evento__frase"><%= e.description %></p><% } %>
+<%= acao(e.inscricao) %>
+</div>
+</li>
+<% } %>
+</ul>
+<% } %>
+```

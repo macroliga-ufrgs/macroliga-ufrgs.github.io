@@ -1,0 +1,764 @@
+/*-- scss:defaults --*/
+// Ajustes do Bootstrap: cantos retos e sem sombras. Cores e fontes vêm do _brand.yml.
+// (As variáveis $brand-* não existem nesta camada; use-as só em scss:rules.)
+$border-radius: 0;
+$border-radius-sm: 0;
+$border-radius-lg: 0;
+$border-radius-xl: 0;
+$border-radius-xxl: 0;
+$border-radius-pill: 0;
+$enable-shadows: false;
+$navbar-padding-y: 0;
+$headings-margin-bottom: 0;
+
+/*-- scss:rules --*/
+// =============================================================================
+// MacroLiga UFRGS: estilos do site. Origem: design/macroliga.css (prancha aprovada).
+// Mesmos tokens e nomes; cada componente é uma seção. Mobile primeiro: o desktop
+// começa em 992 px, onde o menu do Quarto (Bootstrap) deixa de ser recolhido.
+// O vermelho tem três usos (docs/design-tokens.md): .mapa-destaque, .etapa--publicacao
+// e o último dado dos gráficos (na imagem). Não use var(--vermelho) em mais nada.
+// =============================================================================
+
+// ---- Tokens -----------------------------------------------------------------
+:root {
+  // Cores da marca, lidas do _brand.yml. Nenhuma outra cor entra no site.
+  --azul-marinho: #{$brand-azul-marinho};
+  --vermelho: #{$brand-vermelho};
+  --offwhite: #{$brand-offwhite};
+  --grafite: #{$brand-grafite};
+  --grade: #{$brand-grade};
+  --contexto: #{$brand-contexto};
+
+  --fonte-titulo: "Libre Baskerville", Georgia, serif;
+  --fonte-texto: "Inter", system-ui, sans-serif;
+
+  // Escala tipográfica (celular). O desktop redefine abaixo.
+  --fs-display: clamp(2.875rem, 13.4vw, 3.25rem);  // 46–52 px (46 px em 360 px: exceção aprovada)
+  --fs-h1: 3.25rem;
+  --fs-titulo-longo: 2rem;
+  --fs-h2: 1.75rem;
+  --fs-h3: 1.3125rem;
+  --fs-sintese: 1.3125rem;
+  --fs-corpo: 1.0625rem;
+  --fs-meta: 0.9375rem;
+  --fs-pequeno: 0.875rem;
+
+  // Pesos. A Libre Baskerville é variável: o peso sobe quando o tamanho desce.
+  --peso-display: 400;
+  --peso-h1: 400;
+  --peso-titulo-longo: 450;
+  --peso-h2: 500;
+  --peso-h3: 560;
+  --peso-texto: 400;
+  --peso-forte: 700;
+
+  --lh-display: 1.02;
+  --lh-titulo: 1.12;
+  --lh-texto: 1.6;
+  --lh-serifa: 1.65;
+
+  --esp-1: 0.25rem;
+  --esp-2: 0.5rem;
+  --esp-3: 0.75rem;
+  --esp-4: 1rem;
+  --esp-5: 1.5rem;
+  --esp-6: 2rem;
+  --esp-7: 3rem;
+  --esp-8: 4rem;
+  --esp-9: 6rem;
+  --esp-10: 8rem;
+
+  --largura-max: 75rem;
+  --margem: var(--esp-4);
+  --medida: 68ch;
+  --secao: var(--esp-8);
+
+  --raio-0: 0;
+  --raio-ponto: 50%;
+
+  --linha-grade: 1px solid var(--grade);
+  --linha-eixo: 2px solid var(--grafite);
+
+  --alvo-min: 3rem;
+  --cor-foco: var(--azul-marinho);
+}
+
+@media (min-width: 992px) {
+  :root {
+    --fs-display: clamp(4.5rem, 3.4vw + 1.75rem, 5.25rem);
+    --fs-h1: 4.5rem;
+    --fs-titulo-longo: 2.75rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.5rem;
+    --fs-corpo: 1.125rem;
+    --margem: var(--esp-6);
+    --secao: var(--esp-9);
+  }
+}
+
+// ---- Base -------------------------------------------------------------------
+body {
+  background: var(--offwhite);
+  color: var(--grafite);
+  font-family: var(--fonte-texto);
+  font-size: var(--fs-corpo);
+  font-weight: var(--peso-texto);
+  line-height: var(--lh-texto);
+}
+
+[hidden] { display: none !important; }
+
+// Algarismos tabulares só onde números se alinham (tabelas, dados, gráficos).
+// No corpo, a Inter com tabular-nums também alarga o hífen.
+.numeros, table, .dados, .item-texto__dados { font-variant-numeric: tabular-nums; }
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  color: var(--azul-marinho);
+  line-height: var(--lh-titulo);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  opacity: 1;            // o Quarto deixa h3 e h4 com opacity .9 (cor fora da marca)
+  text-wrap: balance;
+}
+h1 { font-size: var(--fs-h1); font-weight: var(--peso-h1); }
+h2 { font-size: var(--fs-h2); font-weight: var(--peso-h2); }
+h3 { font-size: var(--fs-h3); font-weight: var(--peso-h3); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+a {
+  color: var(--azul-marinho);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+a:hover { color: var(--azul-marinho); text-decoration-thickness: 2px; }
+
+:focus-visible {
+  outline: 3px solid var(--cor-foco);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+// Contexto azul-marinho: texto, links e foco passam a off-white.
+.fundo-azul {
+  --cor-foco: var(--offwhite);
+  background: var(--azul-marinho);
+  color: var(--offwhite);
+}
+.fundo-azul a, .fundo-azul a:hover { color: var(--offwhite); }
+.fundo-azul h1, .fundo-azul h2, .fundo-azul h3 { color: var(--offwhite); }
+
+.conteiner {
+  width: 100%;
+  max-width: calc(var(--largura-max) + 2 * var(--margem));
+  margin-inline: auto;
+  padding-inline: var(--margem);
+}
+
+.pular {
+  position: absolute;
+  left: var(--margem);
+  top: -10rem;
+  z-index: 2000;
+  padding: var(--esp-3) var(--esp-4);
+  background: var(--offwhite);
+  color: var(--azul-marinho);
+  font-weight: var(--peso-forte);
+}
+.pular:focus { top: var(--esp-2); }
+
+.so-desktop { display: none; }
+@media (min-width: 992px) {
+  .so-desktop { display: block; }
+  .so-celular { display: none; }
+}
+
+// ---- Ajustes do Quarto ------------------------------------------------------
+// Cada página escreve o próprio h1; o título padrão do Quarto (e o aviso de rascunho) some.
+#title-block-header { display: none; }
+#quarto-content, main.content, #quarto-document-content { margin: 0; padding: 0; max-width: none; }
+// O cabeçalho rola com a página: sem a animação de esconder e reaparecer.
+#quarto-header { position: relative; }
+body.nav-fixed { padding-top: 0 !important; }
+.quarto-figure, figure { margin: 0; }
+// No celular, o Quarto encosta o primeiro h2 de cada seção (margin-top: 1rem, com #id).
+// Nas páginas, o espaço entre seções volta a ser --secao. (.secao: seções escritas pelos filtros Lua.)
+@media (max-width: 991.98px) {
+  #quarto-content .pagina section.level2 > h2:first-of-type,
+  #quarto-content .pagina section.secao > h2:first-of-type { margin-top: var(--secao); }
+  #quarto-content .pagina .sobre__grade section.level2 > h2:first-of-type { margin-top: 0; }
+}
+
+// ---- Componente: página (fluxo de texto das páginas fixas) --------------------
+.pagina { padding-block: var(--esp-7) var(--secao); }
+.pagina h1 { margin-bottom: var(--esp-5); }
+.pagina h2 { margin: var(--secao) 0 var(--esp-4); }
+.pagina h3 { margin: var(--esp-6) 0 var(--esp-3); }
+.pagina :where(p, ul, ol) { max-width: var(--medida); margin: 0 0 var(--esp-4); }
+.pagina__intro p { max-width: 46ch; }
+.bloco__titulo { font-size: var(--fs-h2); font-weight: var(--peso-h2); margin-bottom: var(--esp-5); }
+.trilha { font-size: var(--fs-meta); margin-bottom: var(--esp-5); }
+.titulo-longo { font-size: var(--fs-titulo-longo); font-weight: var(--peso-titulo-longo); max-width: 24em; }
+.nota { font-size: var(--fs-meta); max-width: var(--medida); margin-top: var(--esp-5); }
+.estado-vazio { max-width: var(--medida); }
+.pagina-404 { min-height: 50vh; }
+.aviso {
+  margin-top: var(--secao);
+  padding-top: var(--esp-4);
+  border-top: var(--linha-grade);
+  font-size: var(--fs-pequeno);
+  max-width: var(--medida);
+}
+.dados {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--esp-1) var(--esp-3);
+  font-size: var(--fs-meta);
+}
+.dados dt { font-weight: var(--peso-forte); }
+.dados dd { margin: 0; overflow-wrap: anywhere; }
+.questionario {
+  margin-top: var(--esp-7);
+  padding: var(--esp-5);
+  border: var(--linha-grade);
+  max-width: var(--medida);
+}
+.questionario .acoes { margin-top: var(--esp-4); }
+
+// Dentro dos componentes, parágrafos e listas não têm margem (o espaçamento é do componente).
+// Especificidade 0,1,0 e antes dos componentes: vence .pagina p e perde para as margens próprias.
+:is(.abertura, .fasciculo, .item-texto, .sumario, .grafico, .nav-footer, .questionario, .dados)
+  :where(p, ul, ol, dl, dd, figure) { margin: 0; }
+.questionario .acoes { margin-top: var(--esp-4); }
+
+// ---- Componente: botões ---------------------------------------------------
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--alvo-min);
+  padding: 0 var(--esp-5);
+  border: 2px solid var(--azul-marinho);
+  border-radius: var(--raio-0);
+  background: var(--azul-marinho);
+  color: var(--offwhite);
+  font: var(--peso-forte) 1rem/1.2 var(--fonte-texto);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.botao:hover { text-decoration: underline 2px; text-underline-offset: 0.25em; }
+
+.botao--secundario { background: transparent; color: var(--azul-marinho); }
+
+/* Sobre azul: o principal inverte; o secundário fica só com contorno. */
+.fundo-azul .botao { background: var(--offwhite); border-color: var(--offwhite); color: var(--azul-marinho); }
+.fundo-azul .botao--secundario { background: transparent; color: var(--offwhite); }
+
+.acoes { display: flex; flex-wrap: wrap; gap: var(--esp-3); }
+// Em ::: {.acoes} do Markdown, os botões ficam dentro de um <p>: o espaçamento vale para ele também.
+.acoes > p { display: flex; flex-wrap: wrap; gap: var(--esp-3); margin: 0; max-width: none; }
+
+// ---- Componente: abertura da Início (I1) ----------------------------------
+/* O único momento de movimento do site: o mapa de pontos se acende de norte a
+   sul e, por último, Porto Alegre aparece em vermelho. Só CSS. */
+.abertura {
+  display: grid;
+  padding-bottom: var(--esp-6);
+  overflow: hidden;
+}
+.abertura__mapa {
+  order: -1;
+  height: 12.5rem;            /* 200 px de faixa de pontos no celular */
+  margin-inline: calc(-1 * var(--margem));
+  /* A grade de fundo se dissolve nas bordas; o mapa fica sempre inteiro. */
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 20%);
+          mask-image: linear-gradient(to bottom, transparent, #000 20%);
+}
+.abertura__mapa svg { display: block; width: 100%; height: 100%; }
+.abertura__texto { position: relative; }
+.abertura__titulo {
+  font-size: var(--fs-display);
+  font-weight: var(--peso-display);
+  line-height: var(--lh-display);
+  letter-spacing: -0.01em;
+  margin: var(--esp-4) 0 var(--esp-4);
+  max-width: 9.6em;
+}
+.abertura__subtitulo { max-width: 46ch; margin-bottom: var(--esp-5); }
+
+@media (max-width: 991.98px) {
+  .abertura .acoes .botao { flex: 1 1 100%; }
+}
+
+@media (min-width: 992px) {
+  .abertura {
+    position: relative;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    align-items: end;
+    min-height: 40rem;
+    padding-block: var(--esp-9) var(--esp-8);
+  }
+  .abertura__mapa {
+    order: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: calc(-1 * var(--margem));
+    width: 54%;
+    height: auto;
+    margin: 0;
+    -webkit-mask-image:
+      linear-gradient(to right, transparent, #000 25%, #000 92%, transparent),
+      linear-gradient(to bottom, transparent, #000 12%);
+    -webkit-mask-composite: source-in;
+            mask-image:
+      linear-gradient(to right, transparent, #000 25%, #000 92%, transparent),
+      linear-gradient(to bottom, transparent, #000 12%);
+            mask-composite: intersect;
+  }
+  .abertura__titulo { margin-top: 0; }
+}
+
+/* Pontos do mapa. Cada ponto traz --i (0 a 1): sua posição de norte a sul. */
+.mapa-grade { opacity: 0.1; }
+.mapa-grade-ponto { fill: var(--offwhite); }
+.mapa-ponto {
+  fill: var(--offwhite);
+  animation: ponto-acende 0.5s ease-out both;
+  animation-delay: calc(0.2s + var(--i) * 1.4s);
+}
+.mapa-destaque {
+  fill: var(--vermelho);
+  stroke: var(--offwhite);
+  stroke-width: 6;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ponto-destaque 0.6s cubic-bezier(0.3, 1.5, 0.5, 1) both;
+  animation-delay: 1.9s;
+}
+@keyframes ponto-acende { from { opacity: 0.16; } to { opacity: 1; } }
+@keyframes ponto-destaque { from { opacity: 0; transform: scale(0.3); } to { opacity: 1; transform: scale(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .mapa-ponto, .mapa-destaque { animation: none; }
+}
+
+// ---- Componente: fascículo (I2, P2) ---------------------------------------
+.fasciculo {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: var(--esp-5) var(--esp-4);
+  align-items: start;
+}
+.fasciculo__capa { border: var(--linha-grade); }
+.fasciculo__titulo {
+  font-size: var(--fs-titulo-longo);
+  font-weight: var(--peso-titulo-longo);
+}
+.fasciculo__frase { margin-top: var(--esp-3); max-width: var(--medida); }
+.fasciculo__corpo { grid-column: 1 / -1; }
+.fasciculo__corpo .acoes { margin-top: var(--esp-5); }
+
+/* Sem capa (estado "em breve"): o título ocupa a linha toda. */
+.fasciculo--em-breve { grid-template-columns: minmax(0, 1fr); }
+
+@media (min-width: 992px) {
+  .fasciculo { grid-template-columns: 15rem minmax(0, 1fr); gap: var(--esp-4) var(--esp-6); }
+  .fasciculo__capa { grid-row: span 2; }
+  .fasciculo__corpo { grid-column: 2; }
+  .fasciculo--em-breve { grid-template-columns: minmax(0, 1fr); }
+  .fasciculo--em-breve .fasciculo__corpo { grid-column: 1; }
+}
+
+/* Sumário curto dentro do card: título e autor, sem link no "em breve". */
+.sumario { list-style: none; padding: 0; margin-top: var(--esp-5); max-width: 46rem; border-bottom: var(--linha-eixo); }
+.sumario li { padding-block: var(--esp-3); border-top: var(--linha-grade); }
+.sumario__titulo {
+  display: block;
+  font-family: var(--fonte-titulo);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.sumario__autor { display: block; font-size: var(--fs-meta); margin-top: var(--esp-1); }
+
+// ---- Componente: lista de textos (P4, F3) ---------------------------------
+.lista-textos { list-style: none; margin: 0; padding: 0; border-bottom: var(--linha-eixo); }
+.item-texto {
+  display: grid;
+  gap: var(--esp-3);
+  padding-block: var(--esp-5);
+  border-top: var(--linha-grade);
+}
+.item-texto__tipo { font-size: var(--fs-meta); font-weight: var(--peso-forte); }
+.item-texto__titulo { font-size: var(--fs-h3); font-weight: var(--peso-h3); line-height: 1.3; }
+.item-texto__titulo a,
+.sumario__titulo,
+.fasciculo__titulo a { text-decoration: none; }
+.item-texto__titulo a:hover,
+a.sumario__titulo:hover,
+.fasciculo__titulo a:hover { text-decoration: underline 1px; text-underline-offset: 0.18em; }
+.item-texto__autor { margin-top: var(--esp-1); font-size: var(--fs-meta); }
+.item-texto__dados {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--esp-1) var(--esp-3);
+  font-size: var(--fs-meta);
+}
+.item-texto__dados dt { font-weight: var(--peso-forte); }
+.item-texto__dados dd { margin: 0; }
+
+@media (min-width: 992px) {
+  .item-texto { grid-template-columns: minmax(0, 1fr) 20rem; gap: var(--esp-6); align-items: start; }
+  .item-texto__dados { padding-top: 1.6em; }
+}
+
+// ---- Componente: gráfico comentado (GC3–GC6) ------------------------------
+.grafico { max-width: 56rem; }
+.grafico__titulo, .grafico__subtitulo { max-width: 24em; }
+.grafico__titulo { font-size: var(--fs-titulo-longo); font-weight: var(--peso-titulo-longo); }
+.grafico__subtitulo { margin-top: var(--esp-3); max-width: var(--medida); }
+.grafico__figura { margin-top: var(--esp-5); }
+.grafico__figura img { width: 100%; }
+.grafico__fonte {
+  margin-top: var(--esp-3);
+  padding-top: var(--esp-2);
+  font-size: var(--fs-pequeno);
+}
+.grafico__comentario { margin-top: var(--esp-6); max-width: var(--medida); }
+.grafico__comentario p + p { margin-top: var(--esp-4); }
+.grafico__assinatura { margin-top: var(--esp-5); font-size: var(--fs-meta); }
+.grafico__ampliar { display: inline-block; margin-top: var(--esp-3); font-size: var(--fs-meta); }
+
+
+// ---- Componente: cabeçalho (G1), sobre a navbar do Quarto --------------------
+// Na Início, a navbar azul se funde à abertura azul (D-C): sem borda nem sombra.
+.navbar {
+  --bs-navbar-color: var(--offwhite);
+  --bs-navbar-hover-color: var(--offwhite);
+  --bs-navbar-active-color: var(--offwhite);
+  --cor-foco: var(--offwhite);
+  padding-block: 0;
+  border: 0;
+  box-shadow: none;
+}
+.navbar > .container-fluid {
+  max-width: calc(var(--largura-max) + 2 * var(--margem));
+  margin-inline: auto;
+  padding-inline: var(--margem);
+  min-height: 4rem;
+}
+// Logo à esquerda e botão do menu à direita, na mesma linha; o menu aberto desce inteiro.
+// (O Quarto inverte a ordem no celular e limita a largura da marca; aqui se desfaz isso.)
+#quarto-header > nav { padding-inline: 0; }
+.navbar-container { flex-wrap: wrap; justify-content: space-between; }
+.navbar .navbar-container > .navbar-brand-container { order: 0; max-width: none; flex: 0 1 auto; margin: 0 !important; }
+.navbar .navbar-container > .navbar-toggler { order: 1; margin: 0 0 0 auto; }
+.navbar-collapse { order: 2; flex-basis: 100%; }
+.navbar-brand { padding-block: var(--esp-3); margin-right: 0; }
+.navbar-brand .navbar-logo { height: 2.25rem; max-height: none; width: auto; }
+.navbar .navbar-toggler {
+  min-height: 2.75rem;
+  padding: 0 var(--esp-4);
+  border: 2px solid var(--offwhite);
+  border-radius: var(--raio-0);
+  color: var(--offwhite);
+  font: var(--peso-forte) var(--fs-meta)/1 var(--fonte-texto);
+}
+.navbar .navbar-toggler:focus { box-shadow: none; }
+.navbar .nav-link {
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: var(--offwhite);
+  font-size: var(--fs-meta);
+  text-decoration: none;
+}
+.navbar .nav-link:hover { color: var(--offwhite); text-decoration: underline 1px; text-underline-offset: 0.45em; }
+.navbar .nav-link.active, .navbar .nav-link[aria-current="page"] {
+  color: var(--offwhite);
+  font-weight: var(--peso-forte);
+  text-decoration: underline 2px;
+  text-underline-offset: 0.45em;
+}
+@media (max-width: 991.98px) {
+  .navbar-collapse .navbar-nav { padding-block: var(--esp-3) var(--esp-5); }
+  .navbar .nav-link { min-height: var(--alvo-min); font-size: var(--fs-corpo); }
+}
+@media (min-width: 992px) {
+  .navbar > .container-fluid { min-height: 5rem; }
+  .navbar-brand .navbar-logo { height: 2.75rem; }
+  .navbar-nav { gap: var(--esp-5); }
+}
+
+// ---- Componente: rodapé (G2), sobre o rodapé do Quarto ------------------------
+footer.footer { background: var(--azul-marinho); border: 0; }
+.nav-footer {
+  --cor-foco: var(--offwhite);
+  display: grid;
+  gap: var(--esp-7);
+  align-items: start;
+  max-width: calc(var(--largura-max) + 2 * var(--margem));
+  min-height: 0;
+  margin-inline: auto;
+  padding: var(--esp-8) var(--margem) var(--esp-6);
+  border: 0;
+  background: transparent;   // o Quarto pinta o .nav-footer de off-white; o azul vem do footer
+  color: var(--offwhite);
+  font-size: var(--fs-meta);
+  text-align: left;
+}
+footer.footer .nav-footer { padding-inline: var(--margem); }
+.nav-footer > div {
+  order: initial;
+  width: auto;
+  min-height: 0;
+  margin: 0;
+  text-align: left;
+  justify-content: flex-start;
+}
+.nav-footer a, .nav-footer a:hover { color: var(--offwhite); }
+.nav-footer p + p { margin-top: var(--esp-3); }
+.nav-footer ul { list-style: none; padding: 0; margin-bottom: var(--esp-5); }
+.nav-footer li + li { margin-top: var(--esp-2); }
+.rodape__logo { height: 2.5rem; width: auto; margin-bottom: var(--esp-5); }
+.rodape__nome { font-weight: var(--peso-forte); }
+.rodape__titulo {
+  font-size: var(--fs-h3);
+  font-weight: var(--peso-h2);
+  color: var(--offwhite);
+  margin-bottom: var(--esp-4);
+}
+.nav-footer .botao--secundario { background: transparent; border-color: var(--offwhite); color: var(--offwhite); }
+@media (min-width: 992px) {
+  .nav-footer { grid-template-columns: 5fr 3fr 4fr; }
+}
+// ---- Componente: Início (I2–I6) ---------------------------------------------
+.inicio { display: grid; gap: var(--secao); padding-block: var(--secao); }
+.inicio__producao { display: grid; gap: var(--esp-8); }
+.inicio__lateral { display: grid; gap: var(--esp-7); align-content: start; }
+.inicio__evento { border-top: var(--linha-eixo); padding-top: var(--esp-5); }
+.inicio__evento p + p, .inicio__evento .acoes { margin-top: var(--esp-3); }
+.evento__nome { font-size: var(--fs-h3); font-weight: var(--peso-h3); line-height: 1.3; }
+.evento__nome a { text-decoration: none; }
+.evento__nome a:hover { text-decoration: underline 1px; }
+.evento__quando { margin-top: var(--esp-2); font-size: var(--fs-meta); }
+.evento__inscricao { margin-top: var(--esp-3); font-weight: var(--peso-forte); }
+.inicio__etapas .acoes, .inicio__redes .acoes { margin-top: var(--esp-6); }
+.inicio__redes p { max-width: var(--medida); }
+@media (min-width: 992px) {
+  .inicio__producao { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); align-items: start; }
+}
+
+// ---- Componente: etapas (I5, S2) --------------------------------------------
+// A sequência real "texto → debate → revisão → publicação": pontos ligados por uma linha.
+// A etapa Publicação leva o ponto vermelho (um dos três usos previstos do vermelho).
+.etapas {
+  list-style: none;
+  margin: var(--esp-6) 0 0;
+  padding: 0;
+  max-width: none;
+  display: grid;
+  gap: var(--esp-5);
+}
+.etapa { position: relative; padding-left: var(--esp-6); }
+.etapa p { margin: 0; max-width: 34ch; }
+.etapa::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.4em;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: var(--raio-ponto);
+  background: var(--azul-marinho);
+}
+.etapa::after {
+  content: "";
+  position: absolute;
+  left: calc(0.375rem - 1px);
+  top: 1.3em;
+  bottom: calc(-1 * var(--esp-5) - 0.4em);
+  width: 2px;
+  background: var(--grade);
+}
+.etapa:last-child::after { display: none; }
+.etapa--publicacao::before { background: var(--vermelho); }
+.etapa__titulo {
+  font: var(--peso-h3) var(--fs-h3)/1.3 var(--fonte-titulo);
+  color: var(--azul-marinho);
+  margin-bottom: var(--esp-2) !important;
+}
+@media (min-width: 992px) {
+  .etapas { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--esp-6); }
+  .etapa { padding: var(--esp-6) 0 0; }
+  .etapa::before { top: 0; }
+  .etapa::after { left: 0.75rem; right: calc(-1 * var(--esp-6)); top: calc(0.375rem - 1px); bottom: auto; width: auto; height: 2px; }
+}
+// ---- Componente: Sobre (S1–S5) ----------------------------------------------
+.sobre__abertura { display: grid; gap: var(--esp-6); }
+.sobre__selo { width: 9rem; height: auto; }
+.sobre__grade { display: grid; gap: var(--esp-7); margin-top: var(--secao); }
+.sobre__grade h2 { margin-top: 0; }
+.lista-eixos { list-style: none; padding: 0; margin: 0; border-bottom: var(--linha-eixo); max-width: none !important; }
+.lista-eixos li { border-top: var(--linha-grade); }
+.lista-eixos a {
+  display: flex;
+  align-items: center;
+  min-height: var(--alvo-min);
+  padding-block: var(--esp-2);
+  font: var(--peso-h3) var(--fs-h3)/1.3 var(--fonte-titulo);
+  text-decoration: none;
+}
+.lista-eixos a:hover { text-decoration: underline 1px; text-underline-offset: 0.18em; }
+.pluralidade { padding: var(--esp-6) var(--esp-5); }
+.pluralidade p { max-width: 60ch; margin: 0; }
+.sobre__extensao { margin-top: var(--secao); }
+.sobre__extensao .sobre__selo { margin-bottom: var(--esp-5); }
+@media (min-width: 992px) {
+  .sobre__abertura { grid-template-columns: minmax(0, 1fr) 15rem; align-items: start; gap: var(--esp-8); }
+  .sobre__selo.so-desktop { width: 15rem; margin-top: var(--esp-7); }
+  .sobre__grade { grid-template-columns: 1fr 1fr; gap: var(--esp-8); align-items: start; }
+  .pluralidade { padding: var(--esp-7) var(--esp-6); }
+}
+// ---- Componente: Equipe (EQ1–EQ4) -------------------------------------------
+.equipe-grade { display: grid; gap: var(--esp-6); }
+.equipe-grupo { border-top: var(--linha-grade); padding-top: var(--esp-4); }
+.equipe-grupo h3 { margin: 0 0 var(--esp-3); }
+.equipe-grupo h3 a { text-decoration: none; }
+.equipe-grupo h3 a:hover { text-decoration: underline 1px; }
+.equipe-grupo p { margin: 0; }
+.membros { list-style: none; padding: 0; margin: 0 !important; }
+.membro + .membro { margin-top: var(--esp-3); }
+.membro__foto { width: 6rem; height: 6rem; object-fit: cover; margin-bottom: var(--esp-2); }
+.membro__nome { display: block; font-weight: var(--peso-forte); }
+.membro__cargo { display: block; font-size: var(--fs-meta); }
+.equipe__chamada { margin-top: var(--secao); }
+.equipe__chamada .botao { margin-top: var(--esp-3); }
+@media (min-width: 768px) { .equipe-grade { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 992px) {
+  .equipe-diretorias { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .equipe-eixos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+// ---- Componente: Participe (PA1–PA5) ----------------------------------------
+.participe__grade { display: grid; gap: 0 var(--esp-8); }
+.selecao__fechada, .selecao__aberta { padding: var(--esp-4); border: var(--linha-grade); }
+.selecao__aberta { font-weight: var(--peso-forte); }
+#pa-inscricao-topo .acoes { margin-top: var(--esp-5); }
+.participe .acoes { margin-top: var(--esp-4); }
+@media (min-width: 992px) { .participe__grade { grid-template-columns: 1fr 1fr; } }
+// ---- Componente: eventos (EV2, EV3, EVP1–EVP3) ------------------------------
+.lista-eventos { list-style: none; padding: 0; margin: 0 0 var(--esp-5); border-bottom: var(--linha-eixo); max-width: none !important; }
+.item-evento { display: grid; gap: var(--esp-3); padding-block: var(--esp-5); border-top: var(--linha-grade); }
+.item-evento p { margin: 0; }
+.item-evento__data { font: var(--peso-h3) var(--fs-h3)/1.3 var(--fonte-titulo); color: var(--azul-marinho); }
+.item-evento__nome { font-size: var(--fs-h3); font-weight: var(--peso-h3); line-height: 1.3; margin: 0 !important; }
+.item-evento__nome a { text-decoration: none; }
+.item-evento__nome a:hover { text-decoration: underline 1px; }
+.item-evento__local { font-size: var(--fs-meta); margin-top: var(--esp-1) !important; }
+.item-evento__frase { margin-top: var(--esp-3) !important; max-width: var(--medida); }
+.item-evento__corpo .acoes, .item-evento__corpo .evento__inscricao { margin-top: var(--esp-4) !important; }
+.item-evento__capa { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border: var(--linha-grade); }
+.evento__dados { margin-top: var(--esp-5); max-width: 36rem; }
+.evento__descricao { margin-top: var(--esp-6); }
+.evento__textos { margin-top: var(--esp-7); }
+.evento__textos h2 { margin: 0 0 var(--esp-3); font-size: var(--fs-h3); font-weight: var(--peso-h3); }
+.evento__acao { margin-top: var(--esp-6); }
+.evento__capa { max-width: 56rem; width: 100%; border: var(--linha-grade); margin-bottom: var(--esp-5); }
+@media (min-width: 992px) { .item-evento { grid-template-columns: 15rem minmax(0, 1fr); gap: var(--esp-6); } }
+// ---- Componente: página do fascículo (F1–F6) --------------------------------
+// No celular, a capa fica pequena ao lado do título, para "Baixar PDF" aparecer sem rolar.
+.fasciculo-pagina { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: var(--esp-4); align-items: start; }
+.fasciculo-pagina .fasciculo__capa { aspect-ratio: 210 / 297; object-fit: cover; }
+.fasciculo-pagina__titulo { font-size: var(--fs-titulo-longo); font-weight: var(--peso-titulo-longo); margin-bottom: var(--esp-3) !important; }
+.fasciculo-pagina__dados p { margin: 0; font-size: var(--fs-meta); }
+.fasciculo-pagina__dados .acoes { margin-top: var(--esp-4); grid-column: 1 / -1; }
+.aviso-pdf { font-size: var(--fs-meta); max-width: 36ch; }
+.sumario-fasciculo h2, .lancamento h2 { margin-top: var(--esp-8); }
+@media (max-width: 991.98px) {
+  .fasciculo-pagina__dados { display: contents; }
+  .fasciculo-pagina__dados > :not(.fasciculo-pagina__titulo) { grid-column: 1 / -1; }
+}
+@media (min-width: 992px) {
+  .fasciculo-pagina { grid-template-columns: 15rem minmax(0, 1fr); gap: var(--esp-6); }
+  .fasciculo-pagina__titulo { font-size: var(--fs-h1); font-weight: var(--peso-h1); }
+}
+// ---- Componente: página de texto (T1–T11) -----------------------------------
+// Celular: T2, T3 (botões), T4–T8, T9 (dados). Desktop: coluna lateral fixa com dados e botões.
+.texto__tipo { font-size: var(--fs-meta); font-weight: var(--peso-forte); margin: 0 0 var(--esp-3) !important; }
+.texto__autor { margin: var(--esp-3) 0 0 !important; }
+.texto__grade { display: grid; gap: var(--esp-6); margin-top: var(--esp-6); }
+.texto__dados--lateral { display: none; }
+.texto__sintese { font: var(--peso-texto) var(--fs-sintese)/var(--lh-serifa) var(--fonte-titulo); max-width: var(--medida); margin: 0 !important; }
+.texto__dados--celular { margin-top: var(--esp-7); padding-top: var(--esp-5); border-top: var(--linha-grade); }
+.citacao { margin-top: var(--esp-7); max-width: var(--medida); }
+.citacao h2 { font-size: var(--fs-h3); font-weight: var(--peso-h3); margin: 0 0 var(--esp-3) !important; }
+.citacao__texto { padding: var(--esp-4); border: var(--linha-grade); font-size: var(--fs-meta); margin: 0 0 var(--esp-3) !important; overflow-wrap: anywhere; }
+.citacao__aviso { font-size: var(--fs-meta); min-height: 1.6em; margin: var(--esp-2) 0 0 !important; }
+.outros-textos h2 { font-size: var(--fs-h3); font-weight: var(--peso-h3); margin: var(--esp-8) 0 var(--esp-3); }
+.outros { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--esp-4); max-width: none !important; }
+.outros li { border-top: var(--linha-grade); padding-top: var(--esp-3); }
+.outros__titulo { display: block; font: 500 1.0625rem/1.4 var(--fonte-titulo); text-decoration: none; }
+.outros__titulo:hover { text-decoration: underline 1px; }
+.outros__autor { display: block; font-size: var(--fs-meta); margin-top: var(--esp-1); }
+@media (min-width: 992px) {
+  .texto__grade { grid-template-columns: minmax(0, 1fr) 20rem; gap: var(--esp-8); align-items: start; }
+  .texto__lateral { grid-column: 2; grid-row: 1; position: sticky; top: var(--esp-5); display: flex; flex-direction: column; gap: var(--esp-5); }
+  .texto__lateral .texto__dados--lateral { display: grid; order: 1; }
+  .texto__lateral .texto__acoes { order: 2; }
+  .texto__corpo { grid-column: 1; grid-row: 1; }
+  .texto__dados--celular { display: none; }
+  .outros { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+// ---- Títulos dos componentes dentro de .pagina ----------------------------------
+// .pagina h2/h3 dão espaço de seção ao fluxo de texto; nos componentes o espaço é do componente.
+.pagina .item-texto__titulo,
+.pagina .fasciculo__titulo,
+.pagina .evento__nome { margin: 0; }
+// ---- Componente: filtros de Publicações (P3) --------------------------------
+// Celular: duas listas suspensas. Desktop: botões de opção visíveis (cantos retos).
+.filtros { margin: var(--esp-5) 0 var(--esp-6); }
+.filtros label[for], .filtros legend {
+  display: block;
+  font-size: var(--fs-meta);
+  font-weight: var(--peso-forte);
+  margin-bottom: var(--esp-2);
+}
+.filtros select {
+  width: 100%;
+  min-height: var(--alvo-min);
+  padding: 0 var(--esp-3);
+  margin-bottom: var(--esp-4);
+  border: 2px solid var(--azul-marinho);
+  border-radius: var(--raio-0);
+  background: var(--offwhite);
+  color: var(--grafite);
+  font: inherit;
+}
+.filtros fieldset { border: 0; padding: 0; margin: 0 0 var(--esp-4); }
+.filtros__desktop { display: none; }
+.opcoes { display: flex; flex-wrap: wrap; gap: var(--esp-2); }
+.opcao { position: relative; margin: 0; }
+.opcao input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.opcao span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 var(--esp-4);
+  border: 1px solid var(--azul-marinho);
+  font-size: var(--fs-meta);
+  cursor: pointer;
+}
+.opcao input:checked + span { background: var(--azul-marinho); color: var(--offwhite); font-weight: var(--peso-forte); }
+.opcao input:focus-visible + span { outline: 3px solid var(--cor-foco); outline-offset: 3px; }
+.filtros__resultado { font-size: var(--fs-meta); margin: var(--esp-3) 0 0 !important; }
+.filtros__vazio { margin-top: var(--esp-5); }
+@media (min-width: 992px) {
+  .filtros__celular { display: none; }
+  .filtros__desktop { display: block; }
+}

@@ -1,0 +1,31 @@
+# Membros da liga. Atualize a cada gestão (veja o LEIA-ME).
+# foto: deixe vazio até haver termo de uso de imagem (decisão 5 do CLAUDE.md).
+#       Depois, ponha a foto quadrada em assets/equipe/ e escreva o caminho, ex.: "assets/equipe/nome.jpg".
+# Os nomes dos eixos precisam ser iguais aos de _variables.yml.
+diretorias:
+  - nome: "Presidência (Research)"
+    membros:
+      - { nome: "[a preencher]", cargo: "Presidente", foto: "" }
+  - nome: "Vice-Presidência e Tesouraria"
+    membros:
+      - { nome: "[a preencher]", cargo: "Vice-presidente", foto: "" }
+  - nome: "Comunicação (Marketing e Design)"
+    membros:
+      - { nome: "[a preencher]", cargo: "Comunicação", foto: "" }
+      - { nome: "[a preencher]", cargo: "Comunicação", foto: "" }
+  - nome: "Outreach"
+    membros:
+      - { nome: "[a preencher]", cargo: "Outreach", foto: "" }
+eixos:
+  - nome: "Política monetária e inflação"
+    membros: ["[a preencher]"]
+  - nome: "Setor externo e câmbio"
+    membros: ["[a preencher]"]
+  - nome: "Atividade econômica, mercado de trabalho e crédito"
+    membros: ["[a preencher]"]
+  - nome: "Política fiscal e contas públicas"
+    membros: ["[a preencher]"]
+  - nome: "Mercados externos"
+    membros: ["[a preencher]"]
+  - nome: "Conjuntura política"
+    membros: ["[a preencher]"]

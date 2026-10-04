@@ -1,0 +1,38 @@
+---
+title: "Publicações"
+pagina: publicacoes
+description: "Textos curtos de estudantes de graduação, revisados por professores da FCE e reunidos em fascículos numerados."
+listing:
+  - id: lista-em-breve
+    contents: em-breve.yml
+    template: ../modelos-listing/em-breve-publicacoes.ejs
+  - id: lista-fasciculos
+    contents:
+      - "n*/index.qmd"
+      - "n*/*/index.qmd"
+    template: ../modelos-listing/fasciculos.ejs
+    date-format: "D [de] MMMM [de] YYYY"
+  - id: lista-textos
+    contents: "n*/*/index.qmd"
+    template: ../modelos-listing/textos.ejs
+    sort: ["fasciculo desc", "ordem"]
+---
+
+:::: {.conteiner .pagina .publicacoes}
+# Publicações
+
+::: {.pagina__intro}
+Textos curtos de estudantes de graduação, revisados por professores da FCE e reunidos em fascículos numerados. Todos têm DOI e podem ser citados.
+:::
+
+## Fascículos
+
+::: {#lista-em-breve}
+:::
+
+::: {#lista-fasciculos}
+:::
+
+::: {#lista-textos}
+:::
+::::

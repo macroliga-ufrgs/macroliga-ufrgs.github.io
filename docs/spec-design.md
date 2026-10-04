@@ -77,7 +77,7 @@ Os blocos são os dos wireframes aprovados; esta seção registra o que eles nã
 | P1 | Título "Publicações" + "Textos curtos de estudantes de graduação, revisados por professores da FCE e reunidos em fascículos numerados. Todos têm DOI e podem ser citados." | Fixo. |
 | P2 | Fascículos do mais recente ao mais antigo: capa, "{nome} nº {n}", data, quantidade de textos, "Ler o fascículo". | Se `em-breve.yml` tiver item, ele aparece como "Fascículo nº {n}: em breve", com o aviso de textos-base 5.2 e a lista de títulos sem link. |
 | P3 | Filtros: "Filtrar por eixo" (6) e "Filtrar por tipo" (4), "Limpar filtros". Celular: duas listas suspensas. Desktop: botões de opção visíveis. | Oculto enquanto não houver texto publicado. Comportamento na seção 3.5. |
-| P4 | Lista de todos os textos: título, autor, fascículo, tipo, eixo, "Ler o texto". Lista, não grade de cards. | Oculto enquanto não houver texto publicado. Ordem: fascículo mais recente primeiro; dentro dele, `ordem`. Filtros sem resultado: estado vazio de textos-base 5.2 com botão "Limpar filtros". |
+| P4 | Lista de todos os textos: título (é o link para o texto), autor, fascículo, tipo, eixo. Lista, não grade de cards. | Oculto enquanto não houver texto publicado. Ordem: fascículo mais recente primeiro; dentro dele, `ordem`. Filtros sem resultado: estado vazio de textos-base 5.2 com botão "Limpar filtros". |
 
 ### 2.4 Fascículo (`publicacoes/nNN/index.qmd`)
 
@@ -85,7 +85,7 @@ Os blocos são os dos wireframes aprovados; esta seção registra o que eles nã
 |---|---|---|
 | F1 | Trilha "Publicações / Fascículo nº {n}". | — |
 | F2 | Capa, "{nome} nº {n}" (maior texto da página), "Publicado em: {data}", "{quantidade} textos, revisados por professores da FCE", DOI, "Baixar PDF" e "Abrir no Zenodo". | No celular, "Baixar PDF" fica visível sem rolar (390 × 700). Sem PDF: "O PDF fica disponível no lançamento do fascículo." |
-| F3 | "Sumário": cada texto com título, autor, tipo, eixo e "Ler o texto". | Automático, pelas pastas de texto, em ordem de `ordem`. |
+| F3 | "Sumário": cada texto com título (é o link para o texto), autor, tipo e eixo. | Automático, pelas pastas de texto, em ordem de `ordem`. |
 | F4 | "Lançamento": frase + link para a página do evento ("Ver as fotos" quando realizado). | Só aparece se o campo `evento` estiver preenchido. |
 | F5 | Questionário: "Leu este fascículo? Conte o que achou em um questionário curto. As respostas ajudam a avaliar o projeto de extensão." + "Responder ao questionário". | Obrigatório (indicador da extensão). Regras na seção 3.7. |
 | F6 | "Os textos publicados não representam a posição da MacroLiga UFRGS, da FCE ou da UFRGS." | Fixo. |

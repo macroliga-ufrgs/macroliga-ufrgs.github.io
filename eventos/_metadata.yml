@@ -1,0 +1,5 @@
+# Maquinaria dos eventos (não mexa). Vale para todas as pastas de evento.
+pagina: evento
+data-exibida: ""    # calculado pelo filtro (quando ou date), usado no Open Graph
+open-graph:
+  description: "{{< meta data-exibida >}}, {{< meta local >}}"

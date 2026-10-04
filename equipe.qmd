@@ -1,0 +1,22 @@
+---
+title: "Equipe"
+pagina: equipe
+description: "Quem faz a MacroLiga UFRGS: diretorias e eixos temáticos."
+---
+
+:::: {.conteiner .pagina .equipe}
+# Equipe
+
+::: {.pagina__intro}
+Cerca de 15 estudantes de graduação da UFRGS, organizados em diretorias e em seis eixos temáticos.
+:::
+
+::: {#equipe-membros}
+:::
+
+::: {.equipe__chamada}
+A liga reúne estudantes de graduação da UFRGS pertencentes a qualquer curso.
+
+[Ver como participar](participe.qmd){.botao}
+:::
+::::

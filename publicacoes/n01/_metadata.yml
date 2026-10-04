@@ -1,0 +1,12 @@
+# Maquinaria do fascículo (não mexa). Copiado junto com a pasta; vale para o index.qmd dela.
+pagina: fasciculo
+image: "capa.png"
+quantidade-textos: ""
+description: "{{< meta date >}}. {{< meta quantidade-textos >}} textos sobre a economia brasileira, revisados por professores da FCE."
+open-graph:
+  title: "{{< var publicacao.nome >}} nº {{< meta numero >}}"
+listing:
+  id: lista-sumario
+  contents: "*/index.qmd"
+  template: ../../modelos-listing/sumario.ejs
+  sort: "ordem"

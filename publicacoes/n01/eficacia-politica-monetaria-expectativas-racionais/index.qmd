@@ -1,0 +1,15 @@
+---
+title: "Notas sobre a eficácia da política monetária sob a hipótese de expectativas racionais: uma breve revisão da literatura"
+author: "Gabriel Vieira"
+autor-citacao: ""
+tipo: "Revisão de literatura"
+eixo: "Política monetária e inflação"
+fasciculo: 1
+ordem: 3                            # [ordem provisória: definida pela Presidência]
+date: 2026-11-27
+sintese: "[síntese provisória: a preencher pelo autor]"
+revisao: "[revisor a confirmar]"
+doi: ""
+pdf: "texto.pdf"
+draft: true
+---

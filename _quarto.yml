@@ -1,0 +1,100 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "publicacoes/**/*.qmd"
+    - "eventos/**/*.qmd"
+    - "graficos/**/*.qmd"
+  post-render:
+    - ferramentas/apagar-rascunhos.lua
+    - ferramentas/pular-primeiro.lua
+
+lang: pt
+metadata-files:
+  - _variables.yml
+
+execute:
+  freeze: auto
+
+brand:
+  light: _brand.yml
+
+website:
+  title: "MacroLiga UFRGS"
+  description: "Liga Acadêmica de Macroeconomia da UFRGS: textos curtos sobre a conjuntura brasileira, escritos por estudantes e revisados por professores da FCE."
+  site-url: "https://macroliga-ufrgs.github.io"
+  favicon: assets/marca/png/macroliga-favicon-180.png
+  image: assets/marca/png/macroliga-og.png
+  open-graph: true
+  search: false          # D10: sem busca na 1ª versão
+  page-navigation: false
+  navbar:
+    title: false
+    logo: assets/marca/svg/macroliga-horizontal-branco.svg
+    logo-alt: "MacroLiga UFRGS, página inicial"
+    background: primary
+    pinned: true
+    collapse-below: lg
+    right:
+      - text: "Início"
+        href: index.qmd
+      - text: "Publicações"
+        href: publicacoes/index.qmd
+      - text: "Eventos"
+        href: eventos/index.qmd
+      - text: "Sobre"
+        href: sobre.qmd
+      - text: "Equipe"
+        href: equipe.qmd
+      - text: "Participe"
+        href: participe.qmd
+  page-footer:
+    left: |
+      ![](/assets/marca/svg/macroliga-horizontal-branco.svg){.rodape__logo fig-alt="MacroLiga UFRGS" width="188" height="40"}
+
+      [MacroLiga UFRGS, Liga Acadêmica de Macroeconomia.]{.rodape__nome}
+
+      Projeto de extensão da Faculdade de Ciências Econômicas da UFRGS, coordenado pelo {{< var coordenacao >}}.
+    center: |
+      <h2 class="rodape__titulo">Contato</h2>
+
+      - E-mail: [{{< var contato.email >}}](mailto:{{< var contato.email >}})
+      - Instagram: [{{< var contato.instagram >}}]({{< var contato.instagram-url >}})
+      - LinkedIn: [{{< var contato.linkedin >}}]({{< var contato.linkedin-url >}})
+
+      [Escrever para a liga](mailto:{{< var contato.email >}}){.botao .botao--secundario}
+    right: |
+      Textos publicados sob a licença [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.pt-br).
+
+      Site feito pela equipe de Comunicação da liga, com Quarto, e publicado no GitHub Pages.
+
+      © 2026 MacroLiga UFRGS
+
+format:
+  html:
+    theme:
+      light: [brand, estilos/macroliga.scss]
+    page-layout: custom
+    # O site não usa fórmulas, código nem notas: nada de MathJax, botão de copiar ou popups.
+    html-math-method: plain
+    code-copy: false
+    footnotes-hover: false
+    citations-hover: false
+    crossrefs-hover: false
+    toc: false
+    anchor-sections: false
+    smooth-scroll: false
+    include-in-header:
+      text: |
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400..560&display=swap">
+    include-before-body:
+      text: '<a class="pular" href="#quarto-document-content">Pular para o conteúdo</a>'
+
+filters:
+  - filtros/validar.lua
+  - filtros/montar.lua
+  - filtros/tipografia.lua
+  - filtros/contagem.lua
