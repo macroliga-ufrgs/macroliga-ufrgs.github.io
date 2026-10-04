@@ -6,8 +6,6 @@ project:
     - "publicacoes/**/*.qmd"
     - "eventos/**/*.qmd"
     - "graficos/**/*.qmd"
-  resources:
-    - modelos/
   post-render:
     - ferramentas/apagar-rascunhos.lua
     - ferramentas/pular-primeiro.lua
