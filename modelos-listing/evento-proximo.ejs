@@ -1,0 +1,15 @@
+```{=html}
+<%
+const t = s => String(s || "").replace(/nº /g, "nº\u00a0");
+const acao = v => !v ? '<p class="evento__inscricao">Inscrições em breve.</p>'
+  : (v === "livre" ? '<p class="evento__inscricao">Entrada livre, sem inscrição.</p>'
+  : '<p class="acoes"><a class="botao" href="' + v + '">Fazer inscrição</a></p>');
+const e = items[0];
+if (e) {
+%>
+<h2 class="bloco__titulo">Próximo evento</h2>
+<h3 class="evento__nome"><a href="<%- e.path %>"><%= t(e.title) %></a></h3>
+<p class="evento__quando"><%= e.quando || e.date %><% if (e.horario) { %>, <%= e.horario %><% } %>. <%= e.local %>.</p>
+<%- acao(e.inscricao) %>
+<% } %>
+```

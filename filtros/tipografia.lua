@@ -11,3 +11,8 @@ function Inlines(inlines)
   end
   return inlines
 end
+
+-- O site não usa citações do Pandoc: "@macroliga.ufrgs" (de _variables.yml) volta a ser texto.
+function Cite(c)
+  return c.content
+end

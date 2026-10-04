@@ -189,7 +189,7 @@ body.nav-fixed { padding-top: 0 !important; }
 .pagina h1 { margin-bottom: var(--esp-5); }
 .pagina h2 { margin: var(--secao) 0 var(--esp-4); }
 .pagina h3 { margin: var(--esp-6) 0 var(--esp-3); }
-.pagina p, .pagina ul, .pagina ol { max-width: var(--medida); margin: 0 0 var(--esp-4); }
+.pagina :where(p, ul, ol) { max-width: var(--medida); margin: 0 0 var(--esp-4); }
 .pagina__intro p { max-width: 46ch; }
 .bloco__titulo { font-size: var(--fs-h2); font-weight: var(--peso-h2); margin-bottom: var(--esp-5); }
 .trilha { font-size: var(--fs-meta); margin-bottom: var(--esp-5); }
@@ -217,6 +217,12 @@ body.nav-fixed { padding-top: 0 !important; }
   border: var(--linha-grade);
   max-width: var(--medida);
 }
+.questionario .acoes { margin-top: var(--esp-4); }
+
+// Dentro dos componentes, parágrafos e listas não têm margem (o espaçamento é do componente).
+// Especificidade 0,1,0 e antes dos componentes: vence .pagina p e perde para as margens próprias.
+:is(.abertura, .fasciculo, .item-texto, .sumario, .grafico, .nav-footer, .questionario, .dados)
+  :where(p, ul, ol, dl, dd, figure) { margin: 0; }
 .questionario .acoes { margin-top: var(--esp-4); }
 
 // ---- Componente: botões ---------------------------------------------------
@@ -417,10 +423,6 @@ a.sumario__titulo:hover,
 .grafico__assinatura { margin-top: var(--esp-5); font-size: var(--fs-meta); }
 .grafico__ampliar { display: inline-block; margin-top: var(--esp-3); font-size: var(--fs-meta); }
 
-// Dentro dos componentes, parágrafos e listas não têm margem (o espaçamento é do componente).
-:is(.abertura, .fasciculo, .item-texto, .sumario, .grafico, .nav-footer, .questionario, .dados)
-  :is(p, ul, ol, dl, dd, figure) { margin: 0; }
-.questionario .acoes { margin-top: var(--esp-4); }
 
 // ---- Componente: cabeçalho (G1), sobre a navbar do Quarto --------------------
 // Na Início, a navbar azul se funde à abertura azul (D-C): sem borda nem sombra.
@@ -523,4 +525,66 @@ footer.footer .nav-footer { padding-inline: var(--margem); }
 .nav-footer .botao--secundario { background: transparent; border-color: var(--offwhite); color: var(--offwhite); }
 @media (min-width: 992px) {
   .nav-footer { grid-template-columns: 5fr 3fr 4fr; }
+}
+// ---- Componente: Início (I2–I6) ---------------------------------------------
+.inicio { display: grid; gap: var(--secao); padding-block: var(--secao); }
+.inicio__producao { display: grid; gap: var(--esp-8); }
+.inicio__lateral { display: grid; gap: var(--esp-7); align-content: start; }
+.inicio__evento { border-top: var(--linha-eixo); padding-top: var(--esp-5); }
+.inicio__evento p + p, .inicio__evento .acoes { margin-top: var(--esp-3); }
+.evento__nome { font-size: var(--fs-h3); font-weight: var(--peso-h3); line-height: 1.3; }
+.evento__nome a { text-decoration: none; }
+.evento__nome a:hover { text-decoration: underline 1px; }
+.evento__quando { margin-top: var(--esp-2); font-size: var(--fs-meta); }
+.evento__inscricao { margin-top: var(--esp-3); font-weight: var(--peso-forte); }
+.inicio__etapas .acoes, .inicio__redes .acoes { margin-top: var(--esp-6); }
+.inicio__redes p { max-width: var(--medida); }
+@media (min-width: 992px) {
+  .inicio__producao { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); align-items: start; }
+}
+
+// ---- Componente: etapas (I5, S2) --------------------------------------------
+// A sequência real "texto → debate → revisão → publicação": pontos ligados por uma linha.
+// A etapa Publicação leva o ponto vermelho (um dos três usos previstos do vermelho).
+.etapas {
+  list-style: none;
+  margin: var(--esp-6) 0 0;
+  padding: 0;
+  max-width: none;
+  display: grid;
+  gap: var(--esp-5);
+}
+.etapa { position: relative; padding-left: var(--esp-6); }
+.etapa p { margin: 0; max-width: 34ch; }
+.etapa::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.4em;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: var(--raio-ponto);
+  background: var(--azul-marinho);
+}
+.etapa::after {
+  content: "";
+  position: absolute;
+  left: calc(0.375rem - 1px);
+  top: 1.3em;
+  bottom: calc(-1 * var(--esp-5) - 0.4em);
+  width: 2px;
+  background: var(--grade);
+}
+.etapa:last-child::after { display: none; }
+.etapa--publicacao::before { background: var(--vermelho); }
+.etapa__titulo {
+  font: var(--peso-h3) var(--fs-h3)/1.3 var(--fonte-titulo);
+  color: var(--azul-marinho);
+  margin-bottom: var(--esp-2) !important;
+}
+@media (min-width: 992px) {
+  .etapas { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--esp-6); }
+  .etapa { padding: var(--esp-6) 0 0; }
+  .etapa::before { top: 0; }
+  .etapa::after { left: 0.75rem; right: calc(-1 * var(--esp-6)); top: calc(0.375rem - 1px); bottom: auto; width: auto; height: 2px; }
 }

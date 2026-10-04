@@ -1,6 +1,88 @@
 ---
 title: "Início"
-description: "Site da MacroLiga UFRGS."
+pagina: inicio
+description: "A MacroLiga UFRGS publica textos curtos sobre a conjuntura brasileira, escritos por estudantes de graduação e revisados por professores da FCE."
+abertura:
+  frase: "A conjuntura brasileira, explicada pela teoria."
+  subtitulo: "Somos a Liga Acadêmica de Macroeconomia da UFRGS. Buscamos promover o ensino e o debate da macroeconomia e seus impactos."
+listing:
+  - id: lista-fasciculo-destaque
+    contents:
+      - "publicacoes/n*/index.qmd"
+      - "publicacoes/n*/*/index.qmd"
+    template: modelos-listing/fasciculo-destaque.ejs
+    date-format: "D [de] MMMM [de] YYYY"
+  - id: lista-em-breve
+    contents: publicacoes/em-breve.yml
+    template: modelos-listing/em-breve-inicio.ejs
+  - id: lista-proximo-evento
+    contents: "eventos/*/index.qmd"
+    template: modelos-listing/evento-proximo.ejs
+    include:
+      situacao: "proximo"
+    sort: "date"
+    max-items: 1
+    date-format: "D [de] MMMM [de] YYYY"
 ---
 
-Site em construção.
+::::::: {.conteiner .inicio}
+
+:::::: {.inicio__producao}
+
+::::: {#fasciculo .inicio__fasciculo}
+:::: {#i2-fasciculo}
+::: {#lista-fasciculo-destaque}
+:::
+::::
+:::: {#i2-em-breve}
+::: {#lista-em-breve}
+:::
+::: {.acoes}
+[Seguir {{< var contato.instagram >}} para saber do lançamento]({{< var contato.instagram-url >}}){.botao}
+:::
+::::
+:::::
+
+::::: {.inicio__lateral}
+:::: {#i4 .inicio__evento}
+::: {#lista-proximo-evento}
+:::
+::: {#i4-vazio}
+```{=html}
+<h2 class="bloco__titulo">Próximo evento</h2>
+```
+Nenhum evento agendado. Siga [{{< var contato.instagram >}}]({{< var contato.instagram-url >}}) para saber do próximo.
+:::
+::::
+:::::
+
+::::::
+
+::::: {#como-funcionamos .inicio__etapas}
+```{=html}
+<h2 class="bloco__titulo">Todo texto passa pelas mesmas quatro etapas</h2>
+<ol class="etapas">
+<li class="etapa"><p class="etapa__titulo">1. Texto</p><p>Um membro escreve sobre um dos temas associados à macroeconomia.</p></li>
+<li class="etapa"><p class="etapa__titulo">2. Debate entre pares</p><p>Os membros leem e discutem o texto antes da revisão.</p></li>
+<li class="etapa"><p class="etapa__titulo">3. Revisão docente</p><p>Um professor revisa o texto, garantindo a qualidade acadêmica.</p></li>
+<li class="etapa etapa--publicacao"><p class="etapa__titulo">4. Publicação</p><p>Os textos aprovados formam um fascículo numerado, com DOI no Zenodo.</p></li>
+</ol>
+```
+::: {.acoes}
+[Ler sobre a liga](sobre.qmd){.botao .botao--secundario}
+:::
+:::::
+
+::::: {.inicio__redes}
+```{=html}
+<h2 class="bloco__titulo">Acompanhe a liga</h2>
+```
+Estamos no Instagram e no LinkedIn debatendo sobre macroeconomia e divulgando informações sobre a MacroLiga.
+
+::: {.acoes}
+[Seguir no Instagram]({{< var contato.instagram-url >}}){.botao .botao--secundario}
+[Seguir no LinkedIn]({{< var contato.linkedin-url >}}){.botao .botao--secundario}
+:::
+:::::
+
+:::::::
