@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fontes candidatas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@200..800&family=Baskervville:wght@400..700&family=Inter:wght@100..900&family=Libre+Baskerville:wght@400..700&family=Libre+Franklin:wght@100..900&family=Public+Sans:wght@100..900&family=Source+Sans+3:wght@200..900&family=Source+Serif+4:opsz,wght@8..60,200..900&display=swap" rel="stylesheet">
+<style>
+/* Amostra de fontes: só para avaliação. Não é parte do site. */
+:root {
+  --azul-marinho: #083D6B;
+  --vermelho: #D51E23;
+  --offwhite: #FAF8F4;
+  --grafite: #1F2933;
+  --grade: #D9D4CA;
+  --esp-2: 8px; --esp-3: 12px; --esp-4: 16px; --esp-5: 24px;
+  --esp-6: 32px; --esp-7: 48px; --esp-8: 64px; --esp-9: 96px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--offwhite);
+  color: var(--grafite);
+  font: 400 17px/1.6 "Inter", sans-serif;
+}
+.pagina { max-width: 1240px; margin: 0 auto; padding: var(--esp-7) var(--esp-4); }
+.pagina > h1 {
+  font: 400 52px/1.05 "Libre Baskerville", serif;
+  color: var(--azul-marinho);
+  margin: 0 0 var(--esp-4);
+}
+.pagina > p { max-width: 68ch; margin: 0 0 var(--esp-4); }
+
+/* Cada par de fontes define --serifa e --sem; tudo abaixo usa só essas duas. */
+.par { margin-top: var(--esp-9); font-family: var(--sem); }
+.par-cabeca { border-bottom: 2px solid var(--grafite); padding-bottom: var(--esp-4); margin-bottom: var(--esp-6); }
+.par-cabeca h2 {
+  font: 400 36px/1.15 var(--serifa);
+  color: var(--azul-marinho);
+  margin: 0 0 var(--esp-2);
+}
+.par-cabeca p { margin: 0; max-width: 72ch; }
+.fichas { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--esp-3) var(--esp-6); margin: var(--esp-5) 0 0; font-size: 15px; }
+.fichas div { border-top: 1px solid var(--grade); padding-top: var(--esp-2); }
+.fichas dt { font-weight: 700; }
+.fichas dd { margin: 0; }
+
+.amostras { display: grid; gap: var(--esp-6); grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 600px) { .abertura { padding: var(--esp-5) var(--esp-4) var(--esp-6); } .miolo h3 { font-size: 36px; } }
+@media (min-width: 1100px) { .amostras { grid-template-columns: minmax(0, 1fr) 390px; align-items: start; } }
+
+.abertura {
+  background: var(--azul-marinho);
+  color: var(--offwhite);
+  padding: var(--esp-6) var(--esp-6) var(--esp-7);
+}
+.abertura img { display: block; height: 44px; width: auto; margin-bottom: var(--esp-7); }
+.abertura .display { font: 400 clamp(52px, 6.6vw, 84px)/1.02 var(--serifa); letter-spacing: -0.01em; margin: 0 0 var(--esp-5); max-width: 9.5em; }
+.abertura p { max-width: 52ch; margin: 0 0 var(--esp-5); font-size: 18px; }
+.botao {
+  display: inline-flex; align-items: center; min-height: 48px; padding: 0 var(--esp-5);
+  font: 700 16px/1 var(--sem); text-decoration: none; border: 2px solid currentColor;
+}
+.abertura .botao { background: var(--offwhite); color: var(--azul-marinho); border-color: var(--offwhite); }
+
+.celular { width: 390px; max-width: 100%; border: 1px solid var(--grade); }
+.celular .abertura { padding: var(--esp-5) var(--esp-4) var(--esp-6); }
+.celular .abertura img { height: 36px; margin-bottom: var(--esp-6); }
+.celular .abertura .display { font-size: 52px; }
+.celular .abertura p { font-size: 17px; }
+.celular .abertura .botao { width: 100%; }
+
+.miolo { display: grid; gap: var(--esp-6); grid-template-columns: minmax(0, 1fr); margin-top: var(--esp-6); }
+@media (min-width: 900px) { .miolo { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); } }
+.miolo h3 { font: 400 48px/1.1 var(--serifa); color: var(--azul-marinho); margin: 0 0 var(--esp-3); }
+.miolo .frase { margin: 0 0 var(--esp-5); max-width: 60ch; }
+.lista { list-style: none; margin: 0; padding: 0; border-bottom: 2px solid var(--grafite); }
+.lista li { border-top: 1px solid var(--grade); padding: var(--esp-4) 0; }
+.lista .tipo { display: block; font-size: 15px; font-weight: 700; }
+.lista a { font: 400 24px/1.25 var(--serifa); color: var(--azul-marinho); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+.lista .autor { display: block; font-size: 15px; margin-top: var(--esp-2); }
+.sintese { font: 400 21px/1.6 var(--serifa); margin: 0 0 var(--esp-5); }
+.corpo { margin: 0 0 var(--esp-5); max-width: 68ch; }
+
+.numeros { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: 15px; }
+.numeros caption { text-align: left; font: 400 21px/1.3 var(--serifa); color: var(--azul-marinho); padding-bottom: var(--esp-2); }
+.numeros th, .numeros td { padding: var(--esp-2) 0; border-top: 1px solid var(--grade); text-align: right; }
+.numeros th:first-child, .numeros td:first-child { text-align: left; }
+.numeros tbody tr:last-child td { border-bottom: 2px solid var(--grafite); }
+.numeros .ultimo { font-weight: 700; }
+.nota-tecnica { font-size: 14px; margin-top: var(--esp-3); }
+
+.p-a { --serifa: "Libre Baskerville", serif; --sem: "Inter", sans-serif; }
+.p-b { --serifa: "Libre Baskerville", serif; --sem: "Libre Franklin", sans-serif; }
+.p-c { --serifa: "Libre Baskerville", serif; --sem: "Atkinson Hyperlegible Next", sans-serif; }
+.p-d { --serifa: "Baskervville", serif; --sem: "Public Sans", sans-serif; }
+.p-d .par-cabeca h2, .p-d .display, .p-d h3, .p-d .lista a, .p-d .sintese, .p-d caption { font-variant-numeric: lining-nums; }
+.p-e { --serifa: "Source Serif 4", serif; --sem: "Source Sans 3", sans-serif; }
+.p-f { --serifa: "Libre Baskerville", serif; --sem: "Public Sans", sans-serif; }
+</style>
+</head>
+<body>
+<main class="pagina">
+  <h1>Fontes candidatas</h1>
+  <p>Seis pares de fontes, todos gratuitos no Google Fonts, aplicados ao mesmo conteúdo: a abertura da Início (desktop e celular), o fascículo, um texto e uma tabela de números. Os pesos dos arquivos são do subconjunto latino que o site baixaria.</p>
+  <p>O logo, em todas as amostras, é o arquivo aprovado: o nome MACROLIGA está desenhado em Libre Baskerville Bold.</p>
+
+  <!-- O conteúdo de cada par é idêntico; só a classe p-* muda. -->
+  <section class="par p-a" aria-labelledby="t-a">
+    <div class="par-cabeca">
+      <h2 id="t-a">A. Libre Baskerville + Inter (a atual)</h2>
+      <p>É o que já está no logo, no tema dos gráficos em R, no modelo LaTeX e no modelo Word. Trocar não custa nada, porque nada muda.</p>
+      <dl class="fichas">
+        <div><dt>Peso no site</dt><dd>33 KB + 47 KB = 80 KB</dd></div>
+        <div><dt>Algarismos tabulares</dt><dd>Inter: sim</dd></div>
+        <div><dt>LaTeX (Overleaf)</dt><dd>Pacotes librebaskerville e inter</dd></div>
+        <div><dt>Ponto fraco</dt><dd>A Inter é a sem serifa mais usada da web; a Libre Baskerville é a serifa mais larga das cinco</dd></div>
+      </dl>
+    </div>
+    <div class="amostras">
+      <div class="abertura">
+        <img src="../assets/marca/svg/macroliga-horizontal-branco.svg" alt="MacroLiga UFRGS">
+        <p class="display">A conjuntura brasileira, explicada pela teoria.</p>
+        <p>Somos a Liga Acadêmica de Macroeconomia da UFRGS. Buscamos promover o ensino e o debate da macroeconomia e seus impactos.</p>
+        <a class="botao" href="#">Ver os textos do nº 1</a>
+      </div>
+      <div class="celular"><div class="abertura">
+        <img src="../assets/marca/svg/macroliga-horizontal-branco.svg" alt="MacroLiga UFRGS">
+        <p class="display">A conjuntura brasileira, explicada pela teoria.</p>
+        <p>Somos a Liga Acadêmica de Macroeconomia da UFRGS. Buscamos promover o ensino e o debate da macroeconomia e seus impactos.</p>
+        <a class="botao" href="#">Ver os textos do nº 1</a>
+      </div></div>
+    </div>
+    <div class="miolo">
+      <div>
+        <h3>[Pontos de Macro] nº 1</h3>
+        <p class="frase">27 de novembro de 2026. 4 textos sobre a economia brasileira, revisados por professores da FCE.</p>
+        <ul class="lista">
+          <li><span class="tipo">Análise de conjuntura</span><a href="#">Impactos setoriais do acordo Mercosul e União Europeia</a><span class="autor">Miguel Amorin</span></li>
+          <li><span class="tipo">Revisão de literatura</span><a href="#">Notas sobre a eficácia da política monetária sob a hipótese de expectativas racionais: uma breve revisão da literatura</a><span class="autor">Gabriel Vieira</span></li>
+        </ul>
+      </div>
+      <div>
+        <p class="sintese">O acordo reduz tarifas de forma desigual entre os setores: a agroindústria ganha acesso, e parte da indústria de transformação passa a competir com importações europeias.</p>
+        <p class="corpo">Síntese fictícia, só para a amostra. A opinião expressa é de responsabilidade de quem assina o texto. Ação, função, câmbio, expectativas, inflação e superávit.</p>
+        <table class="numeros">
+          <caption>Selic e IPCA (exemplo)</caption>
+          <thead><tr><th scope="col">Mês</th><th scope="col">Selic, % a.a.</th><th scope="col">IPCA 12 meses, %</th></tr></thead>
+          <tbody>
+            <tr><td>jun./2026</td><td>14,25</td><td>5,1</td></tr>
+            <tr><td>jul./2026</td><td>11,75</td><td>4,8</td></tr>
+            <tr><td class="ultimo">ago./2026</td><td class="ultimo">10,50</td><td class="ultimo">4,4</td></tr>
+          </tbody>
+        </table>
+        <p class="nota-tecnica">Números fictícios. Os algarismos devem ficar alinhados nas colunas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="par p-b" aria-labelledby="t-b">
+    <div class="par-cabeca">
+      <h2 id="t-b">B. Libre Baskerville + Libre Franklin</h2>
+      <p>As duas são do mesmo estúdio (Impallari Type) e foram feitas para andar juntas. A Franklin vem da tradição das sem serifa de jornal. Só a sem serifa muda.</p>
+      <dl class="fichas">
+        <div><dt>Peso no site</dt><dd>33 KB + 28 KB = 61 KB</dd></div>
+        <div><dt>Algarismos tabulares</dt><dd>Não, na versão do Google Fonts: colunas de números não alinham</dd></div>
+        <div><dt>LaTeX (Overleaf)</dt><dd>Pacote librefranklin</dd></div>
+        <div><dt>Ponto fraco</dt><dd>Tabelas e eixos de gráfico ficam desalinhados</dd></div>
+      </dl>
+    </div>
+    <div class="amostras">
+      <div class="abertura">
+        <img src="../assets/marca/svg/macroliga-horizontal-branco.svg" alt="MacroLiga UFRGS">
+        <p class="display">A conjuntura brasileira, explicada pela teoria.</p>
+        <p>Somos a Liga Acadêmica de Macroeconomia da UFRGS. Buscamos promover o ensino e o debate da macroeconomia e seus impactos.</p>
+        <a class="botao" href="#">Ver os textos do nº 1</a>
+      </div>
+      <div class="celular"><div class="abertura">
+        <img src="../assets/marca/svg/macroliga-horizontal-branco.svg" alt="MacroLiga UFRGS">
+        <p class="display">A conjuntura brasileira, explicada pela teoria.</p>
+        <p>Somos a Liga Acadêmica de Macroeconomia da UFRGS. Buscamos promover o ensino e o debate da macroeconomia e seus impactos.</p>
+        <a class="botao" href="#">Ver os textos do nº 1</a>
+      </div></div>
+    </div>
+    <div class="miolo">
+      <div>
+        <h3>[Pontos de Macro] nº 1</h3>
+        <p class="frase">27 de novembro de 2026. 4 textos sobre a economia brasileira, revisados por professores da FCE.</p>
+        <ul class="lista">
+          <li><span class="tipo">Análise de conjuntura</span><a href="#">Impactos setoriais do acordo Mercosul e União Europeia</a><span class="autor">Miguel Amorin</span></li>
+          <li><span class="tipo">Revisão de literatura</span><a href="#">Notas sobre a eficácia da política monetária sob a hipótese de expectativas racionais: uma breve revisão da literatura</a><span class="autor">Gabriel Vieira</span></li>
+        </ul>
+      </div>
+      <div>
+        <p class="sintese">O acordo reduz tarifas de forma desigual entre os setores: a agroindústria ganha acesso, e parte da indústria de transformação passa a competir com importações europeias.</p>
+        <p class="corpo">Síntese fictícia, só para a amostra. A opinião expressa é de responsabilidade de quem assina o texto. Ação, função, câmbio, expectativas, inflação e superávit.</p>
+        <table class="numeros">
+          <caption>Selic e IPCA (exemplo)</caption>
+          <thead><tr><th scope="col">Mês</th><th scope="col">Selic, % a.a.</th><th scope="col">IPCA 12 meses, %</th></tr></thead>
+          <tbody>
+            <tr><td>jun./2026</td><td>14,25</td><td>5,1</td></tr>
+            <tr><td>jul./2026</td><td>11,75</td><td>4,8</td></tr>
+            <tr><td class="ultimo">ago./2026</td><td class="ultimo">10,50</td><td class="ultimo">4,4</td></tr>
+          </tbody>
+        </table>
+        <p class="nota-tecnica">Números fictícios. Os algarismos devem ficar alinhados nas colunas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="par p-c" aria-labelledby="t-c">
+    <div class="par-cabeca">
+      <h2 id="t-c">C. Libre Baskerville + Atkinson Hyperlegible Next</h2>
+      <p>A sem serifa foi desenhada pelo Braille Institute para leitores com baixa visão: letras que não se confundem (I, l e 1; 0 e O). Só a sem serifa muda. Combina com um projeto de extensão aberto à comunidade.</p>
+      <dl class="fichas">
+        <div><dt>Peso no site</dt><dd>33 KB + 33 KB = 66 KB</dd></div>
+        <div><dt>Algarismos tabulares</dt><dd>Sim</dd></div>
+        <div><dt>LaTeX (Overleaf)</dt><dd>Pacote atkinson (da versão anterior, sem o "Next")</dd></div>
+        <div><dt>Ponto fraco</dt><dd>Desenho com mais personalidade: em texto longo, chama mais atenção que a Inter</dd></div>
+      </dl>
+    </div>
+    <div class="amostras">
+      <div class="abertura">
+        <img src="../assets/marca/svg/macroliga-horizontal-branco.svg" alt="MacroLiga UFRGS">
+        <p class="display">A conjuntura brasileira, explicada pela teoria.</p>
+        <p>Somos a Liga Acadêmica de Macroeconomia da UFRGS. Buscamos promover o ensino e o debate da macroeconomia e seus impactos.</p>
+        <a class="botao" href="#">Ver os textos do nº 1</a>
+      </div>
+      <div class="celular"><div class="abertura">
+        <img src="../assets/marca/svg/macroliga-horizontal-branco.svg" alt="MacroLiga UFRGS">
+        <p class="display">A conjuntura brasileira, explicada pela teoria.</p>
+        <p>Somos a Liga Acadêmica de Macroeconomia da UFRGS. Buscamos promover o ensino e o debate da macroeconomia e seus impactos.</p>
+        <a class="botao" href="#">Ver os textos do nº 1</a>
+      </div></div>
+    </div>
+    <div class="miolo">
+      <div>
+        <h3>[Pontos de Macro] nº 1</h3>
+        <p class="frase">27 de novembro de 2026. 4 textos sobre a economia brasileira, revisados por professores da FCE.</p>
+        <ul class="lista">
+          <li><span class="tipo">Análise de conjuntura</span><a href="#">Impactos setoriais do acordo Mercosul e União Europeia</a><span class="autor">Miguel Amorin</span></li>
+          <li><span class="tipo">Revisão de literatura</span><a href="#">Notas sobre a eficácia da política monetária sob a hipótese de expectativas racionais: uma breve revisão da literatura</a><span class="autor">Gabriel Vieira</span></li>
+        </ul>
+      </div>
+      <div>
+        <p class="sintese">O acordo reduz tarifas de forma desigual entre os setores: a agroindústria ganha acesso, e parte da indústria de transformação passa a competir com importações europeias.</p>
+        <p class="corpo">Síntese fictícia, só para a amostra. A opinião expressa é de responsabilidade de quem assina o texto. Ação, função, câmbio, expectativas, inflação e superávit.</p>
+        <table class="numeros">
+          <caption>Selic e IPCA (exemplo)</caption>
+          <thead><tr><th scope="col">Mês</th><th scope="col">Selic, % a.a.</th><th scope="col">IPCA 12 meses, %</th></tr></thead>
+          <tbody>
+            <tr><td>jun./2026</td><td>14,25</td><td>5,1</td></tr>
+            <tr><td>jul./2026</td><td>11,75</td><td>4,8</td></tr>
+            <tr><td class="ultimo">ago./2026</td><td class="ultimo">10,50</td><td class="ultimo">4,4</td></tr>
+          </tbody>
+        </table>
+        <p class="nota-tecnica">Números fictícios. Os algarismos devem ficar alinhados nas colunas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="par p-d" aria-labelledby="t-d">
+    <div class="par-cabeca">
+      <h2 id="t-d">D. Baskervville + Public Sans</h2>
+      <p>A Baskervville (do ANRT, na França) é uma releitura mais fiel ao Baskerville do século XVIII: mais contraste e mais estreita, por isso fica mais elegante em tamanho grande. É prima do nome no logo, não a mesma fonte. A Public Sans foi feita para sites do governo dos EUA: neutra e institucional.</p>
+      <dl class="fichas">
+        <div><dt>Peso no site</dt><dd>30 KB + 26 KB = 56 KB</dd></div>
+        <div><dt>Algarismos tabulares</dt><dd>Sim, nas duas</dd></div>
+        <div><dt>LaTeX (Overleaf)</dt><dd>Sem pacote: o modelo teria que carregar os arquivos de fonte com XeLaTeX</dd></div>
+        <div><dt>Ponto fraco</dt><dd>Muda o site, os gráficos e os modelos Word e LaTeX; o logo fica numa Baskerville diferente da do site</dd></div>
+      </dl>
+    </div>
+    <div class="amostras">
+      <div class="abertura">
+        <img src="../assets/marca/svg/macroliga-horizontal-branco.svg" alt="MacroLiga UFRGS">
+        <p class="display">A conjuntura brasileira, explicada pela teoria.</p>
+        <p>Somos a Liga Acadêmica de Macroeconomia da UFRGS. Buscamos promover o ensino e o debate da macroeconomia e seus impactos.</p>
+        <a class="botao" href="#">Ver os textos do nº 1</a>
+      </div>
+      <div class="celular"><div class="abertura">
+        <img src="../assets/marca/svg/macroliga-horizontal-branco.svg" alt="MacroLiga UFRGS">
+        <p class="display">A conjuntura brasileira, explicada pela teoria.</p>
+        <p>Somos a Liga Acadêmica de Macroeconomia da UFRGS. Buscamos promover o ensino e o debate da macroeconomia e seus impactos.</p>
+        <a class="botao" href="#">Ver os textos do nº 1</a>
+      </div></div>
+    </div>
+    <div class="miolo">
+      <div>
+        <h3>[Pontos de Macro] nº 1</h3>
+        <p class="frase">27 de novembro de 2026. 4 textos sobre a economia brasileira, revisados por professores da FCE.</p>
+        <ul class="lista">
+          <li><span class="tipo">Análise de conjuntura</span><a href="#">Impactos setoriais do acordo Mercosul e União Europeia</a><span class="autor">Miguel Amorin</span></li>
+          <li><span class="tipo">Revisão de literatura</span><a href="#">Notas sobre a eficácia da política monetária sob a hipótese de expectativas racionais: uma breve revisão da literatura</a><span class="autor">Gabriel Vieira</span></li>
+        </ul>
+      </div>
+      <div>
+        <p class="sintese">O acordo reduz tarifas de forma desigual entre os setores: a agroindústria ganha acesso, e parte da indústria de transformação passa a competir com importações europeias.</p>
+        <p class="corpo">Síntese fictícia, só para a amostra. A opinião expressa é de responsabilidade de quem assina o texto. Ação, função, câmbio, expectativas, inflação e superávit.</p>
+        <table class="numeros">
+          <caption>Selic e IPCA (exemplo)</caption>
+          <thead><tr><th scope="col">Mês</th><th scope="col">Selic, % a.a.</th><th scope="col">IPCA 12 meses, %</th></tr></thead>
+          <tbody>
+            <tr><td>jun./2026</td><td>14,25</td><td>5,1</td></tr>
+            <tr><td>jul./2026</td><td>11,75</td><td>4,8</td></tr>
+            <tr><td class="ultimo">ago./2026</td><td class="ultimo">10,50</td><td class="ultimo">4,4</td></tr>
+          </tbody>
+        </table>
+        <p class="nota-tecnica">Números fictícios. Os algarismos devem ficar alinhados nas colunas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="par p-e" aria-labelledby="t-e">
+    <div class="par-cabeca">
+      <h2 id="t-e">E. Source Serif 4 + Source Sans 3</h2>
+      <p>Uma superfamília da Adobe: serifa e sem serifa desenhadas juntas. A serifa tem eixo de tamanho óptico, e o desenho se ajusta sozinho entre o título grande e o texto pequeno. Sai da linhagem Baskerville do logo.</p>
+      <dl class="fichas">
+        <div><dt>Peso no site</dt><dd>119 KB + 28 KB = 147 KB</dd></div>
+        <div><dt>Algarismos tabulares</dt><dd>Sim, nas duas (na Source Sans 3, já por padrão)</dd></div>
+        <div><dt>LaTeX (Overleaf)</dt><dd>Pacotes sourceserifpro e sourcesanspro</dd></div>
+        <div><dt>Ponto fraco</dt><dd>O dobro do peso; muda o site, os gráficos e os modelos; perde o parentesco com o logo</dd></div>
+      </dl>
+    </div>
+    <div class="amostras">
+      <div class="abertura">
+        <img src="../assets/marca/svg/macroliga-horizontal-branco.svg" alt="MacroLiga UFRGS">
+        <p class="display">A conjuntura brasileira, explicada pela teoria.</p>
+        <p>Somos a Liga Acadêmica de Macroeconomia da UFRGS. Buscamos promover o ensino e o debate da macroeconomia e seus impactos.</p>
+        <a class="botao" href="#">Ver os textos do nº 1</a>
+      </div>
+      <div class="celular"><div class="abertura">
+        <img src="../assets/marca/svg/macroliga-horizontal-branco.svg" alt="MacroLiga UFRGS">
+        <p class="display">A conjuntura brasileira, explicada pela teoria.</p>
+        <p>Somos a Liga Acadêmica de Macroeconomia da UFRGS. Buscamos promover o ensino e o debate da macroeconomia e seus impactos.</p>
+        <a class="botao" href="#">Ver os textos do nº 1</a>
+      </div></div>
+    </div>
+    <div class="miolo">
+      <div>
+        <h3>[Pontos de Macro] nº 1</h3>
+        <p class="frase">27 de novembro de 2026. 4 textos sobre a economia brasileira, revisados por professores da FCE.</p>
+        <ul class="lista">
+          <li><span class="tipo">Análise de conjuntura</span><a href="#">Impactos setoriais do acordo Mercosul e União Europeia</a><span class="autor">Miguel Amorin</span></li>
+          <li><span class="tipo">Revisão de literatura</span><a href="#">Notas sobre a eficácia da política monetária sob a hipótese de expectativas racionais: uma breve revisão da literatura</a><span class="autor">Gabriel Vieira</span></li>
+        </ul>
+      </div>
+      <div>
+        <p class="sintese">O acordo reduz tarifas de forma desigual entre os setores: a agroindústria ganha acesso, e parte da indústria de transformação passa a competir com importações europeias.</p>
+        <p class="corpo">Síntese fictícia, só para a amostra. A opinião expressa é de responsabilidade de quem assina o texto. Ação, função, câmbio, expectativas, inflação e superávit.</p>
+        <table class="numeros">
+          <caption>Selic e IPCA (exemplo)</caption>
+          <thead><tr><th scope="col">Mês</th><th scope="col">Selic, % a.a.</th><th scope="col">IPCA 12 meses, %</th></tr></thead>
+          <tbody>
+            <tr><td>jun./2026</td><td>14,25</td><td>5,1</td></tr>
+            <tr><td>jul./2026</td><td>11,75</td><td>4,8</td></tr>
+            <tr><td class="ultimo">ago./2026</td><td class="ultimo">10,50</td><td class="ultimo">4,4</td></tr>
+          </tbody>
+        </table>
+        <p class="nota-tecnica">Números fictícios. Os algarismos devem ficar alinhados nas colunas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="par p-f" aria-labelledby="t-f">
+    <div class="par-cabeca">
+      <h2 id="t-f">F. Libre Baskerville + Public Sans</h2>
+      <p>A Public Sans foi desenhada a partir da Libre Franklin. Mantém o parentesco com a Libre Baskerville da opção B e tem os algarismos tabulares que faltam à Franklin. Só a sem serifa muda.</p>
+      <dl class="fichas">
+        <div><dt>Peso no site</dt><dd>33 KB + 26 KB = 59 KB</dd></div>
+        <div><dt>Algarismos tabulares</dt><dd>Sim</dd></div>
+        <div><dt>LaTeX (Overleaf)</dt><dd>Sem pacote: o modelo teria que levar os arquivos da fonte e compilar com XeLaTeX</dd></div>
+        <div><dt>Ponto fraco</dt><dd>Troca a sem serifa também no tema dos gráficos e nos modelos Word e LaTeX</dd></div>
+      </dl>
+    </div>
+    <div class="amostras">
+      <div class="abertura">
+        <img src="../assets/marca/svg/macroliga-horizontal-branco.svg" alt="MacroLiga UFRGS">
+        <p class="display">A conjuntura brasileira, explicada pela teoria.</p>
+        <p>Somos a Liga Acadêmica de Macroeconomia da UFRGS. Buscamos promover o ensino e o debate da macroeconomia e seus impactos.</p>
+        <a class="botao" href="#">Ver os textos do nº 1</a>
+      </div>
+      <div class="celular"><div class="abertura">
+        <img src="../assets/marca/svg/macroliga-horizontal-branco.svg" alt="MacroLiga UFRGS">
+        <p class="display">A conjuntura brasileira, explicada pela teoria.</p>
+        <p>Somos a Liga Acadêmica de Macroeconomia da UFRGS. Buscamos promover o ensino e o debate da macroeconomia e seus impactos.</p>
+        <a class="botao" href="#">Ver os textos do nº 1</a>
+      </div></div>
+    </div>
+    <div class="miolo">
+      <div>
+        <h3>[Pontos de Macro] nº 1</h3>
+        <p class="frase">27 de novembro de 2026. 4 textos sobre a economia brasileira, revisados por professores da FCE.</p>
+        <ul class="lista">
+          <li><span class="tipo">Análise de conjuntura</span><a href="#">Impactos setoriais do acordo Mercosul e União Europeia</a><span class="autor">Miguel Amorin</span></li>
+          <li><span class="tipo">Revisão de literatura</span><a href="#">Notas sobre a eficácia da política monetária sob a hipótese de expectativas racionais: uma breve revisão da literatura</a><span class="autor">Gabriel Vieira</span></li>
+        </ul>
+      </div>
+      <div>
+        <p class="sintese">O acordo reduz tarifas de forma desigual entre os setores: a agroindústria ganha acesso, e parte da indústria de transformação passa a competir com importações europeias.</p>
+        <p class="corpo">Síntese fictícia, só para a amostra. A opinião expressa é de responsabilidade de quem assina o texto. Ação, função, câmbio, expectativas, inflação e superávit.</p>
+        <table class="numeros">
+          <caption>Selic e IPCA (exemplo)</caption>
+          <thead><tr><th scope="col">Mês</th><th scope="col">Selic, % a.a.</th><th scope="col">IPCA 12 meses, %</th></tr></thead>
+          <tbody>
+            <tr><td>jun./2026</td><td>14,25</td><td>5,1</td></tr>
+            <tr><td>jul./2026</td><td>11,75</td><td>4,8</td></tr>
+            <tr><td class="ultimo">ago./2026</td><td class="ultimo">10,50</td><td class="ultimo">4,4</td></tr>
+          </tbody>
+        </table>
+        <p class="nota-tecnica">Números fictícios. Os algarismos devem ficar alinhados nas colunas.</p>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>
