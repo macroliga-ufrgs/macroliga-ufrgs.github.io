@@ -1,0 +1,10 @@
+---
+numero: 1
+date: 2026-11-27
+capa: "capa.png"
+capa-alt: "Capa do fascículo nº 1"
+pdf: "fasciculo.pdf"
+doi: "10.5281/zenodo.XXXXXXX"       # [a confirmar no depósito do Zenodo]
+evento: "2026-11-27-lancamento-n01"
+draft: true
+---

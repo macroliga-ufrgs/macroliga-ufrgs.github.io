@@ -11,8 +11,20 @@ function Pandoc(doc)
   if pagina ~= "" then
     local arquivo = quarto.utils.resolve_path("paginas/" .. pagina .. ".lua")
     if comum.existe(arquivo) then
+      -- O Quarto põe no corpo divs ocultas (ex.: #quarto-meta-markdown, com o og:title a
+      -- renderizar). Os montadores trocam doc.blocks; estas divs são guardadas e repostas.
+      local ocultas, resto = pandoc.Blocks({}), pandoc.Blocks({})
+      for _, b in ipairs(doc.blocks) do
+        if b.t == "Div" and b.classes:includes("hidden") and b.identifier:match("^quarto%-") then
+          ocultas:insert(b)
+        else
+          resto:insert(b)
+        end
+      end
+      doc.blocks = resto
       local montar = dofile(arquivo)
       doc = montar(doc, comum)
+      doc.blocks:extend(ocultas)
     end
   end
   doc.blocks:insert(1, comum.html('<main id="quarto-document-content" class="content" tabindex="-1">'))

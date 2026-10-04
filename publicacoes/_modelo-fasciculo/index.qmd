@@ -1,0 +1,12 @@
+---
+# Para criar um fascículo: copie esta pasta para publicacoes/nNN/ (dois dígitos: n02, n03...)
+# e preencha. O título ("Nome da publicação nº N") é montado sozinho.
+numero: 2
+date: 2027-05-20                    # data do lançamento
+capa: "capa.png"                    # a capa fica nesta pasta, com este nome
+capa-alt: "Capa do fascículo nº 2"
+pdf: "fasciculo.pdf"                # o PDF completo, nesta pasta (só no lançamento)
+doi: ""                             # DOI do fascículo no Zenodo, ex.: "10.5281/zenodo.1234567"
+evento: ""                          # opcional: nome da pasta do evento de lançamento, ex.: "2027-05-20-lancamento-n02"
+draft: true                         # apague esta linha no dia do lançamento
+---

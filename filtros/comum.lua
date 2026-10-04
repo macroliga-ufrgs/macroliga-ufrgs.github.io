@@ -226,7 +226,7 @@ end
 -- ---- Blocos repetidos ------------------------------------------------------------
 
 local function codificar_url(s)
-  return (s:gsub("[^%w%-%._~]", function(c) return string.format("%%%02X", string.byte(c)) end))
+  return (s:gsub("[^A-Za-z0-9%-%._~]", function(c) return string.format("%%%02X", string.byte(c)) end))
 end
 
 -- Questionário (indicador da extensão). Sem questionario.url, avisa e não mostra nada.

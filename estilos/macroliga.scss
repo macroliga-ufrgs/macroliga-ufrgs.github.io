@@ -670,3 +670,20 @@ footer.footer .nav-footer { padding-inline: var(--margem); }
 .evento__acao { margin-top: var(--esp-6); }
 .evento__capa { max-width: 56rem; width: 100%; border: var(--linha-grade); margin-bottom: var(--esp-5); }
 @media (min-width: 992px) { .item-evento { grid-template-columns: 15rem minmax(0, 1fr); gap: var(--esp-6); } }
+// ---- Componente: página do fascículo (F1–F6) --------------------------------
+// No celular, a capa fica pequena ao lado do título, para "Baixar PDF" aparecer sem rolar.
+.fasciculo-pagina { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: var(--esp-4); align-items: start; }
+.fasciculo-pagina .fasciculo__capa { aspect-ratio: 210 / 297; object-fit: cover; }
+.fasciculo-pagina__titulo { font-size: var(--fs-titulo-longo); font-weight: var(--peso-titulo-longo); margin-bottom: var(--esp-3) !important; }
+.fasciculo-pagina__dados p { margin: 0; font-size: var(--fs-meta); }
+.fasciculo-pagina__dados .acoes { margin-top: var(--esp-4); grid-column: 1 / -1; }
+.aviso-pdf { font-size: var(--fs-meta); max-width: 36ch; }
+.sumario-fasciculo h2, .lancamento h2 { margin-top: var(--esp-8); }
+@media (max-width: 991.98px) {
+  .fasciculo-pagina__dados { display: contents; }
+  .fasciculo-pagina__dados > :not(.fasciculo-pagina__titulo) { grid-column: 1 / -1; }
+}
+@media (min-width: 992px) {
+  .fasciculo-pagina { grid-template-columns: 15rem minmax(0, 1fr); gap: var(--esp-6); }
+  .fasciculo-pagina__titulo { font-size: var(--fs-h1); font-weight: var(--peso-h1); }
+}
