@@ -24,7 +24,7 @@ website:
   title: "MacroLiga UFRGS"
   description: "Liga Acadêmica de Macroeconomia da UFRGS: textos curtos sobre a conjuntura brasileira, escritos por estudantes e revisados por professores da FCE."
   site-url: "https://macroliga-ufrgs.github.io"
-  favicon: assets/marca/png/macroliga-favicon-512.png
+  favicon: assets/marca/png/macroliga-favicon-180.png
   image: assets/marca/png/macroliga-og.png
   open-graph: true
   search: false          # D10: sem busca na 1ª versão
@@ -76,6 +76,12 @@ format:
     theme:
       light: [brand, estilos/macroliga.scss]
     page-layout: custom
+    # O site não usa fórmulas, código nem notas: nada de MathJax, botão de copiar ou popups.
+    html-math-method: plain
+    code-copy: false
+    footnotes-hover: false
+    citations-hover: false
+    crossrefs-hover: false
     toc: false
     anchor-sections: false
     smooth-scroll: false

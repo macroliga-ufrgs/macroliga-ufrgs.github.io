@@ -18,7 +18,7 @@ echo "$FONTES" | grep -q 'ital' && falha "itálicos carregados" || ok "sem itál
 nenhum_html 'bootstrap-dark' "sem CSS de modo escuro"
 tem_css '--azul-marinho: ?#083D6B' "token --azul-marinho vem do _brand.yml"
 tem_css '--fs-display' "tokens tipográficos no CSS"
-tem index.html 'macroliga-favicon-512\.png' "favicon da marca"
+tem index.html 'macroliga-favicon-180.png' "favicon da marca"
 nenhum_html 'id="quarto-search"|search\.json' "sem caixa de busca (D10)"
 nao_existe site_libs/quarto-search "sem biblioteca de busca (D10)"
 nao_existe search.json "sem índice de busca (D10)"
