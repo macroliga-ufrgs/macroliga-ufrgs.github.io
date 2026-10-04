@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prancha de design</title>
+<meta name="description" content="Cores, tipografia e componentes do site da MacroLiga UFRGS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Libre+Baskerville:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="macroliga.css">
+<style>
+/* Estilos só da prancha (organização das amostras). Não vão para o site. */
+.prancha { padding-block: var(--esp-7) var(--secao); }
+.prancha__intro { max-width: var(--medida); }
+.prancha__intro p { margin-top: var(--esp-4); }
+.secao-prancha { margin-top: var(--secao); }
+.secao-prancha > h2 { margin-bottom: var(--esp-3); }
+.secao-prancha > .nota { margin-bottom: var(--esp-6); }
+.nota { max-width: var(--medida); font-size: var(--fs-meta); }
+code { font-family: inherit; font-weight: var(--peso-forte); }
+.rotulo-estado {
+  margin: var(--esp-7) 0 var(--esp-4);
+  font: var(--peso-forte) var(--fs-meta)/1.4 var(--fonte-texto);
+  color: var(--grafite);
+}
+
+.cores { display: grid; grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)); gap: var(--esp-5); list-style: none; padding: 0; }
+.cor__amostra { height: 6rem; border: var(--linha-grade); }
+.ficha { margin-top: var(--esp-3); font-size: var(--fs-meta); }
+.ficha span { display: block; }
+
+.escala { border-bottom: var(--linha-eixo); }
+.escala__linha { display: grid; gap: var(--esp-3); padding-block: var(--esp-5); border-top: var(--linha-grade); }
+.escala__linha .ficha { margin: 0; }
+@media (min-width: 992px) { .escala__linha { grid-template-columns: 15rem minmax(0, 1fr); gap: var(--esp-6); align-items: baseline; } }
+.escala__amostra { max-width: var(--medida); }
+
+.pesos { display: grid; gap: var(--esp-5); grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); margin-top: var(--esp-6); }
+.pesos__amostra { font-family: var(--fonte-titulo); color: var(--azul-marinho); line-height: 1.2; }
+.pesos__amostra--grande { font-size: 2.25rem; }
+.pesos__amostra--pequena { font-size: 1.3125rem; margin-top: var(--esp-2); }
+
+.paineis { display: grid; gap: var(--esp-5); }
+@media (min-width: 992px) { .paineis { grid-template-columns: 1fr 1fr; } }
+.painel { padding: var(--esp-6) var(--esp-5); border: var(--linha-grade); }
+.painel.fundo-azul { border-color: var(--azul-marinho); }
+.painel p { margin-top: var(--esp-5); max-width: 40ch; }
+.demo-foco { outline: 3px solid var(--cor-foco); outline-offset: 3px; }
+
+.quadros { display: grid; gap: var(--esp-6); }
+.quadro { overflow-x: auto; border: var(--linha-grade); }
+.quadro iframe { display: block; border: 0; }
+.quadro--desktop iframe { width: 100%; min-width: 1100px; height: 45rem; }
+.quadro--celular { width: max-content; max-width: 100%; }
+.quadro--celular iframe { width: 390px; height: 760px; }
+.quadros .acoes { margin-top: var(--esp-2); }
+</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="cabecalho fundo-azul">
+  <div class="conteiner cabecalho__barra">
+    <a class="cabecalho__logo" href="#"><img src="../assets/marca/svg/macroliga-horizontal-branco.svg" alt="MacroLiga UFRGS, página inicial" width="207" height="44"></a>
+    <nav aria-label="Principal">
+      <button class="cabecalho__abrir" type="button" aria-expanded="false">Abrir menu</button>
+      <ul class="cabecalho__menu">
+        <li><a href="#">Início</a></li>
+        <li><a href="#" aria-current="page">Publicações</a></li>
+        <li><a href="#">Eventos</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Equipe</a></li>
+        <li><a href="#">Participe</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo" class="conteiner prancha">
+  <div class="prancha__intro">
+    <h1>Prancha de design</h1>
+    <p>Cores, tipografia e componentes do site. O CSS está em <code>macroliga.css</code>, com os nomes de tokens que o SCSS do Quarto vai usar. O cabeçalho acima e o rodapé abaixo são os do site; aqui, a página atual é Publicações.</p>
+  </div>
+
+  <!-- Cores -->
+  <section class="secao-prancha" aria-labelledby="t-cores">
+    <h2 id="t-cores">Cores</h2>
+    <p class="nota">Só as seis cores da marca. O azul-marinho entra em blocos inteiros (cabeçalho, abertura, regra da pluralidade, rodapé). O vermelho aparece em três lugares: Porto Alegre no mapa, o último dado de cada gráfico e a etapa de publicação.</p>
+    <ul class="cores">
+      <li><div class="cor__amostra" style="background: var(--azul-marinho)"></div><p class="ficha"><code>--azul-marinho</code><span>#083D6B</span><span>Blocos, botões, títulos e links. 10,5:1 sobre off-white</span></p></li>
+      <li><div class="cor__amostra" style="background: var(--vermelho)"></div><p class="ficha"><code>--vermelho</code><span>#D51E23</span><span>Só o ponto que importa. Nunca texto</span></p></li>
+      <li><div class="cor__amostra" style="background: var(--offwhite)"></div><p class="ficha"><code>--offwhite</code><span>#FAF8F4</span><span>Fundo; texto sobre azul</span></p></li>
+      <li><div class="cor__amostra" style="background: var(--grafite)"></div><p class="ficha"><code>--grafite</code><span>#1F2933</span><span>Todo o texto, inclusive metadados. 13,9:1</span></p></li>
+      <li><div class="cor__amostra" style="background: var(--grade)"></div><p class="ficha"><code>--grade</code><span>#D9D4CA</span><span>Linhas entre itens de lista, como a grade de um gráfico</span></p></li>
+      <li><div class="cor__amostra" style="background: var(--contexto)"></div><p class="ficha"><code>--contexto</code><span>#9AA5B1</span><span>Só séries secundárias de gráficos. Nunca texto</span></p></li>
+    </ul>
+  </section>
+
+  <!-- Tipografia -->
+  <section class="secao-prancha" aria-labelledby="t-tipo">
+    <h2 id="t-tipo">Tipografia</h2>
+    <p class="nota">Libre Baskerville nos títulos e Inter no resto. A hierarquia vem da escala: o título da abertura tem de 3 a 4,7 vezes o tamanho do corpo. Tamanhos em px, celular / desktop.</p>
+    <div class="escala">
+      <div class="escala__linha">
+        <p class="ficha"><code>--fs-display</code><span>46–52 / 72–84, peso 400</span><span>Só a abertura da Início</span></p>
+        <p class="escala__amostra" style="font: var(--peso-display) var(--fs-display)/var(--lh-display) var(--fonte-titulo); color: var(--azul-marinho); letter-spacing: -0.01em; text-wrap: balance;">A conjuntura brasileira, explicada pela teoria.</p>
+      </div>
+      <div class="escala__linha">
+        <p class="ficha"><code>--fs-h1</code><span>52 / 72, peso 400</span><span>Título de página</span></p>
+        <p class="escala__amostra" style="font: var(--peso-h1) var(--fs-h1)/var(--lh-titulo) var(--fonte-titulo); color: var(--azul-marinho);">Publicações</p>
+      </div>
+      <div class="escala__linha">
+        <p class="ficha"><code>--fs-titulo-longo</code><span>32 / 44, peso 450</span><span>Título de texto, gráfico e fascículo</span></p>
+        <p class="escala__amostra" style="font: var(--peso-titulo-longo) var(--fs-titulo-longo)/var(--lh-titulo) var(--fonte-titulo); color: var(--azul-marinho); text-wrap: balance;">Notas sobre a eficácia da política monetária sob a hipótese de expectativas racionais</p>
+      </div>
+      <div class="escala__linha">
+        <p class="ficha"><code>--fs-h2</code><span>28 / 36, peso 500</span><span>Seções</span></p>
+        <p class="escala__amostra" style="font: var(--peso-h2) var(--fs-h2)/var(--lh-titulo) var(--fonte-titulo); color: var(--azul-marinho);">Todo texto passa pelas mesmas quatro etapas</p>
+      </div>
+      <div class="escala__linha">
+        <p class="ficha"><code>--fs-h3</code><span>21 / 24, peso 560</span><span>Títulos em listas</span></p>
+        <p class="escala__amostra" style="font: var(--peso-h3) var(--fs-h3)/1.3 var(--fonte-titulo); color: var(--azul-marinho);">Impactos setoriais do acordo Mercosul e União Europeia</p>
+      </div>
+      <div class="escala__linha">
+        <p class="ficha"><code>--fs-sintese</code><span>21, peso 400, entrelinha 1,65</span><span>Síntese do texto</span></p>
+        <p class="escala__amostra" style="font: 400 var(--fs-sintese)/var(--lh-serifa) var(--fonte-titulo);">O texto descreve como o acordo reduz tarifas de forma desigual entre os setores e quais deles passam a competir com importações europeias.</p>
+      </div>
+      <div class="escala__linha">
+        <p class="ficha"><code>--fs-corpo</code><span>17 / 18, Inter 400, entrelinha 1,6</span><span>Texto corrido, até 68 caracteres por linha</span></p>
+        <p class="escala__amostra">A liga não toma posição sobre política econômica, governos ou partidos. Nossos membros têm visões teóricas diferentes, e isso faz parte do projeto. Criamos textos baseados em fatos, com número, data e fonte.</p>
+      </div>
+      <div class="escala__linha">
+        <p class="ficha"><code>--fs-meta</code><span>15, Inter 400 e 700</span><span>Tipo, autor, datas, rótulos</span></p>
+        <p class="escala__amostra" style="font-size: var(--fs-meta);"><strong>Análise de conjuntura</strong><br>Miguel Amorin. Publicado em 27/11/2026.</p>
+      </div>
+      <div class="escala__linha">
+        <p class="ficha"><code>--fs-pequeno</code><span>14, Inter 400</span><span>Fonte de gráfico, créditos</span></p>
+        <p class="escala__amostra" style="font-size: var(--fs-pequeno);">Fonte: Banco Central do Brasil, SGS, série 432. Elaboração: MacroLiga UFRGS.</p>
+      </div>
+    </div>
+
+    <h3 class="rotulo-estado">Pesos da Libre Baskerville (fonte variável, 400 a 700)</h3>
+    <p class="nota">O peso sobe quando o tamanho desce. Em tamanho grande, o 400 já tem presença; em tamanho de lista, o 560 evita que o título fique mais fraco que a Inter ao lado. O 700 é o peso do nome no logo e fica fora do site, para não competir com ele.</p>
+    <div class="pesos">
+      <div><p class="pesos__amostra pesos__amostra--grande" style="font-weight: 400">Inflação</p><p class="pesos__amostra pesos__amostra--pequena" style="font-weight: 400">Setor externo e câmbio</p><p class="ficha"><code>400</code><span>Abertura, títulos de página</span></p></div>
+      <div><p class="pesos__amostra pesos__amostra--grande" style="font-weight: 450">Inflação</p><p class="pesos__amostra pesos__amostra--pequena" style="font-weight: 450">Setor externo e câmbio</p><p class="ficha"><code>450</code><span>Títulos longos</span></p></div>
+      <div><p class="pesos__amostra pesos__amostra--grande" style="font-weight: 500">Inflação</p><p class="pesos__amostra pesos__amostra--pequena" style="font-weight: 500">Setor externo e câmbio</p><p class="ficha"><code>500</code><span>Seções, sumário</span></p></div>
+      <div><p class="pesos__amostra pesos__amostra--grande" style="font-weight: 560">Inflação</p><p class="pesos__amostra pesos__amostra--pequena" style="font-weight: 560">Setor externo e câmbio</p><p class="ficha"><code>560</code><span>Títulos em listas</span></p></div>
+      <div><p class="pesos__amostra pesos__amostra--grande" style="font-weight: 700">Inflação</p><p class="pesos__amostra pesos__amostra--pequena" style="font-weight: 700">Setor externo e câmbio</p><p class="ficha"><code>700</code><span>Só no logo</span></p></div>
+    </div>
+  </section>
+
+  <!-- Botões e links -->
+  <section class="secao-prancha" aria-labelledby="t-botoes">
+    <h2 id="t-botoes">Botões e links</h2>
+    <p class="nota">Cantos retos e 48 px de altura. O botão diz o que acontece. Ao passar o mouse, o texto ganha sublinhado; o foco do teclado ganha contorno de 3 px (no segundo botão de cada painel).</p>
+    <div class="paineis">
+      <div class="painel">
+        <div class="acoes">
+          <a class="botao" href="#">Ler o fascículo</a>
+          <a class="botao botao--secundario demo-foco" href="#">Baixar PDF</a>
+        </div>
+        <p>Um link no meio do texto: <a href="#">Abrir no Zenodo</a>.</p>
+      </div>
+      <div class="painel fundo-azul">
+        <div class="acoes">
+          <a class="botao" href="#">Ver os textos do nº&nbsp;1</a>
+          <a class="botao botao--secundario demo-foco" href="#">Ver como funcionamos</a>
+        </div>
+        <p>Sobre azul, o link fica off-white: <a href="#">macroliga.ufrgs@gmail.com</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fascículo -->
+  <section class="secao-prancha" aria-labelledby="t-fasc">
+    <h2 id="t-fasc">Fascículo</h2>
+    <p class="nota">Bloco da Início e de Publicações. Sem caixa e sem sombra: a capa tem só um filete. A capa abaixo é a do modelo LaTeX.</p>
+
+    <p class="rotulo-estado">Publicado</p>
+    <article class="fasciculo">
+      <img class="fasciculo__capa" src="img/capa-modelo.png" alt="Capa do fascículo nº&nbsp;1" width="910" height="1287">
+      <div>
+        <h3 class="fasciculo__titulo"><a href="#">[Pontos de Macro] nº&nbsp;1</a></h3>
+        <p class="fasciculo__frase">27 de novembro de 2026. 4 textos sobre a economia brasileira, revisados por professores da FCE.</p>
+      </div>
+      <div class="fasciculo__corpo">
+        <ul class="sumario">
+          <li><a class="sumario__titulo" href="#">Endividamento das famílias e financeirização no Brasil</a><span class="sumario__autor">João Pedone</span></li>
+          <li><a class="sumario__titulo" href="#">Impactos setoriais do acordo Mercosul e União Europeia</a><span class="sumario__autor">Miguel Amorin</span></li>
+          <li><a class="sumario__titulo" href="#">Notas sobre a eficácia da política monetária sob a hipótese de expectativas racionais: uma breve revisão da literatura</a><span class="sumario__autor">Gabriel Vieira</span></li>
+          <li><a class="sumario__titulo" href="#">Subdesenvolvimento: uma visão schumpeteriana</a><span class="sumario__autor">Arthur Pittella</span></li>
+        </ul>
+        <div class="acoes">
+          <a class="botao" href="#">Ler o fascículo</a>
+          <a class="botao botao--secundario" href="#">Ver todos os fascículos</a>
+        </div>
+      </div>
+    </article>
+
+    <p class="rotulo-estado">Antes do lançamento (estado de 18/10)</p>
+    <article class="fasciculo fasciculo--em-breve">
+      <div>
+        <h3 class="fasciculo__titulo">Fascículo nº&nbsp;1: em breve</h3>
+        <p class="fasciculo__frase">O primeiro fascículo está em produção. O lançamento será em um evento presencial na FCE, em data a ser confirmada.</p>
+      </div>
+      <div class="fasciculo__corpo">
+        <ul class="sumario">
+          <li><span class="sumario__titulo">Endividamento das famílias e financeirização no Brasil</span><span class="sumario__autor">João Pedone</span></li>
+          <li><span class="sumario__titulo">Impactos setoriais do acordo Mercosul e União Europeia</span><span class="sumario__autor">Miguel Amorin</span></li>
+          <li><span class="sumario__titulo">Notas sobre a eficácia da política monetária sob a hipótese de expectativas racionais: uma breve revisão da literatura</span><span class="sumario__autor">Gabriel Vieira</span></li>
+          <li><span class="sumario__titulo">Subdesenvolvimento: uma visão schumpeteriana</span><span class="sumario__autor">Arthur Pittella</span></li>
+        </ul>
+        <div class="acoes">
+          <a class="botao" href="#">Seguir @macroliga.ufrgs para saber do lançamento</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Texto -->
+  <section class="secao-prancha" aria-labelledby="t-texto">
+    <h2 id="t-texto">Texto na lista de publicações</h2>
+    <p class="nota">Uma linha de lista, não um card. As linhas seguem a gramática do gráfico: grade entre os itens e eixo no fim. Tipos e eixos de João Pedone e Arthur Pittella ainda a confirmar.</p>
+    <ul class="lista-textos">
+      <li class="item-texto">
+        <div>
+          <p class="item-texto__tipo">Análise de conjuntura</p>
+          <h3 class="item-texto__titulo"><a href="#">Endividamento das famílias e financeirização no Brasil</a></h3>
+          <p class="item-texto__autor">João Pedone</p>
+        </div>
+        <dl class="item-texto__dados"><dt>Eixo</dt><dd>Atividade econômica, mercado de trabalho e crédito</dd><dt>Fascículo</dt><dd>nº&nbsp;1</dd></dl>
+      </li>
+      <li class="item-texto">
+        <div>
+          <p class="item-texto__tipo">Análise de conjuntura</p>
+          <h3 class="item-texto__titulo"><a href="#">Impactos setoriais do acordo Mercosul e União Europeia</a></h3>
+          <p class="item-texto__autor">Miguel Amorin</p>
+        </div>
+        <dl class="item-texto__dados"><dt>Eixo</dt><dd>Setor externo e câmbio</dd><dt>Fascículo</dt><dd>nº&nbsp;1</dd></dl>
+      </li>
+      <li class="item-texto">
+        <div>
+          <p class="item-texto__tipo">Revisão de literatura</p>
+          <h3 class="item-texto__titulo"><a href="#">Notas sobre a eficácia da política monetária sob a hipótese de expectativas racionais: uma breve revisão da literatura</a></h3>
+          <p class="item-texto__autor">Gabriel Vieira</p>
+        </div>
+        <dl class="item-texto__dados"><dt>Eixo</dt><dd>Política monetária e inflação</dd><dt>Fascículo</dt><dd>nº&nbsp;1</dd></dl>
+      </li>
+      <li class="item-texto">
+        <div>
+          <p class="item-texto__tipo">Texto de opinião</p>
+          <h3 class="item-texto__titulo"><a href="#">Subdesenvolvimento: uma visão schumpeteriana</a></h3>
+          <p class="item-texto__autor">Arthur Pittella</p>
+        </div>
+        <dl class="item-texto__dados"><dt>Eixo</dt><dd>Atividade econômica, mercado de trabalho e crédito</dd><dt>Fascículo</dt><dd>nº&nbsp;1</dd></dl>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Gráfico comentado -->
+  <section class="secao-prancha" aria-labelledby="t-graf">
+    <h2 id="t-graf">Gráfico comentado</h2>
+    <p class="nota">Ordem do post no Instagram: título, gráfico, fonte, comentário. O gráfico é o herói. A imagem vem do formato <code>site</code> do tema em R: uma versão 4:5 para o celular e uma horizontal a partir de 768 px, com o texto do gráfico em cerca de 15 px nas duas. Os dados são os do exemplo do tema em R (base <code>economics</code> do ggplot2), só para a prancha.</p>
+    <article class="grafico">
+      <h3 class="grafico__titulo">Poupança das famílias americanas termina a série em 7,6% da renda</h3>
+      <p class="grafico__subtitulo">Taxa de poupança pessoal dos EUA, % da renda disponível, jan/2000 a abr/2015</p>
+      <figure class="grafico__figura">
+        <picture>
+          <source media="(min-width: 768px)" srcset="img/exemplo-site.png" width="1792" height="1120">
+          <img src="img/exemplo-site-celular.png" width="720" height="900" alt="Gráfico de linha da taxa de poupança pessoal dos Estados Unidos, de 2000 a 2015. A taxa cai de cerca de 5% em 2000 para 2,2% em 2005, sobe depois de 2008, tem um pico isolado de 12% no fim de 2012 e termina em 7,6%, marcado em vermelho.">
+        </picture>
+        <figcaption class="grafico__fonte">Fonte: U.S. Bureau of Economic Analysis, via base economics do ggplot2. Elaboração: MacroLiga UFRGS.</figcaption>
+      </figure>
+      <a class="grafico__ampliar" href="img/exemplo-site.png">Abrir o gráfico em tamanho maior</a>
+      <div class="grafico__comentario">
+        <p>A taxa de poupança mede quanto da renda disponível as famílias deixam de gastar. Na série, ela cai de cerca de 5% em 2000 para 2,2% em 2005, o ponto mais baixo do período.</p>
+        <p>Depois da crise financeira de 2008, a taxa sobe e passa a oscilar entre 5% e 8%. O pico de 12%, no fim de 2012, é um mês isolado: logo depois, a taxa volta à faixa de 6%. O último dado, de abril de 2015, é 7,6%.</p>
+      </div>
+      <p class="grafico__assinatura"><strong>Eixo:</strong> Mercados externos</p>
+    </article>
+  </section>
+
+  <!-- Abertura da Início -->
+  <section class="secao-prancha" aria-labelledby="t-abertura">
+    <h2 id="t-abertura">Abertura da Início</h2>
+    <p class="nota">O único movimento do site: os pontos se acendem de norte a sul e Porto Alegre aparece em vermelho por último. Com "reduzir movimento" ligado no sistema, o mapa já aparece aceso. Os pontos são os do logo (<code>gerar-mapa.py</code>).</p>
+    <div class="quadros">
+      <div class="quadro quadro--desktop"><iframe src="abertura.html" title="Abertura da Início no desktop"></iframe></div>
+      <div class="quadro quadro--celular"><iframe src="abertura.html" title="Abertura da Início no celular, 390 px"></iframe></div>
+      <div class="acoes">
+        <button class="botao botao--secundario" type="button" onclick="document.querySelectorAll('.quadro iframe').forEach(function (f) { f.src = f.src; })">Repetir a animação</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape fundo-azul" id="rodape">
+  <div class="conteiner rodape__blocos">
+    <div>
+      <img class="rodape__logo" src="../assets/marca/svg/macroliga-horizontal-branco.svg" alt="MacroLiga UFRGS" width="188" height="40">
+      <p class="rodape__nome">MacroLiga UFRGS, Liga Acadêmica de Macroeconomia.</p>
+      <p>Projeto de extensão da Faculdade de Ciências Econômicas da UFRGS, coordenado pelo prof. Leonardo Xavier da Silva.</p>
+    </div>
+    <div>
+      <h2>Contato</h2>
+      <ul class="rodape__contatos">
+        <li>E-mail: <a href="mailto:macroliga.ufrgs@gmail.com">macroliga.ufrgs@gmail.com</a></li>
+        <li>Instagram: <a href="https://www.instagram.com/macroliga.ufrgs/">@macroliga.ufrgs</a></li>
+        <li>LinkedIn: <a href="#">MacroLiga UFRGS</a></li>
+      </ul>
+      <a class="botao botao--secundario" href="mailto:macroliga.ufrgs@gmail.com">Escrever para a liga</a>
+    </div>
+    <div class="rodape__creditos">
+      <p>Textos publicados sob a licença <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.pt-br">CC BY-NC 4.0</a>.</p>
+      <p>Site feito pela equipe de Comunicação da liga, com Quarto, e publicado no GitHub Pages.</p>
+      <p>© 2026 MacroLiga UFRGS</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

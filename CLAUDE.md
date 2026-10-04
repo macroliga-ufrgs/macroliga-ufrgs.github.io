@@ -184,7 +184,7 @@ Paleta de gráficos com 2 a 4 séries, em ordem fixa e validada para daltonismo:
 
 ### Tipografia (Google Fonts, gratuitas)
 
-- **Libre Baskerville:** títulos. Tem poucos pesos, então o contraste vem do **tamanho** (saltos grandes de escala), não do peso.
+- **Libre Baskerville:** títulos. O contraste vem do **tamanho** (saltos grandes de escala). É uma fonte variável (400–700) no Google Fonts: os pesos intermediários sobem conforme o título fica menor, e o 700 fica reservado ao logo (ver `docs/design-tokens.md`).
 - **Inter:** texto, interface e gráficos. É uma fonte variável (100–900): use pesos extremos para hierarquia.
 
 ### Gráficos
