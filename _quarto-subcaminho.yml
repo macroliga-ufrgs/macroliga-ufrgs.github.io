@@ -1,0 +1,6 @@
+# Perfil de teste: o site servido sob um subcaminho, como seria em ufrgs.br/macroliga.
+#   quarto render --profile subcaminho   (usado na Tarefa 14)
+project:
+  output-dir: _site-subcaminho
+website:
+  site-url: "http://127.0.0.1:8772/macroliga"

@@ -6,6 +6,9 @@ project:
     - "publicacoes/**/*.qmd"
     - "eventos/**/*.qmd"
     - "graficos/**/*.qmd"
+  post-render:
+    - ferramentas/apagar-rascunhos.lua
+    - ferramentas/pular-primeiro.lua
 
 lang: pt
 metadata-files:
@@ -22,6 +25,8 @@ website:
   description: "Liga Acadêmica de Macroeconomia da UFRGS: textos curtos sobre a conjuntura brasileira, escritos por estudantes e revisados por professores da FCE."
   site-url: "https://macroliga-ufrgs.github.io"
   favicon: assets/marca/png/macroliga-favicon-512.png
+  image: assets/marca/png/macroliga-og.png
+  open-graph: true
   search: false          # D10: sem busca na 1ª versão
   page-navigation: false
   navbar:
@@ -49,3 +54,11 @@ format:
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400..560&display=swap">
+    include-before-body:
+      text: '<a class="pular" href="#quarto-document-content">Pular para o conteúdo</a>'
+
+filters:
+  - filtros/validar.lua
+  - filtros/montar.lua
+  - filtros/tipografia.lua
+  - filtros/contagem.lua

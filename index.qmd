@@ -1,5 +1,6 @@
 ---
 title: "Início"
+description: "Site da MacroLiga UFRGS."
 ---
 
 Site em construção.
