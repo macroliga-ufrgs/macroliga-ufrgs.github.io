@@ -479,7 +479,7 @@ Bloco azul-marinho, 3 blocos (em coluna no celular, lado a lado no desktop), tex
 
 1. **Identidade:** logo horizontal branca; "MacroLiga UFRGS, Liga Acadêmica de Macroeconomia."; "Projeto de extensão da Faculdade de Ciências Econômicas da UFRGS, coordenado pelo {coordenacao}."
 2. **Contato:** e-mail, Instagram e LinkedIn como links; botão "Escrever para a liga" (`mailto:`).
-3. **Créditos:** "Textos publicados sob a licença CC BY 4.0." (link para a licença); "Site feito pela equipe de Comunicação da liga, com Quarto, e publicado no GitHub Pages."; "© 2026 MacroLiga UFRGS".
+3. **Créditos:** "Textos publicados sob a licença CC BY-NC 4.0." (link para creativecommons.org/licenses/by-nc/4.0/deed.pt-br); "Site feito pela equipe de Comunicação da liga, com Quarto, e publicado no GitHub Pages."; "© 2026 MacroLiga UFRGS".
 
 O vermelho nunca é usado para texto no rodapé (2,1:1 sobre azul).
 

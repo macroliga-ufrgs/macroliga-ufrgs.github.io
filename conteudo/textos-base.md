@@ -153,7 +153,7 @@ Use os modelos para escrever no formato dos fascículos: Com título, autor, eix
 
 **Bloco 3: créditos**
 
-- Textos publicados sob a licença CC BY 4.0.
+- Textos publicados sob a licença CC BY-NC 4.0 (link: https://creativecommons.org/licenses/by-nc/4.0/deed.pt-br).
 - Site feito pela equipe de Comunicação da liga, com Quarto, e publicado no GitHub Pages.
 - © 2026 MacroLiga UFRGS
 

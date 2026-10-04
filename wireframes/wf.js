@@ -46,7 +46,7 @@ const G2 = `
         <span class="btn">Escrever para a liga</span>
       </div>
       <div class="peq">
-        <p>Textos publicados sob a licença CC BY 4.0.</p>
+        <p>Textos publicados sob a licença CC BY-NC 4.0.</p>
         <p>Site feito pela equipe de Comunicação da liga, com Quarto, e publicado no GitHub Pages.</p>
         <p>© 2026 MacroLiga UFRGS</p>
       </div>
