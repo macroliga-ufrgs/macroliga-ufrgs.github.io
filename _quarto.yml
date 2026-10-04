@@ -25,7 +25,9 @@ website:
   description: "Liga Acadêmica de Macroeconomia da UFRGS: textos curtos sobre a conjuntura brasileira, escritos por estudantes e revisados por professores da FCE."
   site-url: "https://macroliga-ufrgs.github.io"
   favicon: assets/marca/png/macroliga-favicon-180.png
-  image: assets/marca/png/macroliga-og.png
+  # Imagem de compartilhamento de reserva (ex.: evento sem capa). A "/" inicial é a raiz do
+  # projeto: sem ela, o Quarto procura a imagem dentro da pasta de cada página e o link quebra.
+  image: /assets/marca/png/macroliga-og.png
   open-graph: true
   search: false          # D10: sem busca na 1ª versão
   page-navigation: false

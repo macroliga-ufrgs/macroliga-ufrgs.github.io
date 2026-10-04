@@ -2,6 +2,8 @@
 title: "Sobre"
 pagina: sobre
 description: "Como a MacroLiga UFRGS funciona: textos de estudantes, debate entre pares, revisão docente e publicação com DOI."
+image: "assets/marca/png/macroliga-og.png"   # imagem de compartilhamento (Open Graph)
+image-alt: "Selo da MacroLiga UFRGS"
 ---
 
 :::::: {.conteiner .pagina .sobre}

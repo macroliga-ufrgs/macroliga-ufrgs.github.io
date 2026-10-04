@@ -17,4 +17,8 @@ tem "$P" '<meta property="og:title" content="Pontos de Macro nº 1">' "og:title 
 tem "$P" '<meta property="og:image" content="https://macroliga-ufrgs\.github\.io/publicacoes/n01/capa\.png"' "og:image é a capa"
 tem publicacoes/index.html 'id="listing-lista-em-breve"[^>]*hidden' "P2: em breve oculto quando o nº 1 está visível"
 tem publicacoes/index.html '<img class="fasciculo__capa" src="[^"]*n01/capa\.png"' "P2 com a capa"
+# Com a capa na página, Início e Publicações continuam compartilhando o selo (spec 4.5).
+for p in index.html publicacoes/index.html; do
+  tem "$p" '<meta property="og:image" content="https://macroliga-ufrgs\.github\.io/assets/marca/png/macroliga-og\.png"' "og:image de $p é o selo"
+done
 fim

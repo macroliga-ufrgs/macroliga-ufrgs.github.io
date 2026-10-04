@@ -2,6 +2,8 @@
 title: "Página não encontrada"
 pagina: "404"
 description: "Esta página não existe ou mudou de endereço."
+image: "assets/marca/png/macroliga-og.png"   # imagem de compartilhamento (Open Graph)
+image-alt: "Selo da MacroLiga UFRGS"
 ---
 
 :::: {.conteiner .pagina .pagina-404}

@@ -2,6 +2,8 @@
 title: "Início"
 pagina: inicio
 description: "A MacroLiga UFRGS publica textos curtos sobre a conjuntura brasileira, escritos por estudantes de graduação e revisados por professores da FCE."
+image: "assets/marca/png/macroliga-og.png"   # imagem de compartilhamento (Open Graph)
+image-alt: "Selo da MacroLiga UFRGS"
 abertura:
   frase: "A conjuntura brasileira, explicada pela teoria."
   subtitulo: "Somos a Liga Acadêmica de Macroeconomia da UFRGS. Buscamos promover o ensino e o debate da macroeconomia e seus impactos."
