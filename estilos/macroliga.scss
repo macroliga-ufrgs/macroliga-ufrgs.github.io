@@ -204,6 +204,7 @@ body.nav-fixed { padding-top: 0 !important; }
 .titulo-longo { font-size: var(--fs-titulo-longo); font-weight: var(--peso-titulo-longo); max-width: 24em; }
 .nota { font-size: var(--fs-meta); max-width: var(--medida); margin-top: var(--esp-5); }
 .estado-vazio { max-width: var(--medida); }
+.pagina-404 { min-height: 50vh; }
 .aviso {
   margin-top: var(--secao);
   padding-top: var(--esp-4);
@@ -258,6 +259,8 @@ body.nav-fixed { padding-top: 0 !important; }
 .fundo-azul .botao--secundario { background: transparent; color: var(--offwhite); }
 
 .acoes { display: flex; flex-wrap: wrap; gap: var(--esp-3); }
+// Em ::: {.acoes} do Markdown, os botões ficam dentro de um <p>: o espaçamento vale para ele também.
+.acoes > p { display: flex; flex-wrap: wrap; gap: var(--esp-3); margin: 0; max-width: none; }
 
 // ---- Componente: abertura da Início (I1) ----------------------------------
 /* O único momento de movimento do site: o mapa de pontos se acende de norte a
