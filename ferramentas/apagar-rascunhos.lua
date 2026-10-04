@@ -3,6 +3,10 @@
 -- que os rascunhos não existam no site publicado (spec 3.4). Apaga também o search.json.
 local saida = os.getenv("QUARTO_PROJECT_OUTPUT_DIR")
 if not saida then return end
+-- Só na renderização completa (quarto render e quarto publish). Na parcial do quarto preview,
+-- o Quarto ainda vai reabrir as páginas que acabou de gerar (inclusive as de rascunho) para
+-- recarregar o navegador; apagá-las aqui o faz parar com "NotFound ... index.html".
+if os.getenv("QUARTO_PROJECT_RENDER_ALL") ~= "1" then return end
 
 local pastas_de_rascunho = {}
 
