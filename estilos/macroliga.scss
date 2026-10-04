@@ -720,3 +720,45 @@ footer.footer .nav-footer { padding-inline: var(--margem); }
 .pagina .item-texto__titulo,
 .pagina .fasciculo__titulo,
 .pagina .evento__nome { margin: 0; }
+// ---- Componente: filtros de Publicações (P3) --------------------------------
+// Celular: duas listas suspensas. Desktop: botões de opção visíveis (cantos retos).
+.filtros { margin: var(--esp-5) 0 var(--esp-6); }
+.filtros label[for], .filtros legend {
+  display: block;
+  font-size: var(--fs-meta);
+  font-weight: var(--peso-forte);
+  margin-bottom: var(--esp-2);
+}
+.filtros select {
+  width: 100%;
+  min-height: var(--alvo-min);
+  padding: 0 var(--esp-3);
+  margin-bottom: var(--esp-4);
+  border: 2px solid var(--azul-marinho);
+  border-radius: var(--raio-0);
+  background: var(--offwhite);
+  color: var(--grafite);
+  font: inherit;
+}
+.filtros fieldset { border: 0; padding: 0; margin: 0 0 var(--esp-4); }
+.filtros__desktop { display: none; }
+.opcoes { display: flex; flex-wrap: wrap; gap: var(--esp-2); }
+.opcao { position: relative; margin: 0; }
+.opcao input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.opcao span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 var(--esp-4);
+  border: 1px solid var(--azul-marinho);
+  font-size: var(--fs-meta);
+  cursor: pointer;
+}
+.opcao input:checked + span { background: var(--azul-marinho); color: var(--offwhite); font-weight: var(--peso-forte); }
+.opcao input:focus-visible + span { outline: 3px solid var(--cor-foco); outline-offset: 3px; }
+.filtros__resultado { font-size: var(--fs-meta); margin: var(--esp-3) 0 0 !important; }
+.filtros__vazio { margin-top: var(--esp-5); }
+@media (min-width: 992px) {
+  .filtros__celular { display: none; }
+  .filtros__desktop { display: block; }
+}
