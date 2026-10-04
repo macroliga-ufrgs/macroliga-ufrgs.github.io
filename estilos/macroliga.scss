@@ -120,6 +120,7 @@ h1, h2, h3 {
   margin: 0;
   padding: 0;
   border: 0;
+  opacity: 1;            // o Quarto deixa h3 e h4 com opacity .9 (cor fora da marca)
   text-wrap: balance;
 }
 h1 { font-size: var(--fs-h1); font-weight: var(--peso-h1); }
@@ -183,6 +184,13 @@ a:hover { color: var(--azul-marinho); text-decoration-thickness: 2px; }
 #quarto-header { position: relative; }
 body.nav-fixed { padding-top: 0 !important; }
 .quarto-figure, figure { margin: 0; }
+// No celular, o Quarto encosta o primeiro h2 de cada seção (margin-top: 1rem, com #id).
+// Nas páginas, o espaço entre seções volta a ser --secao. (.secao: seções escritas pelos filtros Lua.)
+@media (max-width: 991.98px) {
+  #quarto-content .pagina section.level2 > h2:first-of-type,
+  #quarto-content .pagina section.secao > h2:first-of-type { margin-top: var(--secao); }
+  #quarto-content .pagina .sobre__grade section.level2 > h2:first-of-type { margin-top: 0; }
+}
 
 // ---- Componente: página (fluxo de texto das páginas fixas) --------------------
 .pagina { padding-block: var(--esp-7) var(--secao); }
@@ -613,4 +621,23 @@ footer.footer .nav-footer { padding-inline: var(--margem); }
   .sobre__selo.so-desktop { width: 15rem; margin-top: var(--esp-7); }
   .sobre__grade { grid-template-columns: 1fr 1fr; gap: var(--esp-8); align-items: start; }
   .pluralidade { padding: var(--esp-7) var(--esp-6); }
+}
+// ---- Componente: Equipe (EQ1–EQ4) -------------------------------------------
+.equipe-grade { display: grid; gap: var(--esp-6); }
+.equipe-grupo { border-top: var(--linha-grade); padding-top: var(--esp-4); }
+.equipe-grupo h3 { margin: 0 0 var(--esp-3); }
+.equipe-grupo h3 a { text-decoration: none; }
+.equipe-grupo h3 a:hover { text-decoration: underline 1px; }
+.equipe-grupo p { margin: 0; }
+.membros { list-style: none; padding: 0; margin: 0 !important; }
+.membro + .membro { margin-top: var(--esp-3); }
+.membro__foto { width: 6rem; height: 6rem; object-fit: cover; margin-bottom: var(--esp-2); }
+.membro__nome { display: block; font-weight: var(--peso-forte); }
+.membro__cargo { display: block; font-size: var(--fs-meta); }
+.equipe__chamada { margin-top: var(--secao); }
+.equipe__chamada .botao { margin-top: var(--esp-3); }
+@media (min-width: 768px) { .equipe-grade { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 992px) {
+  .equipe-diretorias { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .equipe-eixos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
