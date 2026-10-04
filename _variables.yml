@@ -6,7 +6,7 @@ contato:
   instagram: "@macroliga.ufrgs"
   instagram-url: "https://www.instagram.com/macroliga.ufrgs/"
   linkedin: "MacroLiga UFRGS"
-  linkedin-url: "https://www.linkedin.com/company/macroliga-ufrgs/"   # confirmar quando a página abrir
+  linkedin-url: "https://www.linkedin.com/company/macroliga/"
 coordenacao: "prof. Leonardo Xavier da Silva"
 questionario:
   url: ""              # um único formulário do Google Forms para o site todo
@@ -15,7 +15,7 @@ modelos:
   word: "modelos/modelo-macroliga.docx"
   latex: "modelos/modelo-macroliga.zip"
 contagem:
-  goatcounter: ""      # código da conta do GoatCounter; vazio = nada é carregado
+  goatcounter: "macroliga"      # código da conta do GoatCounter; vazio = nada é carregado
 eixos:
   - "Política monetária e inflação"
   - "Setor externo e câmbio"

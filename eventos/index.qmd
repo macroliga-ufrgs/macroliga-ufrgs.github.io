@@ -2,6 +2,8 @@
 title: "Eventos"
 pagina: eventos
 description: "Lançamentos de fascículos, debates e outros encontros promovidos pela MacroLiga UFRGS."
+image: "../assets/marca/png/macroliga-og.png"   # imagem de compartilhamento (Open Graph)
+image-alt: "Selo da MacroLiga UFRGS"
 open-graph:
   description: "Lançamentos de fascículos, debates e outros encontros promovidos pela MacroLiga UFRGS."
 listing:

@@ -3,7 +3,7 @@
 #       Depois, ponha a foto quadrada em assets/equipe/ e escreva o caminho, ex.: "assets/equipe/nome.jpg".
 # Os nomes dos eixos precisam ser iguais aos de _variables.yml.
 diretorias:
-  - nome: "Presidência (Research)"
+  - nome: "Presidência"
     membros:
       - { nome: "[a preencher]", cargo: "Presidente", foto: "" }
   - nome: "Vice-Presidência e Tesouraria"

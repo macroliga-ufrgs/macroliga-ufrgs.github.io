@@ -201,6 +201,21 @@ body.nav-fixed { padding-top: 0 !important; }
 .pagina__intro p { max-width: 46ch; }
 .bloco__titulo { font-size: var(--fs-h2); font-weight: var(--peso-h2); margin-bottom: var(--esp-5); }
 .trilha { font-size: var(--fs-meta); margin-bottom: var(--esp-5); }
+// Links soltos (fora de frases) ganham área de toque de 44 px sem mudar o layout:
+// o padding aumenta a área clicável e a margem negativa devolve o espaço.
+.trilha a,
+.equipe-grupo h3 a,
+.evento__nome a,
+.item-evento__nome a,
+.item-texto__titulo a,
+.fasciculo__titulo a,
+a.sumario__titulo,
+.outros__titulo {
+  display: inline-block;
+  padding-block: 0.75rem;
+  margin-block: -0.75rem;
+}
+a.sumario__titulo, .outros__titulo { display: block; }
 .titulo-longo { font-size: var(--fs-titulo-longo); font-weight: var(--peso-titulo-longo); max-width: 24em; }
 .nota { font-size: var(--fs-meta); max-width: var(--medida); margin-top: var(--esp-5); }
 .estado-vazio { max-width: var(--medida); }
@@ -470,6 +485,8 @@ a.sumario__titulo:hover,
   font: var(--peso-forte) var(--fs-meta)/1 var(--fonte-texto);
 }
 .navbar .navbar-toggler:focus { box-shadow: none; }
+// O Bootstrap zera o outline do botão em :focus; o foco do teclado volta a aparecer.
+.navbar .navbar-toggler:focus-visible { outline: 3px solid var(--cor-foco); outline-offset: 3px; }
 .navbar .nav-link {
   display: flex;
   align-items: center;

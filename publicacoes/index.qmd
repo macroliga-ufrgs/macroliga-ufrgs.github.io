@@ -2,6 +2,8 @@
 title: "Publicações"
 pagina: publicacoes
 description: "Textos curtos de estudantes de graduação, revisados por professores da FCE e reunidos em fascículos numerados."
+image: "../assets/marca/png/macroliga-og.png"   # imagem de compartilhamento (Open Graph)
+image-alt: "Selo da MacroLiga UFRGS"
 listing:
   - id: lista-em-breve
     contents: em-breve.yml

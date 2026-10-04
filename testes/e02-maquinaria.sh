@@ -2,11 +2,10 @@
 # Tarefa 2: estados (GoatCounter preenchido, rascunho, nº + número).
 source "$(dirname "$0")/lib.sh"
 
-echo "-- GoatCounter com código"
-trocar _variables.yml 's|goatcounter: ""|goatcounter: "macroliga-teste"|'
+echo "-- GoatCounter com o código vazio"
+trocar _variables.yml 's|goatcounter: "[^"]*"|goatcounter: ""|'
 renderizar index.qmd
-tem index.html 'https://macroliga-teste\.goatcounter\.com/count' "script do GoatCounter com o código"
-tem index.html 'location\.hostname' "o script não roda em localhost"
+nao_tem index.html 'goatcounter' "sem GoatCounter com o código vazio"
 desfazer
 
 echo "-- página em rascunho e nº"

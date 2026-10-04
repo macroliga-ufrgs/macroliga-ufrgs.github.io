@@ -2,6 +2,8 @@
 title: "Participe"
 pagina: participe
 description: "Como entrar na MacroLiga UFRGS: quem pode participar, como funciona a seleção e modelos para autores."
+image: "assets/marca/png/macroliga-og.png"   # imagem de compartilhamento (Open Graph)
+image-alt: "Selo da MacroLiga UFRGS"
 selecao:
   aberta: false
   prazo: ""          # ex.: "30 de outubro de 2026"

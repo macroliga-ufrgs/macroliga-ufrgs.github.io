@@ -2,6 +2,8 @@
 title: "Equipe"
 pagina: equipe
 description: "Quem faz a MacroLiga UFRGS: diretorias e eixos temáticos."
+image: "assets/marca/png/macroliga-og.png"   # imagem de compartilhamento (Open Graph)
+image-alt: "Selo da MacroLiga UFRGS"
 ---
 
 :::: {.conteiner .pagina .equipe}
