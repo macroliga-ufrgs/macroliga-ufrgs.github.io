@@ -32,7 +32,8 @@ paleta_macroliga <- c("#1F5FA8", "#D51E23", "#C98A0B", "#2E9C78")
 # ---- Fontes -------------------------------------------------------------------
 .fonte_ok <- function(familia) {
   if (!requireNamespace("systemfonts", quietly = TRUE)) return(FALSE)
-  familia %in% systemfonts::system_fonts()$family
+  familia %in% c(systemfonts::system_fonts()$family,
+                 systemfonts::registry_fonts()$family)
 }
 fonte_texto  <- if (.fonte_ok("Inter")) "Inter" else "sans"
 fonte_titulo <- if (.fonte_ok("Libre Baskerville")) "Libre Baskerville" else "serif"
@@ -59,7 +60,8 @@ fonte_macroliga <- function(fonte) {
 }
 
 # ---- Tema ------------------------------------------------------------------------
-# base_size: 16 para redes (exportação 2x); 10 para a publicação (16 cm, 300 dpi)
+# base_size: 16 para redes (exportação 2x); 12 para o site; 10 para a publicação
+#            (16 cm, 300 dpi)
 # fundo:     "offwhite" (padrão, combina com o Canva), "transparente" ou "branco"
 # grade:     linhas de grade "y" (padrão), "x", "ambas" ou "nenhuma"
 theme_macroliga <- function(base_size = 16,
@@ -128,7 +130,8 @@ scale_color_macroliga <- scale_colour_macroliga
 # Várias séries: ponto na cor da série + "Nome  valor" em grafite.
 # Aumente a margem direita do eixo x para caber o texto, ex.:
 #   scale_x_date(expand = expansion(mult = c(0.01, 0.14)))
-# tamanho: 5.2 para redes (base_size 16); 3.4 para a publicação (base_size 10)
+# tamanho: 5.2 para redes (base_size 16); 3.9 para o site (base_size 12);
+#          3.4 para a publicação (base_size 10)
 rotulos_finais <- function(dados, x, y, grupo = NULL,
                            formato = num_br(accuracy = 0.1),
                            tamanho = 5.2) {
@@ -154,12 +157,15 @@ rotulos_finais <- function(dados, x, y, grupo = NULL,
   if (nrow(ult) > 1) for (i in 2:nrow(ult)) {
     ult$.y_rotulo[i] <- max(ult$.y_rotulo[i], ult$.y_rotulo[i - 1] + folga)
   }
-  desloc <- diff(range(as.numeric(dados[[x]]), na.rm = TRUE)) * 0.015
+  # Afastamento entre o ponto e o texto: um espaço tipográfico (en space), que
+  # acompanha o tamanho da fonte e do ponto em qualquer largura de gráfico.
+  # (Um deslocamento em unidades do eixo x encolheria no gráfico do celular.)
+  ult$.rotulo <- paste0(" ", ult$.rotulo)
   list(
     ponto,
     geom_text(data = ult,
               aes(x = .data[[x]], y = .y_rotulo, label = .rotulo),
-              inherit.aes = FALSE, hjust = 0, nudge_x = desloc,
+              inherit.aes = FALSE, hjust = 0,
               family = fonte_texto, fontface = "bold",
               colour = cores_macroliga[["grafite"]], size = tamanho),
     coord_cartesian(clip = "off")
@@ -172,22 +178,79 @@ rotulos_finais <- function(dados, x, y, grupo = NULL,
 #   carrossel         : área cinza da lâmina de gráfico do carrossel   (888 x 800)
 #   linkedin          : post horizontal do LinkedIn                     (1200 x 627)
 #   publicacao        : figura para o fascículo (16 x 10 cm, 300 dpi) — use base_size = 10
+#   site              : página de gráfico do site — use base_size = 12, sem título
+#                       (título, subtítulo e fonte ficam no texto da página).
+#                       Gera DOIS arquivos, um por tamanho de tela:
+#                         arquivo.png          desktop (896 x 560 na tela)
+#                         arquivo-celular.png  celular (360 x 450 na tela, 4:5)
+#                       Assim o texto do gráfico fica com ~15 px nas duas telas.
+#                       No Quarto, use grafico_site(), que já monta a imagem certa.
 salvar_macroliga <- function(grafico, arquivo,
                              formato = c("grafico_comentado", "carrossel",
-                                         "linkedin", "publicacao"),
+                                         "linkedin", "publicacao", "site"),
                              transparente = FALSE) {
   formato <- match.arg(formato)
+  if (formato == "site") {
+    celular <- paste0(tools::file_path_sans_ext(arquivo), "-celular.png")
+    .salvar(grafico, arquivo, list(w = 1792, h = 1120, units = "px", dpi = 192), transparente)
+    .salvar(grafico, celular, list(w = 720,  h = 900,  units = "px", dpi = 192), transparente)
+    return(invisible(c(desktop = arquivo, celular = celular)))
+  }
   spec <- switch(formato,
     grafico_comentado = list(w = 1776, h = 1380, units = "px", dpi = 192),
     carrossel         = list(w = 1776, h = 1600, units = "px", dpi = 192),
     linkedin          = list(w = 2400, h = 1254, units = "px", dpi = 192),
     publicacao        = list(w = 16,   h = 10,   units = "cm", dpi = 300)
   )
+  .salvar(grafico, arquivo, spec, transparente)
+  invisible(arquivo)
+}
+
+.salvar <- function(grafico, arquivo, spec, transparente) {
   dispositivo <- if (requireNamespace("ragg", quietly = TRUE)) ragg::agg_png else "png"
   ggsave(arquivo, grafico, width = spec$w, height = spec$h, units = spec$units,
          dpi = spec$dpi, device = dispositivo,
          bg = if (transparente) "transparent" else cores_macroliga[["offwhite"]])
-  invisible(arquivo)
+}
+
+# ---- Gráfico na página do site (Quarto) --------------------------------------------------
+# Num bloco de código R da página do gráfico:
+#   grafico_site(g, alt = "Gráfico de linha da Selic, de 2016 a 2026. ...")
+# Salva as duas versões do formato "site" e escreve a imagem na página: o celular
+# baixa só a versão 4:5 e o desktop (a partir de 768 px), só a horizontal. Também
+# escreve o link "Abrir o gráfico em tamanho maior".
+# alt: obrigatório. Descreva o que o gráfico mostra, em uma ou duas frases.
+grafico_site <- function(grafico, alt, nome = "grafico") {
+  if (missing(alt) || !nzchar(trimws(alt))) {
+    stop("[MacroLiga] Falta o texto alternativo: grafico_site(g, alt = \"...\").",
+         call. = FALSE)
+  }
+  # Dentro do Quarto, as imagens vão para a pasta de figuras da página.
+  pasta <- if (isTRUE(getOption("knitr.in.progress"))) dirname(knitr::fig_path()) else "."
+  dir.create(pasta, recursive = TRUE, showWarnings = FALSE)
+  arquivos <- salvar_macroliga(grafico, file.path(pasta, paste0(nome, ".png")), "site")
+  escapar <- function(x) {
+    x <- gsub("&", "&amp;", x, fixed = TRUE)
+    x <- gsub("<", "&lt;", x, fixed = TRUE)
+    x <- gsub(">", "&gt;", x, fixed = TRUE)
+    gsub("\"", "&quot;", x, fixed = TRUE)
+  }
+  html <- paste0(
+    '<figure class="grafico__figura"><picture>',
+    '<source media="(min-width: 768px)" srcset="', arquivos[["desktop"]],
+    '" width="1792" height="1120">',
+    '<img src="', arquivos[["celular"]], '" alt="', escapar(alt),
+    '" width="720" height="900">',
+    '</picture></figure>',
+    '<a class="grafico__ampliar" href="', arquivos[["desktop"]],
+    '">Abrir o gráfico em tamanho maior</a>'
+  )
+  if (isTRUE(getOption("knitr.in.progress"))) {
+    knitr::asis_output(html)
+  } else {
+    cat(html, "\n")
+    invisible(html)
+  }
 }
 
 # ---- Dados do Banco Central (SGS) ------------------------------------------------------
