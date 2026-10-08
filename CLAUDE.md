@@ -21,16 +21,20 @@ A **MacroLiga UFRGS** (Liga Acadêmica de Macroeconomia da UFRGS) é um projeto 
 
 ### Estrutura interna
 
-- **Presidência (Research)**, com 6 eixos temáticos:
-  1. Política Monetária e Inflação
-  2. Setor Externo e Câmbio
-  3. Atividade Econômica, Mercado de Trabalho e Crédito
-  4. Política Fiscal e Contas Públicas
-  5. Mercados Externos
-  6. Conjuntura Política
-- Vice-Presidência/Tesouraria
-- Comunicação (Marketing e Design), com 2 pessoas
-- Outreach
+Decidida em reunião dos membros (2026); substitui a antiga divisão em diretorias.
+
+- **Conselho Executivo:** um presidente e conselheiros, sem hierarquia formal entre eles.
+- **Membros:** quem está na liga e não tem posição no conselho.
+- **Membros fundadores:** as 5 pessoas que criaram a liga. É um registro permanente: os nomes ficam mesmo depois que a pessoa sai da liga.
+
+Os textos se organizam em 6 eixos temáticos:
+
+1. Política Monetária e Inflação
+2. Setor Externo e Câmbio
+3. Atividade Econômica, Mercado de Trabalho e Crédito
+4. Política Fiscal e Contas Públicas
+5. Mercados Externos
+6. Conjuntura Política
 
 ### Origem das diretrizes editoriais
 
@@ -96,7 +100,7 @@ O Instagram gera alcance, o LinkedIn gera credibilidade e **o site guarda a prod
 | **Gráfico Comentado** | Gráfico + comentário de até 150 palavras + fonte. É a versão web do formato-assinatura das redes. Fica opcional na 1ª versão |
 | **Eventos** | Próximos eventos (com inscrição) e eventos passados (com fotos) |
 | **Sobre** | Missão, como funcionamos (texto → debate entre pares → revisão docente → publicação), regra da pluralidade, vínculo com a extensão |
-| **Equipe** | Membros, por diretoria e por eixo. A coordenação aparece no rodapé e na página Sobre; cada professor revisor, na página do texto que revisou |
+| **Equipe** | Conselho Executivo, membros e membros fundadores, nesta ordem. A coordenação aparece no rodapé e na página Sobre; cada professor revisor, na página do texto que revisou |
 | **Participe** | Processo seletivo, formulário, modelos para autores (Word/LaTeX) |
 | **Contato** | E-mail e redes (pode ficar no rodapé, em vez de página própria) |
 
