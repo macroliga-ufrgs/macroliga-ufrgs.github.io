@@ -5,11 +5,10 @@ existe equipe.html "página Equipe"
 tem equipe.html '<h1[^>]*>Equipe</h1>' "EQ1 título"
 tem equipe.html 'Cerca de 15 estudantes de graduação da UFRGS' "EQ1 frase"
 tem equipe.html '<h2 id="t-conselho"[^>]*>Conselho Executivo</h2>' "EQ2 seção do conselho"
-tem equipe.html '<h2 id="t-membros"[^>]*>Membros</h2>' "EQ3 seção dos membros"
 tem equipe.html '<h2 id="t-fundadores"[^>]*>Membros fundadores</h2>' "EQ4 seção dos fundadores"
-# Ordem: conselho, membros, fundadores.
-ordem=$(grep -Eo 'id="t-(conselho|membros|fundadores)"' "$SITE/equipe.html" | tr '\n' ' ')
-[ "$ordem" = 'id="t-conselho" id="t-membros" id="t-fundadores" ' ] && ok "ordem das seções" || falha "ordem das seções  [$ordem]"
+# Ordem: conselho, membros (se houver), fundadores. Os dois estados da seção Membros estão em e06.
+ordem=$(grep -Eo 'id="t-(conselho|membros|fundadores)"' "$SITE/equipe.html" | tr '\n' ' ' | sed 's/id="t-membros" //')
+[ "$ordem" = 'id="t-conselho" id="t-fundadores" ' ] && ok "ordem das seções" || falha "ordem das seções  [$ordem]"
 conta equipe.html '<span class="membro__cargo">Presidente</span>' 1 "EQ2 um presidente"
 tem equipe.html '<span class="membro__cargo">Conselheira</span>' "EQ2 cargo no feminino"
 tem equipe.html '<span class="membro__cargo">Conselheiro</span>' "EQ2 cargo no masculino"

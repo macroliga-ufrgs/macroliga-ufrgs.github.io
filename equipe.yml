@@ -12,20 +12,18 @@
 # foto: deixe vazio até haver termo de uso de imagem (decisão 5 do CLAUDE.md).
 #       Depois, ponha a foto quadrada em assets/equipe/ e escreva o caminho, ex.: "assets/equipe/nome.jpg".
 conselho:
-  - { nome: "[a preencher]", genero: "feminino", presidente: true, foto: "" }
-  - { nome: "[a preencher]", genero: "masculino", presidente: false, foto: "" }
-  - { nome: "[a preencher]", genero: "feminino", presidente: false, foto: "" }
-  - { nome: "[a preencher]", genero: "masculino", presidente: false, foto: "" }
-membros:
-  - { nome: "[a preencher]", foto: "" }
-  - { nome: "[a preencher]", foto: "" }
-  - { nome: "[a preencher]", foto: "" }
-  - { nome: "[a preencher]", foto: "" }
-  - { nome: "[a preencher]", foto: "" }
-  - { nome: "[a preencher]", foto: "" }
+  - { nome: "Gabriel Pegoraro Vieira", genero: "masculino", presidente: true, foto: "" }
+  - { nome: "Arthur Marques Pittella", genero: "masculino", presidente: false, foto: "" }
+  - { nome: "João André Caberlon Pedone", genero: "masculino", presidente: false, foto: "" }
+  - { nome: "Miguel Amorin", genero: "masculino", presidente: false, foto: "" }
+  - { nome: "Milena Bruxel Müller", genero: "feminino", presidente: false, foto: "" }
+membros: []
+# Para adicionar membros, troque a linha acima por:
+# membros:
+#   - { nome: "Fulana de Tal", foto: "" }
 fundadores:
-  - { nome: "[a preencher]", foto: "" }
-  - { nome: "[a preencher]", foto: "" }
-  - { nome: "[a preencher]", foto: "" }
-  - { nome: "[a preencher]", foto: "" }
-  - { nome: "[a preencher]", foto: "" }
+  - { nome: "Arthur Marques Pittella", foto: "" }
+  - { nome: "Gabriel Pegoraro Vieira", foto: "" }
+  - { nome: "João André Caberlon Pedone", foto: "" }
+  - { nome: "Miguel Amorin", foto: "" }
+  - { nome: "Milena Bruxel Müller", foto: "" }
