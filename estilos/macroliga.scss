@@ -204,7 +204,6 @@ body.nav-fixed { padding-top: 0 !important; }
 // Links soltos (fora de frases) ganham área de toque de 44 px sem mudar o layout:
 // o padding aumenta a área clicável e a margem negativa devolve o espaço.
 .trilha a,
-.equipe-grupo h3 a,
 .evento__nome a,
 .item-evento__nome a,
 .item-texto__titulo a,
@@ -642,24 +641,29 @@ footer.footer .nav-footer { padding-inline: var(--margem); }
   .sobre__grade { grid-template-columns: 1fr 1fr; gap: var(--esp-8); align-items: start; }
   .pluralidade { padding: var(--esp-7) var(--esp-6); }
 }
-// ---- Componente: Equipe (EQ1–EQ4) -------------------------------------------
-.equipe-grade { display: grid; gap: var(--esp-6); }
-.equipe-grupo { border-top: var(--linha-grade); padding-top: var(--esp-4); }
-.equipe-grupo h3 { margin: 0 0 var(--esp-3); }
-.equipe-grupo h3 a { text-decoration: none; }
-.equipe-grupo h3 a:hover { text-decoration: underline 1px; }
-.equipe-grupo p { margin: 0; }
-.membros { list-style: none; padding: 0; margin: 0 !important; }
-.membro + .membro { margin-top: var(--esp-3); }
-.membro__foto { width: 6rem; height: 6rem; object-fit: cover; margin-bottom: var(--esp-2); }
-.membro__nome { display: block; font-weight: var(--peso-forte); }
+// ---- Componente: Equipe (EQ1–EQ5) -------------------------------------------
+// Conselho, membros e fundadores usam a mesma grade de pessoas; só muda o número de colunas.
+// Todos os nomes do conselho têm o mesmo peso: não há hierarquia formal entre conselheiros.
+.equipe-grade {
+  list-style: none;
+  padding: 0;
+  margin: 0 !important;
+  max-width: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--esp-5) var(--esp-5);
+}
+.membro { border-top: var(--linha-grade); padding-top: var(--esp-3); }
+.membro__foto { display: block; width: 6rem; height: 6rem; object-fit: cover; margin-bottom: var(--esp-2); }
+.membro__nome { display: block; font-weight: var(--peso-forte); overflow-wrap: anywhere; }
 .membro__cargo { display: block; font-size: var(--fs-meta); }
+.equipe__frase { margin-bottom: var(--esp-5) !important; }
 .equipe__chamada { margin-top: var(--secao); }
 .equipe__chamada .botao { margin-top: var(--esp-3); }
-@media (min-width: 768px) { .equipe-grade { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 768px) { .equipe-grade { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--esp-5) var(--esp-6); } }
 @media (min-width: 992px) {
-  .equipe-diretorias { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .equipe-eixos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .equipe-conselho, .equipe-membros { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .equipe-fundadores { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 }
 // ---- Componente: Participe (PA1–PA5) ----------------------------------------
 .participe__grade { display: grid; gap: 0 var(--esp-8); }

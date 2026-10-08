@@ -1,39 +1,60 @@
 -- filtros/paginas/equipe.lua: Equipe (spec 2.11), lida de equipe.yml.
+-- Ordem das seções: Conselho Executivo, Membros, Membros fundadores.
+local CARGO = { feminino = "Conselheira", masculino = "Conselheiro" }
+
 return function(doc, comum)
   local dados = comum.ler_yaml(comum.caminho(comum.raiz(), "equipe.yml")) or {}
-  local eixos_validos = {}
-  for _, e in ipairs(doc.meta.eixos or {}) do eixos_validos[comum.texto(e)] = true end
-
-  local h = { '<section class="secao" aria-labelledby="t-diretorias">', '<h2 id="t-diretorias">Diretorias</h2>',
-    '<div class="equipe-grade equipe-diretorias">' }
-  for _, d in ipairs(dados.diretorias or {}) do
-    table.insert(h, '<div class="equipe-grupo"><h3>' .. comum.esc(comum.texto(d.nome)) .. '</h3><ul class="membros">')
-    for _, p in ipairs(d.membros or {}) do
-      local nome, foto = comum.texto(p.nome), comum.texto(p.foto)
-      local img = ""
-      if foto ~= "" then
-        img = '<img class="membro__foto" src="' .. comum.esc(foto) .. '" alt="Foto de ' .. comum.esc(nome) .. '" width="96" height="96">'
-      end
-      table.insert(h, '<li class="membro">' .. img .. '<span class="membro__nome">' .. comum.esc(nome)
-        .. '</span><span class="membro__cargo">' .. comum.esc(comum.texto(p.cargo)) .. '</span></li>')
-    end
-    table.insert(h, '</ul></div>')
+  if dados.diretorias ~= nil or dados.eixos ~= nil then
+    comum.parar('equipe.yml está no formato antigo (diretorias/eixos). Use conselho, membros e fundadores: veja o LEIA-ME, seção 7.9.')
   end
-  table.insert(h, '</div></section>')
 
-  table.insert(h, '<section class="secao" aria-labelledby="t-eixos"><h2 id="t-eixos">Eixos temáticos</h2>')
-  table.insert(h, '<div class="equipe-grade equipe-eixos">')
-  for _, e in ipairs(dados.eixos or {}) do
-    local nome = comum.texto(e.nome)
-    if not eixos_validos[nome] then
-      comum.parar('equipe.yml: o eixo "' .. nome .. '" não existe. Use os nomes de _variables.yml.')
+  local function pessoa(p, cargo)
+    local nome, foto = comum.texto(p.nome), comum.texto(p.foto)
+    local img, linha_cargo = "", ""
+    if foto ~= "" then
+      img = '<img class="membro__foto" src="' .. comum.esc(foto) .. '" alt="Foto de ' .. comum.esc(nome) .. '" width="96" height="96">'
     end
-    local membros = {}
-    for _, p in ipairs(e.membros or {}) do table.insert(membros, comum.esc(comum.texto(p))) end
-    table.insert(h, string.format('<div class="equipe-grupo equipe-eixo"><h3><a href="publicacoes/index.html?eixo=%s">%s</a></h3><p>%s</p></div>',
-      comum.slug(nome), comum.esc(nome), table.concat(membros, ", ")))
+    if cargo then linha_cargo = '<span class="membro__cargo">' .. cargo .. '</span>' end
+    return '<li class="membro">' .. img .. '<span class="membro__nome">' .. comum.esc(nome) .. '</span>' .. linha_cargo .. '</li>'
   end
-  table.insert(h, '</div></section>')
+
+  local function secao(id, titulo, classe, frase, itens)
+    if #itens == 0 then return "" end
+    local p = frase and ('<p class="equipe__frase">' .. frase .. '</p>') or ""
+    return '<section class="secao" aria-labelledby="t-' .. id .. '"><h2 id="t-' .. id .. '">' .. titulo .. '</h2>' .. p
+      .. '<ul class="equipe-grade ' .. classe .. '">' .. table.concat(itens, "\n") .. '</ul></section>'
+  end
+
+  -- Conselho: a presidência vem primeiro; o resto segue a ordem do equipe.yml.
+  local presidencia, conselheiros = {}, {}
+  for _, p in ipairs(dados.conselho or {}) do
+    local genero = comum.texto(p.genero)
+    if not CARGO[genero] then
+      comum.parar('equipe.yml: o gênero "' .. genero .. '" não é válido (' .. comum.texto(p.nome)
+        .. '). Escreva genero: "feminino" ou genero: "masculino".')
+    end
+    if p.presidente == true then
+      table.insert(presidencia, pessoa(p, "Presidente"))
+    else
+      table.insert(conselheiros, pessoa(p, CARGO[genero]))
+    end
+  end
+  if #presidencia > 1 then
+    comum.parar("equipe.yml: há mais de uma pessoa com presidente: true no conselho. Deixe true em uma só.")
+  elseif #presidencia == 0 and #conselheiros > 0 then
+    quarto.log.warning("[MacroLiga] equipe.yml: ninguém no conselho tem presidente: true.")
+  end
+  for _, item in ipairs(conselheiros) do table.insert(presidencia, item) end
+
+  local membros, fundadores = {}, {}
+  for _, p in ipairs(dados.membros or {}) do table.insert(membros, pessoa(p)) end
+  for _, p in ipairs(dados.fundadores or {}) do table.insert(fundadores, pessoa(p)) end
+
+  local h = {
+    secao("conselho", "Conselho Executivo", "equipe-conselho", nil, presidencia),
+    secao("membros", "Membros", "equipe-membros", nil, membros),
+    secao("fundadores", "Membros fundadores", "equipe-fundadores", "Quem criou a MacroLiga UFRGS.", fundadores),
+  }
 
   local bloco = comum.html(table.concat(h, "\n"))
   doc.blocks = doc.blocks:walk({

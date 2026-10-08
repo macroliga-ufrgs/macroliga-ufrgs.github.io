@@ -1,7 +1,7 @@
 ---
 title: "Equipe"
 pagina: equipe
-description: "Quem faz a MacroLiga UFRGS: diretorias e eixos temáticos."
+description: "Quem faz a MacroLiga UFRGS: Conselho Executivo, membros e membros fundadores."
 image: "assets/marca/png/macroliga-og.png"   # imagem de compartilhamento (Open Graph)
 image-alt: "Selo da MacroLiga UFRGS"
 ---
@@ -10,7 +10,7 @@ image-alt: "Selo da MacroLiga UFRGS"
 # Equipe
 
 ::: {.pagina__intro}
-Cerca de 15 estudantes de graduação da UFRGS, organizados em diretorias e em seis eixos temáticos.
+Cerca de 15 estudantes de graduação da UFRGS. O Conselho Executivo coordena o trabalho e decide em conjunto, sem hierarquia formal entre seus integrantes.
 :::
 
 ::: {#equipe-membros}
