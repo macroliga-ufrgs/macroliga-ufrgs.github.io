@@ -8,7 +8,7 @@ autor-citacao: ""                   # opcional: só para sobrenome composto, ex.
 tipo: "Texto de opinião"       # Análise de conjuntura | Revisão de literatura | Nota de pesquisa | Texto de opinião
 eixo: "Atividade econômica, mercado de trabalho e crédito"      # um dos 6 eixos de _variables.yml, escrito igual
 fasciculo: 1                       # número do fascículo
-ordem: 5                            # posição no sumário
+ordem: 4                            # posição no sumário
 date: 2026-11-27                    # data do lançamento
 sintese: "Duas a três frases que resumem o texto."
 revisao: "Prof. Fulano de Tal (FCE/UFRGS)"

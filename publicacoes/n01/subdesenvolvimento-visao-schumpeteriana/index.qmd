@@ -5,7 +5,7 @@ autor-citacao: ""
 tipo: "Texto de opinião"            # [a confirmar]
 eixo: "Atividade econômica, mercado de trabalho e crédito"   # [a confirmar]
 fasciculo: 1
-ordem: 4                            # [ordem provisória: definida pela Presidência]
+ordem: 5                            # [ordem provisória: definida pela Presidência]
 date: 2026-11-27
 sintese: "[síntese provisória: a preencher pelo autor]"
 revisao: "[revisor a confirmar]"

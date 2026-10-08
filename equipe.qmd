@@ -10,7 +10,7 @@ image-alt: "Selo da MacroLiga UFRGS"
 # Equipe
 
 ::: {.pagina__intro}
-Cerca de 15 estudantes de graduação da UFRGS. O Conselho Executivo coordena o trabalho e decide em conjunto, sem hierarquia formal entre seus integrantes.
+Atuamos com um grupo de estudantes de graduação da UFRGS. O Conselho Executivo coordena o trabalho e decide em conjunto, sem hierarquia formal entre seus integrantes.
 :::
 
 ::: {#equipe-membros}
