@@ -483,23 +483,26 @@ questionario:
 
 ### 7.9 Atualizar a equipe
 
-Edite `equipe.yml`. Cada pessoa é uma linha:
+Edite `equipe.yml`. Ele tem três listas, e cada pessoa é uma linha:
 
 ```yaml
-diretorias:
-  - nome: "Comunicação (Marketing e Design)"
-    membros:
-      - { nome: "Fulana de Tal", cargo: "Comunicação", foto: "" }
-      - { nome: "Beltrano de Tal", cargo: "Comunicação", foto: "" }
-eixos:
-  - nome: "Setor externo e câmbio"
-    membros: ["Fulana de Tal", "Beltrano de Tal"]
+conselho:
+  - { nome: "Fulana de Tal", genero: "feminino", presidente: true, foto: "" }
+  - { nome: "Beltrano de Tal", genero: "masculino", presidente: false, foto: "" }
+membros:
+  - { nome: "Sicrana de Tal", foto: "" }
+fundadores:
+  - { nome: "Fulana de Tal", foto: "" }
 ```
 
+- **`conselho`:** quem está no Conselho Executivo. `genero` é `"feminino"` ou `"masculino"` e define se o site escreve "Conselheira" ou "Conselheiro". Uma pessoa só tem `presidente: true` (aparece como "Presidente" e vem primeiro); as demais têm `presidente: false`.
+- **`membros`:** quem está na liga e não está no conselho. Ninguém aparece nas duas listas.
+- **`fundadores`:** as pessoas que criaram a liga. **Nunca apague ninguém desta lista**, nem quando a pessoa se formar. Por isso um fundador também pode aparecer no conselho ou entre os membros.
+- A página mostra as listas nesta ordem: Conselho Executivo, Membros, Membros fundadores. Uma lista vazia não aparece.
 - Mantenha o recuo (os espaços no começo da linha) igual ao das linhas vizinhas.
-- Os nomes dos eixos precisam ser iguais aos de `_variables.yml`.
+- Se o render parar com uma mensagem `[MacroLiga] equipe.yml: ...`, ela diz o que corrigir: um gênero escrito diferente de `"feminino"`/`"masculino"` ou mais de uma pessoa com `presidente: true`.
 - `foto` fica vazia (`""`) até a liga ter o termo de uso de imagem assinado. Depois, ponha a foto quadrada em `assets/equipe/` e escreva o caminho: `foto: "assets/equipe/fulana-de-tal.jpg"`.
-- A cada nova gestão, troque os nomes e apague quem saiu.
+- A cada nova gestão, troque os nomes do conselho e dos membros e apague quem saiu (menos dos fundadores).
 
 ### 7.10 Abrir ou fechar o processo seletivo
 

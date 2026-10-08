@@ -154,7 +154,7 @@ Use os modelos para escrever no formato dos fascículos: Com título, autor, eix
 **Bloco 3: créditos**
 
 - Textos publicados sob a licença CC BY-NC 4.0 (link: https://creativecommons.org/licenses/by-nc/4.0/deed.pt-br).
-- Site feito pela equipe de Comunicação da liga, com Quarto, e publicado no GitHub Pages.
+- Site feito por membros da liga, com Quarto, e publicado no GitHub Pages.
 - © 2026 MacroLiga UFRGS
 
 ---
@@ -250,6 +250,6 @@ Frases que surgiram nos wireframes e na spec de design (`docs/spec-design.md`, s
 | Publicações | Textos curtos de estudantes de graduação, revisados por professores da FCE e reunidos em fascículos numerados. Todos têm DOI e podem ser citados. |
 | Gráficos comentados | Um gráfico, um comentário e a fonte dos dados. |
 | Eventos | Lançamentos de fascículos, debates e outros encontros promovidos pela liga. |
-| Equipe | Cerca de 15 estudantes de graduação da UFRGS, organizados em diretorias e em seis eixos temáticos. |
+| Equipe | Cerca de 15 estudantes de graduação da UFRGS. O Conselho Executivo coordena o trabalho e decide em conjunto, sem hierarquia formal entre seus integrantes. |
 | Fascículo, questionário | Leu este fascículo? Conte o que achou em um questionário curto. As respostas ajudam a avaliar o projeto de extensão. |
 | 404, título | Página não encontrada |

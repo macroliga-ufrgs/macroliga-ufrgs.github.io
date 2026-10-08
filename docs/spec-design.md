@@ -39,7 +39,7 @@ Públicos (CLAUDE.md, seção 2): (1) estudantes da FCE, (2) calouros e cursos p
 | Gráficos comentados (lista e página) | Ver a versão web do formato-assinatura das redes: gráfico, comentário e fonte. | 2, 4 | 22/11 |
 | Eventos (lista e página do evento) | Saber do próximo evento e se inscrever; ver o que já aconteceu. A página do evento é o link divulgado nas redes. | 1, 2 | 18/10 |
 | Sobre | Avaliar a seriedade: processo em 4 etapas, regra da pluralidade, vínculo com a extensão. | 3, 2 | 18/10 |
-| Equipe | Ver quem faz a liga, por diretoria e por eixo. | 1, 3 | 18/10 |
+| Equipe | Ver quem faz a liga: Conselho Executivo, membros e fundadores. | 1, 3 | 18/10 |
 | Participe | Virar membro ou autor: quem pode entrar, seleção, modelos. | 1, 2 | 18/10 |
 | 404 | Não se perder: voltar ao início ou às publicações. | todos | 18/10 |
 
@@ -162,10 +162,11 @@ S1 a S5 como no wireframe, com o texto de textos-base 2. S2 numera as 4 etapas (
 
 | Bloco | Conteúdo | Estados e regras |
 |---|---|---|
-| EQ1 | Título "Equipe" + "Cerca de 15 estudantes de graduação da UFRGS, organizados em diretorias e em seis eixos temáticos." | Fixo. |
-| EQ2 | 4 diretorias, cada uma com membros (nome + cargo). | De `equipe.yml`. Campo `foto` opcional: quando preenchido (depois do termo de uso de imagem, decisão 5), a foto quadrada aparece acima do nome. |
-| EQ3 | 6 eixos, cada um com seus membros e link para Publicações filtrada. | De `equipe.yml`. |
-| EQ4 | "A liga reúne estudantes de graduação da UFRGS pertencentes a qualquer curso." + "Ver como participar". | Fixo. |
+| EQ1 | Título "Equipe" + "Cerca de 15 estudantes de graduação da UFRGS. O Conselho Executivo coordena o trabalho e decide em conjunto, sem hierarquia formal entre seus integrantes." | Fixo. |
+| EQ2 | Conselho Executivo: nome + cargo. A presidência vem primeiro, com o mesmo peso visual dos demais; o cargo é "Presidente", "Conselheira" ou "Conselheiro", conforme o campo `genero`. | De `equipe.yml`. Campo `foto` opcional em todas as seções: quando preenchido (depois do termo de uso de imagem, decisão 5), a foto quadrada aparece acima do nome. O render para se houver mais de um `presidente: true` ou um `genero` fora da lista. Seção vazia não aparece. |
+| EQ3 | Membros (sem posição no conselho): só o nome. | De `equipe.yml`. |
+| EQ4 | Membros fundadores + "Quem criou a MacroLiga UFRGS." | De `equipe.yml`. Lista permanente: um nome pode se repetir no conselho ou entre os membros. |
+| EQ5 | "A liga reúne estudantes de graduação da UFRGS pertencentes a qualquer curso." + "Ver como participar". | Fixo. |
 
 A coordenação aparece só em G2 e S5; os revisores, em T6.
 
@@ -342,6 +343,18 @@ Corpo: chunk R que carrega `assets/graficos/tema_macroliga.R`, com `fig-alt` obr
 #### 3.3.6 Equipe (`equipe.yml`)
 
 ```yaml
+conselho:
+  - { nome: "…", genero: "feminino", presidente: true, foto: "" }    # genero: feminino | masculino
+  - { nome: "…", genero: "masculino", presidente: false, foto: "" }
+membros:
+  - { nome: "…", foto: "" }
+fundadores:                                                          # lista fixa: nunca apagar
+  - { nome: "…", foto: "" }
+```
+
+Formato antigo (até 2026, substituído pela reestruturação da equipe), que agora para o render com aviso:
+
+```yaml
 diretorias:
   - nome: "Presidência (Research)"
     membros:
@@ -479,7 +492,7 @@ Bloco azul-marinho, 3 blocos (em coluna no celular, lado a lado no desktop), tex
 
 1. **Identidade:** logo horizontal branca; "MacroLiga UFRGS, Liga Acadêmica de Macroeconomia."; "Projeto de extensão da Faculdade de Ciências Econômicas da UFRGS, coordenado pelo {coordenacao}."
 2. **Contato:** e-mail, Instagram e LinkedIn como links; botão "Escrever para a liga" (`mailto:`).
-3. **Créditos:** "Textos publicados sob a licença CC BY-NC 4.0." (link para creativecommons.org/licenses/by-nc/4.0/deed.pt-br); "Site feito pela equipe de Comunicação da liga, com Quarto, e publicado no GitHub Pages."; "© 2026 MacroLiga UFRGS".
+3. **Créditos:** "Textos publicados sob a licença CC BY-NC 4.0." (link para creativecommons.org/licenses/by-nc/4.0/deed.pt-br); "Site feito por membros da liga, com Quarto, e publicado no GitHub Pages."; "© 2026 MacroLiga UFRGS".
 
 O vermelho nunca é usado para texto no rodapé (2,1:1 sobre azul).
 
@@ -606,6 +619,6 @@ Já incorporada a `conteudo/textos-base.md`:
 | EV1 | Lançamentos de fascículos, debates e outros encontros promovidos pela liga. |
 | GC1 e I3 | Um gráfico, um comentário e a fonte dos dados. |
 | P1 | Textos curtos de estudantes de graduação, revisados por professores da FCE e reunidos em fascículos numerados. Todos têm DOI e podem ser citados. |
-| EQ1 | Cerca de 15 estudantes de graduação da UFRGS, organizados em diretorias e em seis eixos temáticos. |
+| EQ1 | Cerca de 15 estudantes de graduação da UFRGS. O Conselho Executivo coordena o trabalho e decide em conjunto, sem hierarquia formal entre seus integrantes. |
 | F5 | Leu este fascículo? Conte o que achou em um questionário curto. As respostas ajudam a avaliar o projeto de extensão. |
 | 404, título | Página não encontrada |
