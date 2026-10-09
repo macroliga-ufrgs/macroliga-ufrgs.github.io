@@ -9,8 +9,8 @@ contato:
   linkedin-url: "https://www.linkedin.com/company/macroliga/"
 coordenacao: "prof. Leonardo Xavier da Silva"
 questionario:
-  url: ""              # um único formulário do Google Forms para o site todo
-  campo-pagina: ""     # opcional: id do campo (entry.NNN) que recebe o título da página
+  url: "https://docs.google.com/forms/d/e/1FAIpQLSeBXEWctDglYJ6cHf2wWb2Gi1-bHusa0uC8KH9GZHtBjuTqtQ/viewform"              # um único formulário do Google Forms para o site todo
+  campo-pagina: "entry.914996542"     # opcional: id do campo (entry.NNN) que recebe o título da página
 modelos:
   word: "modelos/modelo-macroliga.docx"
   latex: "modelos/modelo-macroliga.zip"
