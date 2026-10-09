@@ -250,6 +250,6 @@ Frases que surgiram nos wireframes e na spec de design (`docs/spec-design.md`, s
 | Publicações | Textos curtos de estudantes de graduação, revisados por professores da FCE e reunidos em fascículos numerados. Todos têm DOI e podem ser citados. |
 | Gráficos comentados | Um gráfico, um comentário e a fonte dos dados. |
 | Eventos | Lançamentos de fascículos, debates e outros encontros promovidos pela liga. |
-| Equipe | Cerca de 15 estudantes de graduação da UFRGS. O Conselho Executivo coordena o trabalho e decide em conjunto, sem hierarquia formal entre seus integrantes. |
+| Equipe | Atuamos com um grupo de estudantes de graduação da UFRGS. O Conselho Executivo coordena o trabalho e decide em conjunto, sem hierarquia formal entre seus integrantes. |
 | Fascículo, questionário | Leu este fascículo? Conte o que achou em um questionário curto. As respostas ajudam a avaliar o projeto de extensão. |
 | 404, título | Página não encontrada |

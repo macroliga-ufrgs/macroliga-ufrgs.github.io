@@ -3,7 +3,7 @@
 source "$(dirname "$0")/lib.sh"
 existe equipe.html "página Equipe"
 tem equipe.html '<h1[^>]*>Equipe</h1>' "EQ1 título"
-tem equipe.html 'Cerca de 15 estudantes de graduação da UFRGS' "EQ1 frase"
+tem equipe.html 'Atuamos com um grupo de estudantes de graduação da UFRGS' "EQ1 frase"
 tem equipe.html '<h2 id="t-conselho"[^>]*>Conselho Executivo</h2>' "EQ2 seção do conselho"
 tem equipe.html '<h2 id="t-fundadores"[^>]*>Membros fundadores</h2>' "EQ4 seção dos fundadores"
 # Ordem: conselho, membros (se houver), fundadores. Os dois estados da seção Membros estão em e06.

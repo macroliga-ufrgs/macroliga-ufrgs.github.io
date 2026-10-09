@@ -162,7 +162,7 @@ S1 a S5 como no wireframe, com o texto de textos-base 2. S2 numera as 4 etapas (
 
 | Bloco | Conteúdo | Estados e regras |
 |---|---|---|
-| EQ1 | Título "Equipe" + "Cerca de 15 estudantes de graduação da UFRGS. O Conselho Executivo coordena o trabalho e decide em conjunto, sem hierarquia formal entre seus integrantes." | Fixo. |
+| EQ1 | Título "Equipe" + "Atuamos com um grupo de estudantes de graduação da UFRGS. O Conselho Executivo coordena o trabalho e decide em conjunto, sem hierarquia formal entre seus integrantes." | Fixo. |
 | EQ2 | Conselho Executivo: nome + cargo. A presidência vem primeiro, com o mesmo peso visual dos demais; o cargo é "Presidente", "Conselheira" ou "Conselheiro", conforme o campo `genero`. | De `equipe.yml`. Campo `foto` opcional em todas as seções: quando preenchido (depois do termo de uso de imagem, decisão 5), a foto quadrada aparece acima do nome. O render para se houver mais de um `presidente: true` ou um `genero` fora da lista. Seção vazia não aparece. |
 | EQ3 | Membros (sem posição no conselho): só o nome. | De `equipe.yml`. |
 | EQ4 | Membros fundadores + "Quem criou a MacroLiga UFRGS." | De `equipe.yml`. Lista permanente: um nome pode se repetir no conselho ou entre os membros. |
@@ -619,6 +619,6 @@ Já incorporada a `conteudo/textos-base.md`:
 | EV1 | Lançamentos de fascículos, debates e outros encontros promovidos pela liga. |
 | GC1 e I3 | Um gráfico, um comentário e a fonte dos dados. |
 | P1 | Textos curtos de estudantes de graduação, revisados por professores da FCE e reunidos em fascículos numerados. Todos têm DOI e podem ser citados. |
-| EQ1 | Cerca de 15 estudantes de graduação da UFRGS. O Conselho Executivo coordena o trabalho e decide em conjunto, sem hierarquia formal entre seus integrantes. |
+| EQ1 | Atuamos com um grupo de estudantes de graduação da UFRGS. O Conselho Executivo coordena o trabalho e decide em conjunto, sem hierarquia formal entre seus integrantes. |
 | F5 | Leu este fascículo? Conte o que achou em um questionário curto. As respostas ajudam a avaliar o projeto de extensão. |
 | 404, título | Página não encontrada |
