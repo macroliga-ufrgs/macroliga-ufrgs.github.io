@@ -397,8 +397,8 @@ Siga a lista na ordem. Reserve uma hora.
 4. No fascículo, preencha `doi` e apague `draft: true`.
 5. Em cada texto, preencha `sintese`, `revisao` e `doi` (seção 7.3) e apague `draft: true`.
 6. Em `publicacoes/em-breve.yml`, apague o anúncio e deixe só `[]` (ou anuncie o próximo fascículo).
-7. Se o link do questionário de avaliação ainda estiver vazio, preencha-o em `_variables.yml` (seção 7.8).
-8. Rode `quarto preview` (sem `--profile`) e confira: Início, Publicações, o fascículo e cada texto. Clique em "Baixar PDF" em todos.
+7. Rode `quarto preview` (sem `--profile`) e confira: Início, Publicações, o fascículo e cada texto. Clique em "Baixar PDF" em todos.
+8. Em um texto, clique em "Responder ao questionário": o formulário deve abrir com o título do texto já escrito em "O que você leu?". Se não abrir assim, veja a seção 7.8.
 9. Envie ao GitHub (seção 8): `"Publica o fascículo nº 2"`.
 10. Publique (seção 9).
 
@@ -474,10 +474,14 @@ contato:
   instagram: "@macroliga.ufrgs"
   instagram-url: "https://www.instagram.com/macroliga.ufrgs/"
 questionario:
-  url: "https://forms.gle/exemplo"   # aparece em toda página de texto e de fascículo
+  url: "https://docs.google.com/forms/d/e/1FAIpQL.../viewform"   # aparece em toda página de texto, de fascículo e de gráfico
+  campo-pagina: "entry.914996542"   # a pergunta "O que você leu?", que recebe o título da página
 ```
 
-- **Questionário:** enquanto `url` estiver vazio, o bloco "Responder ao questionário" não aparece e o terminal mostra um aviso amarelo. É um aviso, não um erro: o site funciona.
+- **Questionário:** é um formulário só, do Google Forms, na conta da liga. O botão "Responder ao questionário" abre o formulário com o título da página já escrito na pergunta "O que você leu?". Enquanto `url` estiver vazio, o botão não aparece e o terminal mostra um aviso amarelo. É um aviso, não um erro: o site funciona.
+  - Em `url`, use o **endereço longo**, que começa com `https://docs.google.com/forms/d/e/` e termina em `/viewform`. Nunca use o encurtado (`forms.gle/...`): ele pode perder o título preenchido.
+  - Para achar o `campo-pagina`: no formulário, abra o menu ⋮ e clique em **Obter link preenchido**, escreva `TESTE` em "O que você leu?" e copie o link. O trecho antes de `=TESTE` (ex.: `entry.914996542`) é o valor.
+  - Pode mudar o texto das perguntas à vontade. Se apagar e recriar a pergunta "O que você leu?", o número `entry` muda: repita o passo acima.
 - **Eixos e tipos:** a lista também está aqui. Só mude com acordo da Presidência, porque os textos já publicados precisam usar os nomes novos.
 - **Nunca** escreva o nome da publicação direto em outro arquivo. Ele ainda pode mudar.
 
