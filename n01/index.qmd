@@ -1,0 +1,8 @@
+---
+title: "Redirecionando"
+pagina: redirecionamento
+# Endereço curto da página final do fascículo nº 1 (versões digital e impressa).
+# Fica em rascunho até o lançamento, junto com o fascículo (LEIA-ME, seção 7.5).
+destino: "../publicacoes/n01/"
+draft: true
+---

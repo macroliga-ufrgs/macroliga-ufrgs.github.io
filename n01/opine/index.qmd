@@ -1,0 +1,9 @@
+---
+title: "Redirecionando"
+pagina: redirecionamento
+# QR e endereço impressos na versão impressa do fascículo nº 1: leva ao questionário
+# com a origem "<nome> nº 1 · impresso". Rascunho até o lançamento (LEIA-ME, 7.5).
+numero: 1
+canal: impresso
+draft: true
+---

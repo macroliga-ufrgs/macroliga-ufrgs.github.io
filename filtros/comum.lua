@@ -229,19 +229,27 @@ local function codificar_url(s)
   return (s:gsub("[^A-Za-z0-9%-%._~]", function(c) return string.format("%%%02X", string.byte(c)) end))
 end
 
--- Questionário (indicador da extensão). Sem questionario.url, avisa e não mostra nada.
-function M.questionario(meta, frase, titulo)
+-- Endereço do questionário com o campo da página já preenchido com `valor`.
+-- Sem questionario.url, devolve nil.
+function M.url_questionario(meta, valor)
   local q = meta.questionario or {}
   local url = M.texto(q.url)
-  if url == "" then
-    quarto.log.warning("[MacroLiga] questionario.url está vazio em _variables.yml: o questionário não aparece em "
-      .. M.relativo(quarto.doc.input_file) .. ".")
-    return nil
-  end
+  if url == "" then return nil end
   local campo = M.texto(q["campo-pagina"])
   if campo ~= "" then
     local sep = url:find("?", 1, true) and "&" or "?"
-    url = url .. sep .. "usp=pp_url&" .. campo .. "=" .. codificar_url(titulo or "")
+    url = url .. sep .. "usp=pp_url&" .. campo .. "=" .. codificar_url(valor or "")
+  end
+  return url
+end
+
+-- Questionário (indicador da extensão). Sem questionario.url, avisa e não mostra nada.
+function M.questionario(meta, frase, titulo)
+  local url = M.url_questionario(meta, titulo)
+  if not url then
+    quarto.log.warning("[MacroLiga] questionario.url está vazio em _variables.yml: o questionário não aparece em "
+      .. M.relativo(quarto.doc.input_file) .. ".")
+    return nil
   end
   return M.html(table.concat({
     '<section class="questionario" aria-label="Questionário de avaliação">',

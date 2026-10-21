@@ -21,8 +21,26 @@ local function contem(t, v)
   return false
 end
 
+-- Endereço curto (nNN, nNN/opine...): "destino" ou o par "numero" e "canal".
+local function validar_redirecionamento()
+  local y = comum.cabecalho(quarto.doc.input_file) or {}
+  local function parar(msg)
+    comum.parar(string.format('Redirecionamento (%s): %s', comum.relativo(quarto.doc.input_file), msg))
+  end
+  if comum.texto(y.destino) ~= "" then return nil end
+  local canal = comum.texto(y.canal)
+  if canal == "" or comum.texto(y.numero) == "" then
+    parar('preencha "destino" ou o par "numero" e "canal" no cabeçalho do index.qmd.')
+  end
+  if canal ~= "impresso" and canal ~= "PDF" then
+    parar(string.format('o canal "%s" não existe. Use "impresso" ou "PDF".', canal))
+  end
+  return nil
+end
+
 function Meta(meta)
   local pagina = comum.texto(meta.pagina)
+  if pagina == "redirecionamento" then return validar_redirecionamento() end
   if not OBRIGATORIOS[pagina] then return nil end
   local y = comum.cabecalho(quarto.doc.input_file) or {}
   local nome = comum.texto(y.title)

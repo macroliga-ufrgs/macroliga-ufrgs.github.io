@@ -1,0 +1,9 @@
+---
+title: "Redirecionando"
+pagina: redirecionamento
+# Botão e QR da versão digital (PDF) do fascículo nº 1: leva ao questionário
+# com a origem "<nome> nº 1 · PDF". Rascunho até o lançamento (LEIA-ME, 7.5).
+numero: 1
+canal: PDF
+draft: true
+---

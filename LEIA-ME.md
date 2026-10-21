@@ -387,6 +387,16 @@ Não escreva o título: "Pontos de Macro nº 2" (ou o nome que a publicação ti
 
 Se não houver nenhum fascículo anunciado, o arquivo fica só com `[]`.
 
+6. **Crie os endereços curtos da página final.** A última página do PDF do fascículo aponta para três endereços curtos do site, e não direto para o Google Forms: o PDF depositado no Zenodo não muda mais, mas o destino destes endereços pode mudar.
+
+   | Endereço | Leva a |
+   |---|---|
+   | `/n02` | página do fascículo |
+   | `/n02/opine` | questionário, com "<nome> nº 2 · impresso" já escrito (QR da versão impressa) |
+   | `/n02/opine/pdf` | questionário, com "<nome> nº 2 · PDF" já escrito (botão da versão digital) |
+
+   Copie a pasta `n01/` (na raiz do site, não em `publicacoes/`) e renomeie a cópia para `n02`. Nos três `index.qmd` dela, troque `1` por `2`: em `destino` (`"../publicacoes/n02/"`) e em `numero`. Deixe `draft: true`.
+
 ### 7.5 No dia do lançamento
 
 Siga a lista na ordem. Reserve uma hora.
@@ -394,11 +404,11 @@ Siga a lista na ordem. Reserve uma hora.
 1. `git pull`.
 2. Deposite os PDFs no Zenodo (comunidade da MacroLiga) e anote os DOIs: um do fascículo e, se houver, um de cada texto.
 3. Copie `fasciculo.pdf` para a pasta do fascículo (ex.: `publicacoes/n02/`) e cada `texto.pdf` para a pasta do seu texto.
-4. No fascículo, preencha `doi` e apague `draft: true`.
+4. No fascículo, preencha `doi` e apague `draft: true`. Apague também o `draft: true` dos três endereços curtos (`n02/index.qmd`, `n02/opine/index.qmd` e `n02/opine/pdf/index.qmd`, seção 7.4).
 5. Em cada texto, preencha `sintese`, `revisao` e `doi` (seção 7.3) e apague `draft: true`.
 6. Em `publicacoes/em-breve.yml`, apague o anúncio e deixe só `[]` (ou anuncie o próximo fascículo).
 7. Rode `quarto preview` (sem `--profile`) e confira: Início, Publicações, o fascículo e cada texto. Clique em "Baixar PDF" em todos.
-8. Em um texto, clique em "Responder ao questionário": o formulário deve abrir com o título do texto já escrito em "O que você leu?". Se não abrir assim, veja a seção 7.8.
+8. Em um texto, clique em "Responder ao questionário": o formulário deve abrir com o título do texto já escrito em "O que você leu?". Se não abrir assim, veja a seção 7.8. Abra também `/n02/opine` e `/n02/opine/pdf` no `quarto preview`: os dois devem levar ao formulário, com "impresso" e "PDF" no fim do que já vem escrito.
 9. Envie ao GitHub (seção 8): `"Publica o fascículo nº 2"`.
 10. Publique (seção 9).
 
