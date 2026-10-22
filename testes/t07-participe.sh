@@ -3,7 +3,7 @@
 source "$(dirname "$0")/lib.sh"
 existe participe.html "página Participe"
 tem participe.html '<h1[^>]*>Participe</h1>' "PA1 título"
-tem participe.html 'pertencentes a qualquer curso' "PA1 texto"
+tem participe.html 'estudantes de graduação em Ciências Econômicas da UFRGS' "PA1 texto"
 tem participe.html 'Não há processo seletivo aberto agora\.' "PA2 seleção fechada"
 nao_tem participe.html 'Fazer inscrição no processo seletivo' "sem botão de inscrição com a seleção fechada"
 tem participe.html 'O que se espera do membro' "PA3"

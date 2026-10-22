@@ -1,7 +1,7 @@
 ---
 title: "Lançamento do fascículo nº 1"
 date: 2026-11-27
-quando: "Semana de 23/11/2026, data a confirmar"
+quando: "No início de dezembro, data a confirmar"
 horario: ""
 local: "FCE/UFRGS, sala a definir"
 situacao: "proximo"
@@ -12,4 +12,4 @@ capa-alt: ""
 fotos: ""
 ---
 
-Apresentação dos quatro textos do fascículo nº 1, cada um com um debatedor designado. A programação e os nomes dos debatedores serão divulgados aqui e no Instagram.
+Apresentação da Liga e discussão dos textos do fascículo nº 1. A programação será divulgada aqui e no Instagram.

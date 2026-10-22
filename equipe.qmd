@@ -17,7 +17,7 @@ Atuamos com um grupo de estudantes de graduação da UFRGS. O Conselho Executivo
 :::
 
 ::: {.equipe__chamada}
-A liga reúne estudantes de graduação da UFRGS pertencentes a qualquer curso.
+A liga reúne estudantes de graduação em Ciências Econômicas da UFRGS.
 
 [Ver como participar](participe.qmd){.botao}
 :::
