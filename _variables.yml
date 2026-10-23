@@ -14,6 +14,7 @@ questionario:
 modelos:
   word: "modelos/modelo-macroliga.docx"
   latex: "modelos/modelo-macroliga.zip"
+  graficos: "modelos/graficos-macroliga.zip"
 contagem:
   goatcounter: "macroliga"      # código da conta do GoatCounter; vazio = nada é carregado
 eixos:

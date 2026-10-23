@@ -11,5 +11,7 @@ tem participe.html 'href="modelos/modelo-macroliga\.docx"[^>]*>Baixar modelo em 
 tem participe.html 'href="modelos/modelo-macroliga\.zip"[^>]*>Baixar modelo em LaTeX' "PA4 LaTeX"
 existe modelos/modelo-macroliga.docx "modelo Word copiado para o site"
 existe modelos/modelo-macroliga.zip "modelo LaTeX copiado para o site"
+tem participe.html 'href="modelos/graficos-macroliga\.zip"[^>]*>Baixar tema de gráficos em R' "PA4 gráficos"
+existe modelos/graficos-macroliga.zip "tema de gráficos copiado para o site"
 tem participe.html 'Escrever para a liga' "PA5"
 fim

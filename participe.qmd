@@ -49,9 +49,12 @@ As vagas abrem por processo seletivo periódico. A inscrição é feita por form
 
 Use os modelos para escrever no formato dos fascículos: com título, autor, eixo e tipo de texto.
 
+Para os gráficos, o tema em R aplica ao ggplot2 as cores, as fontes e o formato brasileiro de números da liga. O arquivo traz o guia de instalação e 14 exemplos com dados do BCB, do IBGE e do Tesouro.
+
 ::: {.acoes}
 [Baixar modelo em Word]({{< var modelos.word >}}){.botao .botao--secundario}
 [Baixar modelo em LaTeX]({{< var modelos.latex >}}){.botao .botao--secundario}
+[Baixar tema de gráficos em R]({{< var modelos.graficos >}}){.botao .botao--secundario}
 :::
 ::::
 

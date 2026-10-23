@@ -101,7 +101,7 @@ O Instagram gera alcance, o LinkedIn gera credibilidade e **o site guarda a prod
 | **Eventos** | Próximos eventos (com inscrição) e eventos passados (com fotos) |
 | **Sobre** | Missão, como funcionamos (texto → debate entre pares → revisão docente → publicação), regra da pluralidade, vínculo com a extensão |
 | **Equipe** | Conselho Executivo, membros e membros fundadores, nesta ordem. A coordenação aparece no rodapé e na página Sobre; cada professor revisor, na página do texto que revisou |
-| **Participe** | Processo seletivo, formulário, modelos para autores (Word/LaTeX) |
+| **Participe** | Processo seletivo, formulário, modelos para autores (Word/LaTeX) e tema de gráficos em R |
 | **Contato** | E-mail e redes (pode ficar no rodapé, em vez de página própria) |
 
 ### Modelo de conteúdo (cabeçalho YAML de cada texto)

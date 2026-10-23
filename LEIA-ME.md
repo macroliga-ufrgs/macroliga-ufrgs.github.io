@@ -535,6 +535,17 @@ Quando o prazo acabar, volte `aberta` para `false`. Não precisa apagar o prazo 
 
 A página de gráficos comentados ainda está em construção. Quando ela existir, a receita entra aqui. Ela vai exigir o R instalado no computador de quem cria o gráfico.
 
+### 7.12 Atualizar o tema de gráficos que os autores baixam
+
+A página Participe oferece o arquivo `modelos/graficos-macroliga.zip`. Ele tem o tema (`tema_macroliga.R`), os exemplos (`exemplos.R`), o guia (`LEIA-ME.md`) e as imagens de cada exemplo.
+
+**A versão oficial do tema é `assets/graficos/tema_macroliga.R`.** Se mudar o tema, atualize o zip no mesmo commit, senão os autores baixam a versão antiga:
+
+1. Copie `modelos/graficos-macroliga.zip` para uma pasta fora do site (a Área de Trabalho, por exemplo), clique nele com o botão direito e escolha **Extrair tudo**.
+2. Na pasta extraída, troque o que mudou. Se foi o tema, copie por cima o `assets/graficos/tema_macroliga.R` do site.
+3. Selecione **os arquivos** de dentro da pasta (não a pasta), clique com o botão direito e escolha **Compactar para arquivo ZIP** (no Windows 11: **Compactar para › Arquivo ZIP**).
+4. Renomeie o zip novo para `graficos-macroliga.zip` e ponha no lugar do antigo, em `modelos/`.
+
 ---
 
 ## 8. Salvar e enviar ao GitHub
