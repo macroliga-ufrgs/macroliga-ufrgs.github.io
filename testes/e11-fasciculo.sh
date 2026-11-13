@@ -13,4 +13,9 @@ trocar _variables.yml 's|^  url: "[^"]*"|  url: "https://docs.google.com/forms/d
 quarto render "$F" --profile rascunhos > testes/.render-estado.log 2>&1
 SITE=_site-rascunhos tem publicacoes/n01/index.html 'viewform\?usp=pp_url&amp;entry\.123=Pontos%20de%20Macro%20n%C2%BA%C2%A01' "F5 abre o formulário com o título"
 SITE=_site-rascunhos tem publicacoes/n01/index.html 'Leu este fascículo\? Conte o que achou em um questionário curto\.' "F5 frase"
+desfazer
+echo "-- fascículo ligado a um evento"
+trocar "$F" 's|^evento: .*|evento: "2026-11-25-apresentacao-liga"|'
+quarto render "$F" --profile rascunhos > testes/.render-estado.log 2>&1
+SITE=_site-rascunhos tem publicacoes/n01/index.html 'href="\.\./\.\./eventos/2026-11-25-apresentacao-liga/index\.html">Ver o evento de lançamento' "F4 link para o evento"
 fim

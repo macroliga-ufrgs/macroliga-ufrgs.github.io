@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Tarefa 14: critérios automáticos do site mínimo (spec 6.1).
 source "$(dirname "$0")/lib.sh"
-for p in index.html sobre.html equipe.html participe.html 404.html publicacoes/index.html eventos/index.html eventos/2026-11-27-lancamento-n01/index.html; do
+for p in index.html sobre.html equipe.html participe.html 404.html publicacoes/index.html eventos/index.html eventos/2026-11-25-apresentacao-liga/index.html; do
   existe "$p" "no ar: $p"
 done
 nao_tem index.html 'Gráficos comentados' "menu sem Gráficos comentados (D1)"

@@ -45,6 +45,6 @@ Nenhum evento agendado. Siga [{{< var contato.instagram >}}]({{< var contato.ins
 :::
 
 ::: {#ev3-vazio .estado-vazio}
-Ainda não realizamos eventos. O primeiro será o lançamento do fascículo nº 1.
+Ainda não realizamos eventos. O primeiro será a apresentação da liga, em 25 de novembro de 2026.
 :::
 ::::

@@ -11,7 +11,7 @@ tem "$P" '<img class="fasciculo__capa" src="capa\.png" alt="Capa do fascículo' 
 tem "$P" 'Publicado em: 27 de novembro de 2026' "F2 data"
 tem "$P" 'O PDF fica disponível no lançamento do fascículo\.' "F2 sem PDF"
 tem "$P" '<h2 id="t-sumario">Sumário</h2>' "F3 título"
-tem "$P" "Ver o evento de lançamento" "F4 link para o evento"
+nao_tem "$P" "Ver o evento de lançamento" "F4 sem evento ligado: nenhum botão de evento"
 tem "$P" 'Os textos publicados não representam a posição da MacroLiga UFRGS' "F6"
 tem "$P" '<meta property="og:title" content="Pontos de Macro nº 1">' "og:title do fascículo"
 tem "$P" '<meta property="og:image" content="https://macroliga-ufrgs\.github\.io/publicacoes/n01/capa\.png"' "og:image é a capa"

@@ -11,7 +11,7 @@ tem index.html '<meta property="og:image" content="https://macroliga-ufrgs\.gith
 tem index.html '<meta property="og:description" content="[^"]+' "og:description preenchida"
 # A imagem de compartilhamento existe em toda página (LinkedIn e Instagram não mostram SVG).
 OG='<meta property="og:image" content="https://macroliga-ufrgs\.github\.io/assets/marca/png/macroliga-og\.png"'
-for p in sobre.html equipe.html participe.html publicacoes/index.html eventos/index.html eventos/2026-11-27-lancamento-n01/index.html; do
+for p in sobre.html equipe.html participe.html publicacoes/index.html eventos/index.html eventos/2026-11-25-apresentacao-liga/index.html; do
   tem "$p" "$OG" "og:image do selo em $p"
 done
 nenhum_html '<meta property="og:image" content="[^"]*\.svg"' "nenhum og:image em SVG"

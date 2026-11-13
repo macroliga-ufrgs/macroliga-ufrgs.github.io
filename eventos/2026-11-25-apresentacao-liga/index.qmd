@@ -1,0 +1,15 @@
+---
+title: "Apresentação da MacroLiga"
+date: 2026-11-25                 # data do evento (ordena a lista)
+quando: ""                       # opcional: substitui a data exibida, ex.: "Semana de 23/11/2026, data a confirmar"
+horario: "17h30min"              # ex.: "19h"
+local: "FCE/UFRGS, sala 402"     # texto livre, ex.: "FCE/UFRGS, sala 101" ou "On-line, link enviado após a inscrição"
+situacao: "proximo"              # proximo | realizado (troque à mão depois do evento)
+inscricao: "https://forms.gle/j3nFqVM3E7jp68ap9"        # link do formulário | vazio (= "Inscrições em breve.") | livre
+fasciculo:                       # só em lançamento: o número do fascículo, ex.: 2
+capa: ""                         # depois do evento: arquivo da foto de capa nesta pasta, ex.: "capa.jpg"
+capa-alt: ""                     # descrição da foto (obrigatória se houver capa)
+fotos: ""                        # link do álbum externo da liga
+---
+
+Evento de apresentação da MacroLiga, anunciando a sua estrutura de trabalho, funcionamento e processo seletivo.
